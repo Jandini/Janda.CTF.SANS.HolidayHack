@@ -2,7 +2,7 @@
   "profiles": {
     "Add": {
       "commandName": "Project",
-      "commandLineArgs": "add --name S3 --root Amazon"
+      "commandLineArgs": "add --name UnescapeTmux --resource"
     },
     "Play": {
       "commandName": "Project",
@@ -12,9 +12,17 @@
       "commandName": "Project",
       "commandLineArgs": "--help"
     },
-    "S3": {
+    "InvestigateS3Bucket": {
       "commandName": "Project",
-      "commandLineArgs": "--name S3"
+      "commandLineArgs": "--name InvestigateS3Bucket"
+    },
+    "UncoverSantasGiftList": {
+      "commandName": "Project",
+      "commandLineArgs": "--name UncoverSantasGiftList"
+    },
+    "UnescapeTmux": {
+      "commandName": "Project",
+      "commandLineArgs": "--name UnescapeTmux"
     }
   }
 }
