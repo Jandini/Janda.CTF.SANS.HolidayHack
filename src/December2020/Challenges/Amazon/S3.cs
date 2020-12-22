@@ -34,10 +34,12 @@ namespace Janda.CTF.SANS.HolidayHack
         public void Run()
         {
             var counter = 0;
+            var forbidden = 0;
+            var found = 0;
 
             Parallel.ForEach(_dictionary.GetWords().Select(a => HttpUtility.UrlEncode(a.ToLower())), new ParallelOptions() { MaxDegreeOfParallelism = 8 }, (word) =>
             {
-                Console.Title = $"{counter} {word}";
+                Console.Title = $"Scanned: {counter}  Forbidden: {forbidden}  Found: {found}  Bucket: {word}";
 
                 try
                 {
@@ -48,7 +50,8 @@ namespace Janda.CTF.SANS.HolidayHack
                     var  response = reader.ReadToEnd();
                     _logger.LogInformation("Bucket found: {bucket}", word);
 
-                    _logger.LogDebug("{{{content}}}", response);
+                    found++;
+                    //_logger.LogDebug("{content}", response);
 
                     data.Close();
                     reader.Close();
@@ -68,7 +71,8 @@ namespace Janda.CTF.SANS.HolidayHack
                             break;
 
                         case HttpStatusCode.Forbidden:
-                            _logger.LogError(ex, "Bucket forbidden: {bucket}", word);
+                            forbidden++;
+                            //_logger.LogError(ex, "Bucket forbidden: {bucket}", word);
                             break;
 
                         default:
