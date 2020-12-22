@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>SANS.HolidayHack</RootNamespace>
+    <RootNamespace>Janda.CTF.SANS.HolidayHack</RootNamespace>
     <Authors>Matt Janda</Authors>
   </PropertyGroup>
 
@@ -21,7 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Challenges\Amazon\" />
     <Folder Include="Properties\" />
   </ItemGroup>
 
