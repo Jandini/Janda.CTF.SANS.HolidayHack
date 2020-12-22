@@ -2,7 +2,7 @@
   "profiles": {
     "Add": {
       "commandName": "Project",
-      "commandLineArgs": "add --name UnescapeTmux --resource"
+      "commandLineArgs": "add --name PointOfSalePasswordRecovery --resource"
     },
     "Play": {
       "commandName": "Project",
@@ -23,6 +23,14 @@
     "UnescapeTmux": {
       "commandName": "Project",
       "commandLineArgs": "--name UnescapeTmux"
+    },
+    "TheElfCode": {
+      "commandName": "Project",
+      "commandLineArgs": "--name TheElfCode"
+    },
+    "PointOfSalePasswordRecovery": {
+      "commandName": "Project",
+      "commandLineArgs": "--name PointOfSalePasswordRecovery"
     }
   }
 }
