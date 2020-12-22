@@ -11,6 +11,10 @@
     "Help": {
       "commandName": "Project",
       "commandLineArgs": "--help"
-    }   
+    },
+    "S3": {
+      "commandName": "Project",
+      "commandLineArgs": "--name S3"
+    }
   }
 }

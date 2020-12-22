@@ -17,11 +17,18 @@
 
   <ItemGroup>
     <PackageReference Include="Janda.CTF" Version="0.1.0-alpha.18" />
+    <PackageReference Include="Janda.CTF.Dictionary" Version="0.1.0-alpha.7" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Challenges\Amazon\" />
     <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
