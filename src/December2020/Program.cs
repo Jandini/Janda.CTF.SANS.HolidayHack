@@ -21,7 +21,8 @@ namespace Janda.CTF.SANS.HolidayHack
             ShowWindow(ThisConsole, MAXIMIZE);
 
             CTF.Run(args, (services) => services
-                .AddTransient<IS3Scanner, S3Scanner>()
+                .AddS3Scanner()
+                .AddWebBrowserService()
                 .AddDictionary());
         }
     }
