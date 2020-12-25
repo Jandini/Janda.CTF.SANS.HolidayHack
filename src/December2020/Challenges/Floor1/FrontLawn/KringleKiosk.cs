@@ -14,18 +14,8 @@ namespace Janda.CTF.SANS.HolidayHack
 
         public void Run()
         {
-            Menu();
-            Map();
-            Conduct();
-            Directory();
-            Badge();
 
-            Plant();
-
-
-
-            _logger.LogInformation(@"Go to option {m} and enter {s}
-
+            @"
                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                  Welcome to the North Pole!
                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -54,13 +44,11 @@ namespace Janda.CTF.SANS.HolidayHack
                 welcome.sh
 
 
-            ", 4, ";ls");
+            ".LogMessage(_logger, "Go to option {m} and enter {s}", 4, "; ls");
 
 
 
-
-
-            _logger.LogInformation(@"Go to option 4 and enter ;cat welcome.sh
+            @"
 
                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                  Welcome to the North Pole!
@@ -208,12 +196,12 @@ namespace Janda.CTF.SANS.HolidayHack
 
 
 
-            ");
+            ".LogMessage(_logger, "Go to option 4 and enter ;cat welcome.sh");
 
 
 
 
-            _logger.LogInformation(@"Go to option {m} and enter {s}
+            @"
                 
                 Please select an item from the menu by entering a single number.
                 Anything else might have ... unintended consequences.
@@ -238,11 +226,11 @@ namespace Janda.CTF.SANS.HolidayHack
                 Type 'exit' to return to the menu.
                 shinny@9edb28c788e6: ~$ 
 
-            ", 4, ";bash");
+            ".LogMessage(_logger, "Go to option {m} and enter {s}", 4, ";bash");
 
 
-            _logger.LogInformation(
-            @"Wonder around...
+
+            @"
                 Type 'exit' to return to the menu.
 
                 shinny@9edb28c788e6:~$ ls
@@ -258,13 +246,20 @@ namespace Janda.CTF.SANS.HolidayHack
                 shinny@9edb28c788e6:/home/elf$ ./runtoanswer 
 
                 Sorry, that answer is incorrect. Please try again!
-            ");
+            ".LogMessage(_logger, "Wonder around...");
 
+
+            Menu();
+            Conduct();
+            Directory();
+            Badge();
+            Plant();
+            Map();
         }
 
         void Menu()
         {
-            _logger.LogInformation(@"Menu
+            @"Menu
 
                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                  Welcome to the North Pole!
@@ -280,7 +275,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 Anything else might have ... unintended consequences.
 
                 Enter choice [1 - 5] 
-            ");
+            ".LogMessage(_logger, "Menu");
         }
 
 
@@ -290,7 +285,7 @@ namespace Janda.CTF.SANS.HolidayHack
 
         void Plant()
         {
-            _logger.LogInformation(@"
+            @"
                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                  Welcome to the North Pole!
                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -313,12 +308,12 @@ namespace Janda.CTF.SANS.HolidayHack
                   \    /
                    \__/ ejm96
                 Sleeping for 10 seconds..
-            "); 
+            ".LogMessage(_logger, "Plant");
         }
 
         void Conduct()
         {
-            _logger.LogInformation(@"Code of Conduct and Terms of Use 
+            @"
 
                     # KringleCon III and Holiday Hack Challenge Code of Conduct
 
@@ -356,7 +351,7 @@ namespace Janda.CTF.SANS.HolidayHack
 
                     5.E - mail addresses collected will be used in accordance with the SANS Privacy Policy(https://www
                     .sans.org / privacy /).
-                ");
+                ".LogMessage(_logger, "Code of Conduct and Terms of Use ");
         }
 
 
@@ -366,7 +361,7 @@ namespace Janda.CTF.SANS.HolidayHack
 
         void Map()
         {
-            _logger.LogInformation(@"Map
+            @"
 
                  __       _    --------------                                                
                 |__)_  _ (_   | NetWars Room |                                               
@@ -403,12 +398,12 @@ namespace Janda.CTF.SANS.HolidayHack
                            ----------                                         --------       
                           |Front Lawn|       NOTE: * denotes Santavator                      
                            ----------                                                        
-            ");
+            ".LogMessage(_logger, "Map");
         }
 
         void Directory()
         {
-            _logger.LogInformation(@"Directory
+            @"
 
                         Name: Floor: Room:
                         Ribb Bonbowford       1        Dining Room
@@ -435,12 +430,12 @@ namespace Janda.CTF.SANS.HolidayHack
                         Eve Snowshoes         3        Santa's Balcony
                         Shinny Upatree                 Front Lawn
                         Tinsel Upatree        3        Santa's Office
-                ");
+                ".LogMessage(_logger, "Directory");
         }
 
         void Badge()
         {
-            _logger.LogInformation(@"Print Name Badge
+            @"
                 Enter your name (Please avoid special characters, they cause some weird errors)...Jandini
                  _________
                 < Jandini >
@@ -452,7 +447,7 @@ namespace Janda.CTF.SANS.HolidayHack
                            (__)\       )\/\
                                ||----w |
                                ||     ||
-            ");
+            ".LogMessage(_logger, "Print Name Badge");
         }
     }
 }
