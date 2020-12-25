@@ -2,7 +2,7 @@
   "profiles": {
     "Add...": {
       "commandName": "Project",
-      "commandLineArgs": "add --root Courtyard --name LinuxPremier"
+      "commandLineArgs": "add --root NetwarsRoom --name CANBusInvestigation"
     },
     "Play...": {
       "commandName": "Project",
@@ -55,6 +55,10 @@
     "LinuxPremier": {
       "commandName": "Project",
       "commandLineArgs": "--name LinuxPremier"
+    },
+    "CANBusInvestigation": {
+      "commandName": "Project",
+      "commandLineArgs": "--name CANBusInvestigation"
     }
   }
 }
