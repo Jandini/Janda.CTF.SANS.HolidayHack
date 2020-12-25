@@ -2,7 +2,7 @@
   "profiles": {
     "Add...": {
       "commandName": "Project",
-      "commandLineArgs": "add --root NetwarsRoom --name CANBusInvestigation"
+      "commandLineArgs": "add --root GreatRoom --name Splunk"
     },
     "Play...": {
       "commandName": "Project",
@@ -59,6 +59,10 @@
     "CANBusInvestigation": {
       "commandName": "Project",
       "commandLineArgs": "--name CANBusInvestigation"
+    },
+    "Splunk": {
+      "commandName": "Project",
+      "commandLineArgs": "--name Splunk"
     }
   }
 }
