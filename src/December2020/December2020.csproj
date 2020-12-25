@@ -21,11 +21,42 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Challenges\Floor1.5\WrappingRoom\" />
+    <Folder Include="Challenges\Floor1\Entryway\" />
+    <Folder Include="Challenges\Floor1\GreatRoom\" />
+    <Folder Include="Challenges\Floor3\Balcony\" />
+    <Folder Include="Challenges\Floor3\" />
+    <Folder Include="Challenges\Floor3\SantasOffice\" />
+    <Folder Include="Challenges\Floor2\SpeakerUnprep\" />
     <Folder Include="Properties\" />
   </ItemGroup>
 
   <ItemGroup>
     <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Challenges\Floor1\DiningRoom\TheElfCode\Level-1.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Challenges\Floor1\DiningRoom\TheElfCode\Level-2.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Challenges\Floor1\DiningRoom\TheElfCode\Level-3.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Challenges\Floor1\DiningRoom\TheElfCode\Level-4.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Challenges\Floor1\DiningRoom\TheElfCode\Level-5.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Challenges\Floor1\DiningRoom\TheElfCode\Level-6.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Challenges\Floor1\DiningRoom\TheElfCode\Level-7.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Challenges\Floor1\DiningRoom\TheElfCode\Level-8.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

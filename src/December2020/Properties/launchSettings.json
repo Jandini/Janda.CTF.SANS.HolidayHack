@@ -2,7 +2,7 @@
   "profiles": {
     "Add...": {
       "commandName": "Project",
-      "commandLineArgs": "add --name ScrapyPrepper"
+      "commandLineArgs": "add --root Courtyard --name LinuxPremier"
     },
     "Play...": {
       "commandName": "Project",
@@ -46,7 +46,15 @@
     },
     "ScrapyPrepper": {
       "commandName": "Project",
-      "commandLineArgs": "--name ScrapyPrepper"
+      "commandLineArgs": "--name ScapyPrepper"
+    },
+    "SortOMatic": {
+      "commandName": "Project",
+      "commandLineArgs": "--name SortOMatic"
+    },
+    "LinuxPremier": {
+      "commandName": "Project",
+      "commandLineArgs": "--name LinuxPremier"
     }
   }
 }

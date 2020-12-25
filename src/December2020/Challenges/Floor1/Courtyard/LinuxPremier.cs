@@ -1,4 +1,4 @@
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 
 namespace Janda.CTF.SANS.HolidayHack
 {
@@ -14,20 +14,31 @@ namespace Janda.CTF.SANS.HolidayHack
         public void Run()
         {
             @"
-yes
-ls
-cat munchkin_19315479765589239 
-rm munchkin_19315479765589239
-pwd
-ls -a
-cat .bash_history
-set
-cd workshop/
-grep -i munch *.txt
-chmod +x lollipop_engine
-./lollipop_engine
-               
+                The North Pole 🍭 Lollipop Maker:
+                All the lollipops on this system have been stolen by munchkins. Capture munchkins by following instructions here and 🍭's will appear in the green bar below. Run the command ""hintme"" to receive a hint.
+            "
+                .LogMessage(_logger, "Linux Premier");
+
+
+            @"
+                yes
+                ls
+                cat munchkin_19315479765589239 
+                rm munchkin_19315479765589239
+                pwd
+                ls -a
+                cat .bash_history
+                set
+                cd workshop/
+                grep -i munch *.txt
+                chmod +x lollipop_engine
+                ./lollipop_engine
+                cd electrical/
+                mv blown_fuse0 fuse0
+
             ".LogMessage(_logger, "Complete challenge by typing following commands");
+
+
 
             ("chmod +x lollipop_engine" + 
                 "\n" + 
