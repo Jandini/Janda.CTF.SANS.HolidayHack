@@ -14,6 +14,11 @@ namespace Janda.CTF.SANS.HolidayHack.Services
     {
         private readonly ILogger<S3Scanner> _logger;
 
+        public S3Scanner(ILogger<S3Scanner> logger)
+        {
+            _logger = logger;
+        }
+
         public void Scan(IEnumerable<string> words)
         {
             var random = new Random((int)DateTime.Now.Ticks);
