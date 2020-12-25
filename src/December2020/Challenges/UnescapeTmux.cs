@@ -1,8 +1,7 @@
-using Janda.CTF;
 using Microsoft.Extensions.Logging;
 
 namespace Janda.CTF.SANS.HolidayHack
-{  
+{
     public class UnescapeTmux : IChallenge
     {
         private readonly ILogger<UnescapeTmux> _logger;
@@ -14,9 +13,7 @@ namespace Janda.CTF.SANS.HolidayHack
         
         public void Run()
         {
-
-            _logger.LogInformation("Run {command} ", "tmux attach");
-            _logger.LogInformation(@"
+            @"
                 ..............................'.''''''.'''''''''''''
                 .........................................'''''''''''
                 ................................,:lccc:;,'...'''''''
@@ -51,7 +48,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 ....:dkOddOO0OkdoolllllloooddxOOOOOkkkkOdllccccccccc
 
                 You found her! Thank you!!!
-            ");
+            ".LogMessage(_logger, "Run {command} ", "tmux attach");
         }
     }
 }
