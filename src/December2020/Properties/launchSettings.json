@@ -2,7 +2,7 @@
   "profiles": {
     "Add...": {
       "commandName": "Project",
-      "commandLineArgs": "add --root Workshop --name OpenHIDLock"
+      "commandLineArgs": "add --root Challenges --name Santavator"
     },
     "Play...": {
       "commandName": "Project",
@@ -79,6 +79,10 @@
     "OpenHIDLock": {
       "commandName": "Project",
       "commandLineArgs": "--name OpenHIDLock"
+    },
+    "DefeatFingerprintSensor": {
+      "commandName": "Project",
+      "commandLineArgs": "--name DefeatFingerprintSensor"
     }
   }
 }
