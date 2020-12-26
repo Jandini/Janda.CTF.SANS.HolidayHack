@@ -2,7 +2,7 @@
   "profiles": {
     "Add...": {
       "commandName": "Project",
-      "commandLineArgs": "add --root TalksLobby --name SpeakerUNPrep_Lights"
+      "commandLineArgs": "add --root Workshop --name OpenHIDLock"
     },
     "Play...": {
       "commandName": "Project",
@@ -75,6 +75,10 @@
     "SpeakerUNPrep_Lights": {
       "commandName": "Project",
       "commandLineArgs": "--name SpeakerUNPrep_Lights"
+    },
+    "OpenHIDLock": {
+      "commandName": "Project",
+      "commandLineArgs": "--name OpenHIDLock"
     }
   }
 }
