@@ -2,7 +2,7 @@
   "profiles": {
     "Add...": {
       "commandName": "Project",
-      "commandLineArgs": "add --root Challenges --name Santavator"
+      "commandLineArgs": "add --root Kitchen --name DialUp"
     },
     "Play...": {
       "commandName": "Project",
@@ -83,6 +83,10 @@
     "DefeatFingerprintSensor": {
       "commandName": "Project",
       "commandLineArgs": "--name DefeatFingerprintSensor"
+    },
+    "DialUp336Kbps": {
+      "commandName": "Project",
+      "commandLineArgs": "--name DialUp336Kbps"
     }
   }
 }
