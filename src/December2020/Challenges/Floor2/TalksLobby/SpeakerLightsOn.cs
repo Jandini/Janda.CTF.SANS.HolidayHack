@@ -2,11 +2,11 @@ using Microsoft.Extensions.Logging;
 
 namespace Janda.CTF.SANS.HolidayHack
 {
-    public class SpeakerUNPrep_Lights : IChallenge
+    public class SpeakerLightsOn : IChallenge
     {
-        private readonly ILogger<SpeakerUNPrep_Lights> _logger;
+        private readonly ILogger<SpeakerLightsOn> _logger;
 
-        public SpeakerUNPrep_Lights(ILogger<SpeakerUNPrep_Lights> logger)
+        public SpeakerLightsOn(ILogger<SpeakerLightsOn> logger)
         {
             _logger = logger;
         }

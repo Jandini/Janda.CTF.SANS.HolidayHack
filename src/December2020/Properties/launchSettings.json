@@ -16,9 +16,9 @@
       "commandName": "Project",
       "commandLineArgs": "--name InvestigateS3Bucket"
     },
-    "UncoverSantasGiftList": {
+    "UncoverChristmasList": {
       "commandName": "Project",
-      "commandLineArgs": "--name UncoverSantasGiftList"
+      "commandLineArgs": "--name UncoverChristmasList"
     },
     "UnescapeTmux": {
       "commandName": "Project",
@@ -64,17 +64,17 @@
       "commandName": "Project",
       "commandLineArgs": "--name SnowballFight"
     },
-    "SpeakerUNPrep_Door": {
+    "SpeakerDoorOpen": {
       "commandName": "Project",
-      "commandLineArgs": "--name SpeakerUNPrep_Door"
+      "commandLineArgs": "--name SpeakerDoorOpen"
     },
-    "SpeakerUNPrep_VendingMachine": {
+    "SpeakerVendingMachineOn": {
       "commandName": "Project",
-      "commandLineArgs": "--name SpeakerUNPrep_VendingMachine"
+      "commandLineArgs": "--name SpeakerVendingMachineOn"
     },
-    "SpeakerUNPrep_Lights": {
+    "SpeakerLightsOn": {
       "commandName": "Project",
-      "commandLineArgs": "--name SpeakerUNPrep_Lights"
+      "commandLineArgs": "--name SpeakerLightsOn"
     },
     "OpenHIDLock": {
       "commandName": "Project",

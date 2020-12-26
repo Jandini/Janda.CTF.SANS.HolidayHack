@@ -4,11 +4,11 @@ namespace Janda.CTF.SANS.HolidayHack
 {
 
     [Challenge(Flag = "CandyCane1")]
-    public class SpeakerUNPrep_VendingMachine : IChallenge
+    public class SpeakerVendingMachineOn : IChallenge
     {
-        private readonly ILogger<SpeakerUNPrep_VendingMachine> _logger;
+        private readonly ILogger<SpeakerVendingMachineOn> _logger;
 
-        public SpeakerUNPrep_VendingMachine(ILogger<SpeakerUNPrep_VendingMachine> logger)
+        public SpeakerVendingMachineOn(ILogger<SpeakerVendingMachineOn> logger)
         {
             _logger = logger;
         }

@@ -3,11 +3,11 @@ using Microsoft.Extensions.Logging;
 namespace Janda.CTF.SANS.HolidayHack
 {
     [Challenge(Flag = "proxmark")]
-    public class UncoverSantasGiftList : IChallenge
+    public class UncoverChristmasList : IChallenge
     {
-        private readonly ILogger<UncoverSantasGiftList> _logger;
+        private readonly ILogger<UncoverChristmasList> _logger;
 
-        public UncoverSantasGiftList(ILogger<UncoverSantasGiftList> logger)
+        public UncoverChristmasList(ILogger<UncoverChristmasList> logger)
         {
             _logger = logger;
         }
