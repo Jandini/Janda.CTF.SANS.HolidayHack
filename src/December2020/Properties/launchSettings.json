@@ -2,7 +2,7 @@
   "profiles": {
     "Add...": {
       "commandName": "Project",
-      "commandLineArgs": "add --root GreatRoom --name Splunk"
+      "commandLineArgs": "add --root SpeakerUnprep --name SnowballFight"
     },
     "Play...": {
       "commandName": "Project",
@@ -63,6 +63,10 @@
     "Splunk": {
       "commandName": "Project",
       "commandLineArgs": "--name Splunk"
+    },
+    "SnowballFight": {
+      "commandName": "Project",
+      "commandLineArgs": "--name SnowballFight"
     }
   }
 }

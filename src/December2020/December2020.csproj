@@ -16,7 +16,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Janda.CTF" Version="0.1.0-alpha.18" />
+    <PackageReference Include="Janda.CTF" Version="0.1.0-alpha.19" />
     <PackageReference Include="Janda.CTF.Dictionary" Version="0.1.0-alpha.7" />
   </ItemGroup>
 
@@ -27,7 +27,7 @@
     <Folder Include="Challenges\Floor3\Balcony\" />
     <Folder Include="Challenges\Floor3\" />
     <Folder Include="Challenges\Floor3\SantasOffice\" />
-    <Folder Include="Challenges\Floor2\SpeakerUNprep\" />
+    <Folder Include="Challenges\Floor2\SpeakerUnprep\" />
     <Folder Include="Properties\" />
   </ItemGroup>
 
