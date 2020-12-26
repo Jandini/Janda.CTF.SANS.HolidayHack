@@ -17,6 +17,7 @@ namespace Janda.CTF.SANS.HolidayHack
         [CTF(Name = "SANS Holiday Hack, December 2020")]
         static void Main(string[] args)
         {
+            // This can be added as ChallengeConsoleAttribute(FullScreen = true)
             Console.SetWindowSize(Console.LargestWindowWidth, Console.LargestWindowHeight);
             ShowWindow(ThisConsole, MAXIMIZE);
 

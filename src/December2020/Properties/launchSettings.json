@@ -2,7 +2,7 @@
   "profiles": {
     "Add...": {
       "commandName": "Project",
-      "commandLineArgs": "add --root SpeakerUnprep --name SnowballFight"
+      "commandLineArgs": "add --root TalksLobby --name SpeakerUNPrep_Lights"
     },
     "Play...": {
       "commandName": "Project",
@@ -40,10 +40,6 @@
       "commandName": "Project",
       "commandLineArgs": "--name KringleKiosk"
     },
-    "SpeakerUNPrep": {
-      "commandName": "Project",
-      "commandLineArgs": "--name SpeakerUNPrep"
-    },
     "ScrapyPrepper": {
       "commandName": "Project",
       "commandLineArgs": "--name ScapyPrepper"
@@ -67,6 +63,18 @@
     "SnowballFight": {
       "commandName": "Project",
       "commandLineArgs": "--name SnowballFight"
+    },
+    "SpeakerUNPrep_Door": {
+      "commandName": "Project",
+      "commandLineArgs": "--name SpeakerUNPrep_Door"
+    },
+    "SpeakerUNPrep_VendingMachine": {
+      "commandName": "Project",
+      "commandLineArgs": "--name SpeakerUNPrep_VendingMachine"
+    },
+    "SpeakerUNPrep_Lights": {
+      "commandName": "Project",
+      "commandLineArgs": "--name SpeakerUNPrep_Lights"
     }
   }
 }

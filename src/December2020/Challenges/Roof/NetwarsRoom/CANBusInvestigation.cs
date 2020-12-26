@@ -1,8 +1,7 @@
-using Janda.CTF;
 using Microsoft.Extensions.Logging;
 
 namespace Janda.CTF.SANS.HolidayHack
-{  
+{
     public class CANBusInvestigation : IChallenge
     {
         private readonly ILogger<CANBusInvestigation> _logger;
