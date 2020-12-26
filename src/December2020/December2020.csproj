@@ -27,7 +27,7 @@
     <Folder Include="Challenges\Floor3\Balcony\" />
     <Folder Include="Challenges\Floor3\" />
     <Folder Include="Challenges\Floor3\SantasOffice\" />
-    <Folder Include="Challenges\Floor2\SpeakerUnprep\" />
+    <Folder Include="Challenges\Floor2\SpeakerUNprep\" />
     <Folder Include="Properties\" />
   </ItemGroup>
 
