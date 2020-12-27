@@ -1,0 +1,19 @@
+2020-12-26 22:36:39.524 +00:00 [VRB] Started SANS Holiday Hack, December 2020
+2020-12-26 22:36:39.543 +00:00 [VRB] Using CTF runner 0.1.0-alpha.19
+2020-12-26 22:36:39.545 +00:00 [VRB] Running challange DialUp
+2020-12-26 22:36:39.546 +00:00 [INF] Fitzy Shortstack
+
+                We can shuffle the colors of the lights by connecting via dial-up, but our only modem is broken!
+
+                Fortunately, I speak dial-up. However, I can't quite remember the handshake sequence.
+
+                Maybe you can help me out? The phone number is 756-8347; you can use this blue phone.
+
+                ...
+
+                "Put it in the cloud," they said...
+
+            
+2020-12-26 22:36:39.547 +00:00 [INF] Run from console to call
+["pickup","dtmf7","dtmf5","dtmf6","dtmf8","dtmf3","dtmf4","dtmf7", "respCrEsCl","ack"].forEach((step)=> document.getElementsByClassName(step)[0].click());
+2020-12-26 22:36:39.548 +00:00 [VRB] Challenge DialUp completed

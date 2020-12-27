@@ -1,0 +1,11 @@
+2020-12-25 19:53:17.029 +00:00 [VRB] Started SANS Holiday Hack, December 2020
+2020-12-25 19:53:17.047 +00:00 [VRB] Using CTF runner 0.1.0-alpha.18
+2020-12-25 19:53:17.049 +00:00 [VRB] Searching for NetwarsRoom
+2020-12-25 19:53:17.068 +00:00 [VRB] Directory NetwarsRoom found in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Challenges\Roof\NetwarsRoom
+2020-12-25 19:53:17.071 +00:00 [VRB] Locating Challenge template file
+2020-12-25 19:53:17.073 +00:00 [VRB] Searching for Challenge.ch
+2020-12-25 19:53:17.135 +00:00 [VRB] Loading embedded template Challenge from Janda.CTF
+2020-12-25 19:53:17.138 +00:00 [VRB] Adding challenge CANBusInvestigation to launchSettings.json
+2020-12-25 19:53:17.138 +00:00 [VRB] Searching for launchSettings.json
+2020-12-25 19:53:17.152 +00:00 [VRB] File "launchSettings.json" was found in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Properties\launchSettings.json
+2020-12-25 19:53:17.182 +00:00 [VRB] Challenge CANBusInvestigation added successfully

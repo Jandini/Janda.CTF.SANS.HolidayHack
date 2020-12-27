@@ -1,0 +1,5 @@
+2020-12-22 19:10:37.143 +00:00 [VRB] Started SANS Holiday Hack, December 2020
+2020-12-22 19:10:37.159 +00:00 [VRB] Using CTF runner 0.1.0-alpha.18
+2020-12-22 19:10:37.161 +00:00 [VRB] Running challange S3
+2020-12-22 19:10:37.171 +00:00 [VRB] Reading embedded Dictionary.embedded.gz
+2020-12-22 19:10:40.847 +00:00 [WRN] Something is wrong. The bucket blast is open but it was returned as not found.

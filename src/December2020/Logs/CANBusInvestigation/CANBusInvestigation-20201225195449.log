@@ -1,0 +1,39 @@
+2020-12-25 19:54:49.092 +00:00 [VRB] Started SANS Holiday Hack, December 2020
+2020-12-25 19:54:49.110 +00:00 [VRB] Using CTF runner 0.1.0-alpha.18
+2020-12-25 19:54:49.112 +00:00 [VRB] Running challange CANBusInvestigation
+2020-12-25 19:54:49.113 +00:00 [INF] CAN bus challenge
+
+                MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+                MMMMMMMMMMMMMMMMMMMMMMMMMMMMMWX00OkxxddcddxxkOO0XWMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+                MMMMMMMMMMMMMMMMMMMMMMMWXOxoc:c.;cccccc.ccccc:.:c:ldxOXMMMMMMMMMMMMMMMMMMMMMMM
+                MMMMMMMMMMMMMMMMMMMMXkoc',ccccc:.:ccccc.ccccc.;cccc,'::cdOXMMMMMMMMMMMMMMMMMMM
+                MMMMMMMMMMMMMMMMM0xc:cccc,':cccc::ccccccccccccccc:.;cccccc:lxXMMMMMMMMMMMMMMMM
+                MMMMMMMMMMMMMMNkl,',:ccccc;;ccccccccccccccccccccc::cccccc:,',:lOWMMMMMMMMMMMMM
+                MMMMMMMMMMMMNxccccc;';cccccccccccccccccccccccccccccccccc;':cccccckWMMMMMMMMMMM
+                MMMMMMMMMMNdcccccc:..;cccccccccccccccccccccccccccccccccccccccccccc:kWMMMMMMMMM
+                MMMMMMMMM0c,,,,:cccc;..;cccccccccccccccccccccccccccccccccccccc:,,,;:lKMMMMMMMM
+                MMMMMMMWd:cccc;:cccccc;..,cccccccccccccccccccccccccccccccccccc;:cccccckMMMMMMM
+                MMMMMMNlcccccccccccccccc:..,:ccccccccccccccccccccccccccccccccccccccccc:oWMMMMM
+                MMMMMNc,,,,,:ccccccccccccc:..':cccccccccccccccccccccccccccccccccc:,,,,,;oWMMMM
+                MMMMWoccccc::ccccccccccccccc:'.':cccccccccccccccccccccccccccccccc::ccccccxMMMM
+                MMMMkccccccccccccccccccccccccc:'..:cccccccccccccccccccccccccccccccccccccc:0MMM
+                MMMN::cccccccccccccccccccccccccc:'..:cccccccccccccccccccccccccccccccccccc:cWMM
+                MMMk,,,,,:cccccccccccccccccccccccc:,..;ccccccccccccccccccccccccccccc:,,,,,;0MM
+                MMMlccccccccccccccccccccccccccccccccc,.;cccccccccccccccccccccccccccccccccccdMM
+                MMW:ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccclMM
+                MMWOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO0MM
+                MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+
+                Welcome to the CAN bus terminal challenge!
+
+                In your home folder, there's a CAN bus capture from Santa's sleigh. Some of
+                the data has been cleaned up, so don't worry - it isn't too noisy. What you
+                will see is a record of the engine idling up and down. Also in the data are
+                a LOCK signal, an UNLOCK signal, and one more LOCK. Can you find the UNLOCK?
+                We'd like to encode another key mechanism.
+
+                Find the decimal portion of the timestamp of the UNLOCK code in candump.log
+                and submit it to ./runtoanswer!  (e.g., if the timestamp is 123456.112233,
+                please submit 112233)
+            
+2020-12-25 19:54:49.114 +00:00 [VRB] Challenge CANBusInvestigation completed

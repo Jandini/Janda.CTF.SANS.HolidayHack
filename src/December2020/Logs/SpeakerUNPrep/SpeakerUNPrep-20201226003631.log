@@ -1,0 +1,9 @@
+2020-12-26 00:36:31.989 +00:00 [VRB] Started SANS Holiday Hack, December 2020
+2020-12-26 00:36:32.007 +00:00 [VRB] Using CTF runner 0.1.0-alpha.18
+2020-12-26 00:36:32.009 +00:00 [VRB] Running challange SpeakerUNPrep
+2020-12-26 00:36:32.010 +00:00 [INF] cat /home/elf/lights.conf
+
+                password: E$ed633d885dcb9b2f3f0118361de4d57752712c27c5316a95d9e5e5b124
+                name: elf-technician
+            
+2020-12-26 00:36:32.010 +00:00 [VRB] Challenge SpeakerUNPrep completed

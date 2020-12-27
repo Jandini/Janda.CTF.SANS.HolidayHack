@@ -1,0 +1,11 @@
+2020-12-22 17:15:53.928 +00:00 [VRB] Started SANS Holiday Hack, December 2020
+2020-12-22 17:15:53.947 +00:00 [VRB] Using CTF runner 0.1.0-alpha.18
+2020-12-22 17:15:53.951 +00:00 [VRB] Running challange S3
+2020-12-22 17:15:54.257 +00:00 [ERR] The remote server returned an error: (403) Forbidden.
+System.Net.WebException: The remote server returned an error: (403) Forbidden.
+   at System.Net.HttpWebRequest.GetResponse()
+   at System.Net.WebClient.GetWebResponse(WebRequest request)
+   at System.Net.WebClient.OpenRead(Uri address)
+   at System.Net.WebClient.OpenRead(String address)
+   at Janda.CTF.SANS.HolidayHack.S3.Run() in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Challenges\Amazon\S3.cs:line 25
+2020-12-22 17:15:54.285 +00:00 [VRB] Challenge S3 completed

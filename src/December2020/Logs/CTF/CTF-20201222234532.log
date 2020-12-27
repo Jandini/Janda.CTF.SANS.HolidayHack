@@ -1,0 +1,5 @@
+2020-12-22 23:45:32.595 +00:00 [VRB] Started SANS Holiday Hack, December 2020
+2020-12-22 23:45:32.613 +00:00 [VRB] Using CTF runner 0.1.0-alpha.18
+2020-12-22 23:45:32.615 +00:00 [VRB] Searching for Challenges
+2020-12-22 23:45:32.626 +00:00 [VRB] Directory Challenges found in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Challenges
+2020-12-22 23:45:32.629 +00:00 [ERR] The challenge RedisBugHunt file already exist in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Challenges\RedisBugHunt.cs

@@ -1,0 +1,23 @@
+2020-12-25 13:15:00.384 +00:00 [VRB] Started SANS Holiday Hack, December 2020
+2020-12-25 13:15:00.403 +00:00 [VRB] Using CTF runner 0.1.0-alpha.18
+2020-12-25 13:15:00.405 +00:00 [VRB] Running challange LinuxPremier
+2020-12-25 13:15:00.406 +00:00 [INF] Enter following commands:
+
+yes
+ls
+cat munchkin_19315479765589239 
+rm munchkin_19315479765589239
+pwd
+ls -a
+cat .bash_history
+set
+cd workshop/
+grep -i munch *.txt
+
+
+                
+            
+2020-12-25 13:15:00.407 +00:00 [INF] A munchkin is blocking the lollipop_engine from starting. Run the lollipop_engine binary to retrieve this munchkin.
+chmod +x lollipop_engine
+./lollipop_engine
+2020-12-25 13:15:00.407 +00:00 [VRB] Challenge LinuxPremier completed
