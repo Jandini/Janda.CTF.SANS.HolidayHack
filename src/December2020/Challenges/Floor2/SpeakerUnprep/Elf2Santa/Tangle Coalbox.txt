@@ -8,3 +8,18 @@ I'd call it impossible, but I just saw someone beat it!
 Is it possible that the name a player provides influences how the forts are laid out?
 Oh, oh, maybe if I feed a Hard name into an Easy game I can manipulate it!
 UGH! on Impossible, the best I get are rejected player names in the page comments... maybe that's useful?
+
+
+
+
+...
+
+Wow, it really was all about abusing the pseudo-random sequence!
+I've been thinking, do you think someone could try and cheat the Naughty/Nice Blockchain with this same technique?
+I remember you told us about how if you have control over to bytes in a file, it's easy to create MD5 hash collisions.
+But the nonce would have to be known ahead of time.
+We know that the blockchain works by "chaining" blocks together.
+There's no way you know who could change it without messing up the chain, right Santa?
+I'm going to look closer to spot if any of the blocks have been changed.
+
+
