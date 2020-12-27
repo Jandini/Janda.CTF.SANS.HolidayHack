@@ -40,7 +40,7 @@
       "commandName": "Project",
       "commandLineArgs": "--name KringleKiosk"
     },
-    "ScrapyPrepper": {
+    "ScapyPrepper": {
       "commandName": "Project",
       "commandLineArgs": "--name ScapyPrepper"
     },
