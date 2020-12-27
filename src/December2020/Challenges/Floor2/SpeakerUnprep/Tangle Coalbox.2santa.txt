@@ -1,0 +1,10 @@
+﻿...
+Howdy Boss. You look a tad flushed.
+Can I get you some water from the vending machine?
+I'm still looking into the Snowball Game like you asked.
+I read the write-up of the test completed earlier this summer with the web socket vulnerabilities.
+I was able to complete the Easy level, but the Impossible level is, umm...
+I'd call it impossible, but I just saw someone beat it!
+Is it possible that the name a player provides influences how the forts are laid out?
+Oh, oh, maybe if I feed a Hard name into an Easy game I can manipulate it!
+UGH! on Impossible, the best I get are rejected player names in the page comments... maybe that's useful?
