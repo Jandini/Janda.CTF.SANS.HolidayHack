@@ -2,7 +2,7 @@
   "profiles": {
     "Add...": {
       "commandName": "Project",
-      "commandLineArgs": "add --root Kitchen --name DialUp"
+      "commandLineArgs": "add --root SantasOffice --name BlockchainInvestigation1 --resource"
     },
     "Play...": {
       "commandName": "Project",
@@ -10,7 +10,7 @@
     },
     "Help...": {
       "commandName": "Project",
-      "commandLineArgs": "--help"
+      "commandLineArgs": "add --help"
     },
     "InvestigateS3Bucket": {
       "commandName": "Project",
@@ -87,6 +87,10 @@
     "DialUp336Kbps": {
       "commandName": "Project",
       "commandLineArgs": "--name DialUp336Kbps"
+    },
+    "BlockchainInvestigation": {
+      "commandName": "Project",
+      "commandLineArgs": "--name BlockchainInvestigationPart1"
     }
   }
 }
