@@ -194,6 +194,8 @@ Splunk Basics
 From: Minty Candycane
 Objective: 6) Splunk Challenge
 There was a great Splunk talk at KringleCon 2 that's still available!
+https://www.youtube.com/watch?v=qbIhHhRKQCw
+https://www.youtube.com/watch?v=RxVgEFt08kU
 
 Adversary Emulation and Splunk
 From: Minty Candycane
