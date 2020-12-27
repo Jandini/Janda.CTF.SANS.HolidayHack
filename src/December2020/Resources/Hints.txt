@@ -1,4 +1,7 @@
-﻿Terminal Tips
+﻿document.getElementsByClassName("badge-item hint selected")[0].outerHTML
+
+
+Terminal Tips
 From: Jewel Loggins
 You can copy and paste in terminals with Ctrl-c and Ctrl-v or ⌘-c and ⌘-v.
 
