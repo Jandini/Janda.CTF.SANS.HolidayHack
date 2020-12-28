@@ -35,12 +35,9 @@ namespace Janda.CTF.SANS.HolidayHack
 
                 index=* sourcetype=wineventlog
 
-
-
                 | metadata type=sourcetypes index=*
 
-            ".LogMessage(_logger, "Random searches");
-
+            ".LogMessage(_logger, "Learning random searches");
 
 
             @"
@@ -93,8 +90,7 @@ namespace Janda.CTF.SANS.HolidayHack
             ".LogMessage(_logger, "| tstats count where index=* by index");
 
 
-            @"
-
+            @"                
                 Manual: 
                 Count distinct from index list: t1033,t1057,t1059,t1071,t1082,t1105,t1106,t1123,t1204,t1547,t1548,t1559,t1566
 
@@ -108,12 +104,12 @@ namespace Janda.CTF.SANS.HolidayHack
                 | stats dc(technique)
 
 
-            ".LogMessage(_logger, "How many distinct MITRE ATT & CK techniques did Alice emulate? {Answer}", 13);
+            ".LogMessage(_logger, "Q1: How many distinct MITRE ATT & CK techniques did Alice emulate? {Answer}", 13);
 
 
             @"
                 t1059.003-main t1059.003-win
-            ".LogMessage(_logger, "What are the names of the two indexes that contain the results of emulating Enterprise ATT&CK technique 1059.003 ? (Put them in alphabetical order and separate them with a space) {Answer}", "t1059.003-main t1059.003-win");
+            ".LogMessage(_logger, "Q2: What are the names of the two indexes that contain the results of emulating Enterprise ATT&CK technique 1059.003 ? (Put them in alphabetical order and separate them with a space) {Answer}", "t1059.003-main t1059.003-win");
 
 
             @"
@@ -137,7 +133,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 Attack Commands: Run with command_prompt!
                 REG QUERY HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography /v MachineGuid
 
-            ".LogMessage(_logger, "One technique that Santa had us simulate deals with 'system information discovery'. What is the full name of the registry key that is queried to determine the MachineGuid? {Answer}", "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Cryptography");
+            ".LogMessage(_logger, "Q3: One technique that Santa had us simulate deals with 'system information discovery'. What is the full name of the registry key that is queried to determine the MachineGuid? {Answer}", "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Cryptography");
 
 
 
@@ -147,7 +143,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 ""2020-11-30T17:44:15Z"",""2020-11-30T17:44:15"",""T1105"",""11"",""OSTAP Worming Activity"",""win-dc-748"",""attackrange\administrator"",""2ca61766-b456-4fcf-a35a-1233685e1cad""
 
               
-            ".LogMessage(_logger, "According to events recorded by the Splunk Attack Range, when was the first OSTAP related atomic test executed? (Please provide the alphanumeric UTC timestamp.) {Answer}", "2020-11-30T17:44:15Z");
+            ".LogMessage(_logger, "Q4: According to events recorded by the Splunk Attack Range, when was the first OSTAP related atomic test executed? (Please provide the alphanumeric UTC timestamp.) {Answer}", "2020-11-30T17:44:15Z");
 
 
             @"
@@ -192,7 +188,7 @@ namespace Janda.CTF.SANS.HolidayHack
 
                 index=T1123* ProcessId=* ""Microsoft-Windows-Sysmon"" EventCode=1 powershell.exe -Command WindowsAudioDevice-Powershell-Cmdlet | sort +UtcTime
 
-            ".LogMessage(_logger, "One Atomic Red Team test executed by the Attack Range makes use of an open source package authored by frgnca on GitHub. According to Sysmon (Event Code 1) events in Splunk, what was the ProcessId associated with the first use of this component? {Answer}", "3648");
+            ".LogMessage(_logger, "Q5: One Atomic Red Team test executed by the Attack Range makes use of an open source package authored by frgnca on GitHub. According to Sysmon (Event Code 1) events in Splunk, what was the ProcessId associated with the first use of this component? {Answer}", "3648");
 
 
             @"
@@ -206,22 +202,8 @@ namespace Janda.CTF.SANS.HolidayHack
                 it was not this one... so went to find all bat files in atomice-red-team...
                 https://github.com/redcanaryco/atomic-red-team/blob/8eb52117b748d378325f7719554a896e37bccec7/atomics/T1074.001/src/Discovery.bat
                 
-            ".LogMessage(_logger, "Alice ran a simulation of an attacker abusing Windows registry run keys. This technique leveraged a multi-line batch file that was also used by a few other techniques. What is the final command of this multi-line batch file used as part of this simulation? {Answer}", "quser");
-
-
-            @"
-                Find Atomic Test related to registry run keys...
-                https://github.com/redcanaryco/atomic-red-team/search?q=registry+run+keys                
-                https://github.com/redcanaryco/atomic-red-team/tree/5ff80f6f90c056b0bfe3a6ffa0f5015f215c56b0/atomics/T1547.001                
-                https://github.com/redcanaryco/atomic-red-team/blob/5ff80f6f90c056b0bfe3a6ffa0f5015f215c56b0/atomics/T1547.001/T1547.001.md#atomic-test-6---suspicious-bat-file-run-from-startup-folder
-
-                index=* batstartup.bat
-                
-                it was not this one... so went to find all bat files in atomice-red-team...
-                https://github.com/redcanaryco/atomic-red-team/blob/8eb52117b748d378325f7719554a896e37bccec7/atomics/T1074.001/src/Discovery.bat
-                
-            ".LogMessage(_logger, "Alice ran a simulation of an attacker abusing Windows registry run keys. This technique leveraged a multi-line batch file that was also used by a few other techniques. What is the final command of this multi-line batch file used as part of this simulation? {Answer}", "quser");
-
+            ".LogMessage(_logger, "Q6: Alice ran a simulation of an attacker abusing Windows registry run keys. This technique leveraged a multi-line batch file that was also used by a few other techniques. What is the final command of this multi-line batch file used as part of this simulation? {Answer}", "quser");
+      
 
             @"
 
@@ -250,7 +232,7 @@ namespace Janda.CTF.SANS.HolidayHack
 
                 index=* sourcetype=bro:x509* win-dc | stats dc(certificate.serial) by certificate.serial
 
-            ".LogMessage(_logger, "According to x509 certificate events captured by Zeek (formerly Bro), what is the serial number of the TLS certificate assigned to the Windows domain controller in the attack range? {answer}", "55FCEEBB21270D9249E86F4B9DC7AA60");
+            ".LogMessage(_logger, "Q7: According to x509 certificate events captured by Zeek (formerly Bro), what is the serial number of the TLS certificate assigned to the Windows domain controller in the attack range? {answer}", "55FCEEBB21270D9249E86F4B9DC7AA60");
 
 
             @"
