@@ -56,7 +56,7 @@
       "commandName": "Project",
       "commandLineArgs": "--name CANBusInvestigation"
     },
-    "Splunk": {
+    "Splunk Challenge": {
       "commandName": "Project",
       "commandLineArgs": "--name Splunk"
     },
