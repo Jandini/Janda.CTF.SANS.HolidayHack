@@ -3,6 +3,8 @@ using System.IO;
 
 namespace Janda.CTF.SANS.HolidayHack
 {
+
+    [Challenge(Name = "The Elf C0de", Flag = "")]
     public class TheElfCode : IChallenge
     {
         private readonly ILogger<TheElfCode> _logger;

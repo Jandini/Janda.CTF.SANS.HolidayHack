@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 namespace Janda.CTF.SANS.HolidayHack
 {
 
-    [Challenge(Name ="CAN-Bus Investigation", Flag = "Hint for ")]
+    [Challenge(Name ="Terminal: CAN-Bus Investigation", Flag = "None")]
     public class CANBusInvestigation : IChallenge
     {
         private readonly ILogger<CANBusInvestigation> _logger;
@@ -1444,6 +1444,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 Your answer is correct!
 
             ".LogNote(_logger, "elf@58bf86f1423e:~$ ./runtoanswer");
+
 
         }
     }

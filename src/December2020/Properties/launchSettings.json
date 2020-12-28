@@ -2,7 +2,7 @@
   "profiles": {
     "Add...": {
       "commandName": "Project",
-      "commandLineArgs": "add --root SantasOffice --name BlockchainInvestigation1 --resource"
+      "commandLineArgs": "add --root NetwarsRoom --name SleighCANDBUS --resource"
     },
     "Play...": {
       "commandName": "Project",
@@ -12,83 +12,87 @@
       "commandName": "Project",
       "commandLineArgs": "add --help"
     },
-    "InvestigateS3Bucket": {
-      "commandName": "Project",
-      "commandLineArgs": "--name InvestigateS3Bucket"
-    },
-    "UncoverChristmasList": {
-      "commandName": "Project",
-      "commandLineArgs": "--name UncoverChristmasList"
-    },
-    "UnescapeTmux": {
-      "commandName": "Project",
-      "commandLineArgs": "--name UnescapeTmux"
-    },
-    "TheElfCode": {
+    "The Elf C0de": {
       "commandName": "Project",
       "commandLineArgs": "--name TheElfCode"
     },
-    "PointOfSalePasswordRecovery": {
+    "336Kbps": {
       "commandName": "Project",
-      "commandLineArgs": "--name PointOfSalePasswordRecovery"
-    },
-    "RedisBugHunt": {
-      "commandName": "Project",
-      "commandLineArgs": "--name RedisBugHunt"
-    },
-    "KringleKiosk": {
-      "commandName": "Project",
-      "commandLineArgs": "--name KringleKiosk"
-    },
-    "ScapyPrepper": {
-      "commandName": "Project",
-      "commandLineArgs": "--name ScapyPrepper"
+      "commandLineArgs": "--name DialUp336Kbps"
     },
     "SortOMatic": {
       "commandName": "Project",
       "commandLineArgs": "--name SortOMatic"
     },
-    "LinuxPremier": {
-      "commandName": "Project",
-      "commandLineArgs": "--name LinuxPremier"
-    },
-    "CANBusInvestigation": {
-      "commandName": "Project",
-      "commandLineArgs": "--name CANBusInvestigation"
-    },
-    "Splunk Challenge": {
-      "commandName": "Project",
-      "commandLineArgs": "--name Splunk"
-    },
-    "SnowballFight": {
+    "Snowball Fight": {
       "commandName": "Project",
       "commandLineArgs": "--name SnowballFight"
     },
-    "SpeakerDoorOpen": {
+    "Terminal: Unescape Tmux": {
+      "commandName": "Project",
+      "commandLineArgs": "--name UnescapeTmux"
+    },
+    "Terminal: Redis Bug Hunt": {
+      "commandName": "Project",
+      "commandLineArgs": "--name RedisBugHunt"
+    },
+    "Terminal: Kringle Kiosk": {
+      "commandName": "Project",
+      "commandLineArgs": "--name KringleKiosk"
+    },
+    "Terminal: Scapy Prepper": {
+      "commandName": "Project",
+      "commandLineArgs": "--name ScapyPrepper"
+    },
+    "Terminal: Linux Premier": {
+      "commandName": "Project",
+      "commandLineArgs": "--name LinuxPremier"
+    },
+    "Terminal: CAN-Bus Investigation": {
+      "commandName": "Project",
+      "commandLineArgs": "--name CANBusInvestigation"
+    },
+    "Terminal: Speaker Door Open": {
       "commandName": "Project",
       "commandLineArgs": "--name SpeakerDoorOpen"
     },
-    "SpeakerVendingMachineOn": {
+    "Terminal: Speaker Vending Machine On": {
       "commandName": "Project",
       "commandLineArgs": "--name SpeakerVendingMachineOn"
     },
-    "SpeakerLightsOn": {
+    "Terminal: Speaker Lights On": {
       "commandName": "Project",
       "commandLineArgs": "--name SpeakerLightsOn"
     },
-    "OpenHIDLock": {
+    "Objective 1: UncoverChristmasList": {
       "commandName": "Project",
-      "commandLineArgs": "--name OpenHIDLock"
+      "commandLineArgs": "--name UncoverChristmasList"
     },
-    "DefeatFingerprintSensor": {
+    "Objective 2: Investigate S3 Bucket": {
+      "commandName": "Project",
+      "commandLineArgs": "--name InvestigateS3Bucket"
+    },
+    "Objective 3: Point-of-Sale Password Recovery": {
+      "commandName": "Project",
+      "commandLineArgs": "--name PointOfSalePasswordRecovery"
+    },
+    "Objective 4: Operate the Santavator": {
       "commandName": "Project",
       "commandLineArgs": "--name DefeatFingerprintSensor"
     },
-    "DialUp336Kbps": {
+    "Objective 5: Open HID Lock": {
       "commandName": "Project",
-      "commandLineArgs": "--name DialUp336Kbps"
+      "commandLineArgs": "--name OpenHIDLock"
     },
-    "BlockchainInvestigation": {
+    "Objective 6: Splunk Challenge": {
+      "commandName": "Project",
+      "commandLineArgs": "--name Splunk"
+    },
+    "Objective 7: Solve the Sleigh's CAN-D-BUS Problem": {
+      "commandName": "Project",
+      "commandLineArgs": "--name SleighCANDBUS"
+    },
+    "Objective 11A: Blockchain Investigation": {
       "commandName": "Project",
       "commandLineArgs": "--name BlockchainInvestigationPart1"
     }

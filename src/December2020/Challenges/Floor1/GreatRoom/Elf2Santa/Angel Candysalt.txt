@@ -1,3 +1,0 @@
-﻿Hey Santa, there’s some crazy stuff going on that we can see through our Splunk infrastructure.
-
-You better login and see what’s up.

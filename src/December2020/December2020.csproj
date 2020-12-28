@@ -16,7 +16,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Janda.CTF" Version="0.1.0-alpha.19" />
+    <PackageReference Include="Janda.CTF" Version="0.1.0-alpha.21" />
     <PackageReference Include="Janda.CTF.Dictionary" Version="0.1.0-alpha.7" />
   </ItemGroup>
 
@@ -24,6 +24,7 @@
     <Folder Include="Challenges\Floor1.5\WrappingRoom\" />
     <Folder Include="Challenges\Floor1\Entryway\" />
     <Folder Include="Challenges\Floor2\SpeakerUnprep\SnowballFight\" />
+    <Folder Include="Challenges\Floor3\Balcony\" />
     <Folder Include="Properties\" />
   </ItemGroup>
 

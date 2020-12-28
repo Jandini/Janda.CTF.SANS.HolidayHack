@@ -15,9 +15,7 @@ namespace Janda.CTF.SANS.HolidayHack
         public void Run()
         {
 
-            @"
-                document.getElementById(""can-feed"").innerText
-
+            @"               
                 Epoch Time    ID  MESSAGE
                 1609182521803 244#0000000000
                 1609182521903 080#000000
@@ -63,7 +61,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 1609182628697 019#00000000
 
 
-                STEERING
+                Steering 019
 
 
                 1609182811389 019#FFFFFFCF
@@ -87,9 +85,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 1609182813211 244#00000003ec
                 1609182813312 080#000000
 
-
-
-            ".LogNote(_logger);
+            ".LogNote(_logger, @"document.getElementById(""can-feed"").innerText");
 
 
 
@@ -100,24 +96,22 @@ namespace Janda.CTF.SANS.HolidayHack
                 019 Greater FFFFFFFFFF00
                 080 Less    000000000000
 
-
                 19B Equals  0000000F2057
                 188 Equals  000000000000
                 080 Equals  000000000000
                 244 Equals  000000000000
                 080 Less    000000000000
 
-
-            ".LogNote(_logger);
+            ".LogNote(_logger, "First blood.... didn't work, so started disabling");
 
 
 
             @"
                 Exclude 
-                244Equals000000000000Click to remove this filter
-                080Equals000000000000Click to remove this filter
-                188Equals000000000000Click to remove this filter
-                019Equals000000000000Click to remove this filter
+                244 Equals  000000000000
+                080 Equals  000000000000
+                188 Equals  000000000000
+                019 Equals  000000000000
 
 
                 Epoch Time    ID  MESSAGE

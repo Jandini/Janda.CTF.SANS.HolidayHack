@@ -2,6 +2,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Janda.CTF.SANS.HolidayHack
 {
+    [Challenge(Name = "Terminal: Scapy Prepper", Flag = "")]
     public class ScapyPrepper : IChallenge
     {
         private readonly ILogger<ScapyPrepper> _logger;
