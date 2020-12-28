@@ -1,0 +1,18 @@
+2020-12-27 19:20:18.717 +00:00 [VRB] Started SANS Holiday Hack, December 2020
+2020-12-27 19:20:18.735 +00:00 [VRB] Using CTF runner 0.1.0-alpha.19
+2020-12-27 19:20:18.737 +00:00 [VRB] Running challange SnowballFight
+2020-12-27 19:20:18.740 +00:00 [INF] 
+6,4,6,1,9,7,8,2,9,7
+2020-12-27 19:20:18.740 +00:00 [INF] Seed 0
+
+                                 4,0  5,0  6,0
+             0,1
+             0,2
+             0,3
+             0,4                 4,3  5,3
+
+                  1,5  2,5  3,5  4,5  5,5
+                            3,6  4,6  5,6
+
+            
+2020-12-27 19:20:18.740 +00:00 [VRB] Challenge SnowballFight completed
