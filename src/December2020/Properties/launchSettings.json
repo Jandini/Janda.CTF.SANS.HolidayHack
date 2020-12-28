@@ -2,7 +2,7 @@
   "profiles": {
     "Add...": {
       "commandName": "Project",
-      "commandLineArgs": "add --root NetwarsRoom --name SleighCANDBUS --resource"
+      "commandLineArgs": "add --root WrappingRoom --name BrokenTagGenerator --resource"
     },
     "Play...": {
       "commandName": "Project",
@@ -20,7 +20,7 @@
       "commandName": "Project",
       "commandLineArgs": "--name DialUp336Kbps"
     },
-    "SortOMatic": {
+    "SORT-O-MATIC": {
       "commandName": "Project",
       "commandLineArgs": "--name SortOMatic"
     },
@@ -91,6 +91,10 @@
     "Objective 7: Solve the Sleigh's CAN-D-BUS Problem": {
       "commandName": "Project",
       "commandLineArgs": "--name SleighCANDBUS"
+    },
+    "Objective 8: Broken Tag Generator": {
+      "commandName": "Project",
+      "commandLineArgs": "--name BrokenTagGenerator"
     },
     "Objective 11A: Blockchain Investigation": {
       "commandName": "Project",
