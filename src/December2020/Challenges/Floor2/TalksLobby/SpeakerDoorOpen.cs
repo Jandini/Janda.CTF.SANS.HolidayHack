@@ -3,6 +3,7 @@
 namespace Janda.CTF.SANS.HolidayHack
 {
 
+    //[Challenge(Flag = "Op3nTheD00r", Name = "Speaker Door Open")]
     [Challenge(Flag = "Op3nTheD00r")]
     public class SpeakerDoorOpen : IChallenge
     {
@@ -35,7 +36,7 @@ namespace Janda.CTF.SANS.HolidayHack
                     the NoneSome <= Zerokind    __ZNshim as u128i128charboolmut for< -> dyn  mainfull/ at  environment
                     al variable is missing - that can happen if you're using sudo
 
-            ".LogMessage(_logger, "cat door");
+            ".LogNote(_logger, "cat door");
 
 
 
@@ -139,7 +140,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 .data
                 .bss
                 .comment
-            ".LogMessage(_logger, "strings door");
+            ".LogNote(_logger, "strings door");
         }
     }
 }

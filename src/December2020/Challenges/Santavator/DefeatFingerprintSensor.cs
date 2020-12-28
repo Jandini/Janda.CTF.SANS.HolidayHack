@@ -41,7 +41,7 @@ namespace Janda.CTF.SANS.HolidayHack
                     </div>
                   <script src=""app.js""></script>
                 </body>
-            ".LogMessage(_logger, "Change {tag} value to get to 3rd floor if the button is not powered yet.", "data-floor");
+            ".LogNote(_logger, "Change {tag} value to get to 3rd floor if the button is not powered yet.", "data-floor");
         }
     }
 }

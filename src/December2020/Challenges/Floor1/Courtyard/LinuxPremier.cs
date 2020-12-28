@@ -17,7 +17,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 The North Pole 🍭 Lollipop Maker:
                 All the lollipops on this system have been stolen by munchkins. Capture munchkins by following instructions here and 🍭's will appear in the green bar below. Run the command ""hintme"" to receive a hint.
             "
-                .LogMessage(_logger, "Linux Premier");
+                .LogNote(_logger, "Linux Premier");
 
 
             @"
@@ -36,14 +36,14 @@ namespace Janda.CTF.SANS.HolidayHack
                 cd electrical/
                 mv blown_fuse0 fuse0
 
-            ".LogMessage(_logger, "Complete challenge by typing following commands");
+            ".LogNote(_logger, "Complete challenge by typing following commands");
 
 
 
             ("chmod +x lollipop_engine" + 
                 "\n" + 
                 "./lollipop_engine")
-                .LogMessage(_logger, "A munchkin is blocking the lollipop_engine from starting. Run the lollipop_engine binary to retrieve this munchkin.");
+                .LogNote(_logger, "A munchkin is blocking the lollipop_engine from starting. Run the lollipop_engine binary to retrieve this munchkin.");
         }
     }
 }

@@ -20,7 +20,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 Start by running the task.submit() function passing in a string argument of 'start'.
                 Type task.help() for help on this question.
 
-            ".LogMessage(_logger, "yes");
+            ".LogNote(_logger, "yes");
 
 
             @"
@@ -31,7 +31,7 @@ namespace Janda.CTF.SANS.HolidayHack
 
                 Correct! adding a () to a function or class will execute it. Ex - FunctionExecuted()
 
-            ".LogMessage(_logger, "task.submit('start')");
+            ".LogNote(_logger, "task.submit('start')");
 
 
             @"
@@ -39,7 +39,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 
                 Correct! The ""send"" scapy class will send a crafted scapy packet out of a network interface.
 
-            ".LogMessage(_logger, "task.submit(send)");
+            ".LogNote(_logger, "task.submit(send)");
 
 
             @"
@@ -47,7 +47,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 
                 Correct! the ""sniff"" scapy class will sniff network traffic and return these packets in a list.
 
-            ".LogMessage(_logger, "task.submit(sniff)");
+            ".LogNote(_logger, "task.submit(sniff)");
 
 
 
@@ -59,7 +59,7 @@ namespace Janda.CTF.SANS.HolidayHack
 
                 Correct! sr1 will send a packet, then immediately sniff for a response packet.
 
-            ".LogMessage(_logger, "task.submit(1)");
+            ".LogNote(_logger, "task.submit(1)");
 
 
             @"
@@ -67,7 +67,7 @@ namespace Janda.CTF.SANS.HolidayHack
 
                 Correct! the ""rdpcap"" scapy class can read pcap files.
 
-            ".LogMessage(_logger, "task.submit(rdpcap)");
+            ".LogNote(_logger, "task.submit(rdpcap)");
 
 
             @"
@@ -80,7 +80,7 @@ namespace Janda.CTF.SANS.HolidayHack
 
                 Correct! .show() can be used on lists of packets AND on an individual packet.
 
-            ".LogMessage(_logger, "task.submit(2)");
+            ".LogNote(_logger, "task.submit(2)");
 
 
             @"
@@ -92,7 +92,7 @@ namespace Janda.CTF.SANS.HolidayHack
 
                 Correct! Scapy packet lists work just like regular python lists so packets can be accessed by their position in the list starting at offset 0.
 
-            ".LogMessage(_logger, "task.submit(UDP_PACKETS[0])");
+            ".LogNote(_logger, "task.submit(UDP_PACKETS[0])");
 
 
 
@@ -101,7 +101,7 @@ namespace Janda.CTF.SANS.HolidayHack
 
                 Correct! Most of the major fields like Ether, IP, TCP, UDP, ICMP, DNS, DNSQR, DNSRR, Raw, etc... can be accessed this way. Ex - pkt[IP][TCP]
 
-            ".LogMessage(_logger, "task.submit(TCP_PACKETS[1][TCP])");
+            ".LogNote(_logger, "task.submit(TCP_PACKETS[1][TCP])");
 
 
             @"
@@ -109,7 +109,7 @@ namespace Janda.CTF.SANS.HolidayHack
 
                 Correct! You can change ALL scapy packet attributes using this method.
 
-            ".LogMessage(_logger, @"
+            ".LogNote(_logger, @"
                 UDP_PACKETS[0][IP].src=""127.0.0.1""
                 task.submit(UDP_PACKETS[0])
             ");
@@ -177,7 +177,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 [pkt[Raw].load for pkt in TCP_PACKETS if Raw in pkt]
 
 
-            ".LogMessage(_logger, "task.submit('echo')");
+            ".LogNote(_logger, "task.submit('echo')");
 
 
 
@@ -199,7 +199,7 @@ namespace Janda.CTF.SANS.HolidayHack
 
                 Correct! You can access the ICMP chksum value from the second packet using ICMP_PACKETS[1][ICMP].chksum .
 
-            ".LogMessage(_logger, "task.submit(ICMP_PACKETS[1][ICMP].chksum)");
+            ".LogNote(_logger, "task.submit(ICMP_PACKETS[1][ICMP].chksum)");
 
 
 
@@ -212,7 +212,7 @@ namespace Janda.CTF.SANS.HolidayHack
 
                 Correct! Once you assign the packet to a variable named ""pkt"" you can then use that variable to send or manipulate your created packet.
 
-            ".LogMessage(_logger, "task.submit(3)");
+            ".LogNote(_logger, "task.submit(3)");
 
 
 
@@ -227,7 +227,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 pkt = IP(dst=""127.127.127.127"")/UDP(dport=5000)
                 task.submit(pkt)
 
-            ".LogMessage(_logger, "task.submit(IP(dst=\"127.127.127.127\")/UDP(dport=5000))");
+            ".LogNote(_logger, "task.submit(IP(dst=\"127.127.127.127\")/UDP(dport=5000))");
 
 
             @"
@@ -238,7 +238,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 pkt = IP(dst=""127.2.3.4"")/UDP(dport=53)/DNS(rd=1,qd=DNSQR(qname=""elveslove.santa""))
                 task.submit(pkt)
 
-            ".LogMessage(_logger, "task.submit(IP(dst=\"127.2.3.4\")/UDP(dport=53)/DNS(qd=DNSQR(qname=\"elveslove.santa\")))");
+            ".LogNote(_logger, "task.submit(IP(dst=\"127.2.3.4\")/UDP(dport=53)/DNS(qd=DNSQR(qname=\"elveslove.santa\")))");
 
 
 
@@ -294,7 +294,7 @@ namespace Janda.CTF.SANS.HolidayHack
 
                 Congratulations, all pretty present packets properly prepared for processing!
 
-            ".LogMessage(_logger, @"
+            ".LogNote(_logger, @"
                 ARP_PACKETS[1][ARP].op='is-at'                
                 ARP_PACKETS[1][ARP].hwsrc='00:13:46:0b:22:ba'
                 ARP_PACKETS[1][ARP].hwdst='00:16:ce:6e:8b:24'task.submit(ARP_PACKETS)

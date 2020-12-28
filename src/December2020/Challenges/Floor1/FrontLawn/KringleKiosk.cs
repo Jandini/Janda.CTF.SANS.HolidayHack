@@ -43,7 +43,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 welcome.sh
 
 
-            ".LogMessage(_logger, "Go to option {m} and enter {s}", 4, "; ls");
+            ".LogNote(_logger, "Go to option {m} and enter {s}", 4, "; ls");
 
 
 
@@ -195,7 +195,7 @@ namespace Janda.CTF.SANS.HolidayHack
 
 
 
-            ".LogMessage(_logger, "Go to option 4 and enter ;cat welcome.sh");
+            ".LogNote(_logger, "Go to option 4 and enter ;cat welcome.sh");
 
 
 
@@ -225,7 +225,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 Type 'exit' to return to the menu.
                 shinny@9edb28c788e6: ~$ 
 
-            ".LogMessage(_logger, "Go to option {m} and enter {s}", 4, ";bash");
+            ".LogNote(_logger, "Go to option {m} and enter {s}", 4, ";bash");
 
 
 
@@ -245,7 +245,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 shinny@9edb28c788e6:/home/elf$ ./runtoanswer 
 
                 Sorry, that answer is incorrect. Please try again!
-            ".LogMessage(_logger, "Wonder around...");
+            ".LogNote(_logger, "Wonder around...");
 
 
             Menu();
@@ -274,7 +274,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 Anything else might have ... unintended consequences.
 
                 Enter choice [1 - 5] 
-            ".LogMessage(_logger, "Menu");
+            ".LogNote(_logger, "Menu");
         }
 
 
@@ -307,7 +307,7 @@ namespace Janda.CTF.SANS.HolidayHack
                   \    /
                    \__/ ejm96
                 Sleeping for 10 seconds..
-            ".LogMessage(_logger, "Plant");
+            ".LogNote(_logger, "Plant");
         }
 
         void Conduct()
@@ -350,7 +350,7 @@ namespace Janda.CTF.SANS.HolidayHack
 
                     5.E - mail addresses collected will be used in accordance with the SANS Privacy Policy(https://www
                     .sans.org / privacy /).
-                ".LogMessage(_logger, "Code of Conduct and Terms of Use ");
+                ".LogNote(_logger, "Code of Conduct and Terms of Use ");
         }
 
 
@@ -397,7 +397,7 @@ namespace Janda.CTF.SANS.HolidayHack
                            ----------                                         --------       
                           |Front Lawn|       NOTE: * denotes Santavator                      
                            ----------                                                        
-            ".LogMessage(_logger, "Map");
+            ".LogNote(_logger, "Map");
         }
 
         void Directory()
@@ -429,7 +429,7 @@ namespace Janda.CTF.SANS.HolidayHack
                         Eve Snowshoes         3        Santa's Balcony
                         Shinny Upatree                 Front Lawn
                         Tinsel Upatree        3        Santa's Office
-                ".LogMessage(_logger, "Directory");
+                ".LogNote(_logger, "Directory");
         }
 
         void Badge()
@@ -446,7 +446,7 @@ namespace Janda.CTF.SANS.HolidayHack
                            (__)\       )\/\
                                ||----w |
                                ||     ||
-            ".LogMessage(_logger, "Print Name Badge");
+            ".LogNote(_logger, "Print Name Badge");
         }
     }
 }

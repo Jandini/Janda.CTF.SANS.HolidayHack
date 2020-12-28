@@ -28,23 +28,23 @@ namespace Janda.CTF.SANS.HolidayHack
                 What do you enter? > light
                 Checking......
                 Beep boop invalid password
-            ".LogMessage(_logger, "---t is {a}?, hin--- is {b}", "---t", "hin---");
+            ".LogNote(_logger, "---t is {a}?, hin--- is {b}", "---t", "hin---");
 
 
             @"
                 password: E$ed633d885dcb9b2f3f0118361de4d57752712c27c5316a95d9e5e5b124
                 name: elf-technician
-            ".LogMessage(_logger, "cat /home/elf/lights.conf");
+            ".LogNote(_logger, "cat /home/elf/lights.conf");
 
 
 
             @"
                 Failed to parse key `password`: OddLength
                 Password is missing from config file!
-            ".LogMessage(_logger, "Removed one character from the password.");
+            ".LogNote(_logger, "Removed one character from the password.");
 
 
-            @"Couldn't read config file: Badly formatted line (expected: ""key: value""): ".LogMessage(_logger, "Remove entire password");
+            @"Couldn't read config file: Badly formatted line (expected: ""key: value""): ".LogNote(_logger, "Remove entire password");
 
 
             @"
@@ -66,7 +66,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 password: E$ed633d885dcb9b2f3f0118361de4d57752712c27c5316a95d9e5e5b124
                 name: E$ed633d885dcb9b2f3f0118361de4d57752712c27c5316a95d9e5e5b124
                 elf@0e91ec090c86 ~/lab $ 
-            ".LogMessage(_logger, "Rename {name} to {encrypted} in ./lab/lights.conf to get {answer}", "elf-technician", "E$ed633d885dcb9b2f3f0118361de4d57752712c27c5316a95d9e5e5b124", "Computer-TurnLightsOn");
+            ".LogNote(_logger, "Rename {name} to {encrypted} in ./lab/lights.conf to get {answer}", "elf-technician", "E$ed633d885dcb9b2f3f0118361de4d57752712c27c5316a95d9e5e5b124", "Computer-TurnLightsOn");
 
         }
     }

@@ -21,7 +21,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 rm vending-machines.json
                 ./vending-machines                
                 
-            ".LogMessage(_logger, "Goto lab directory, delete vending-machines.json");
+            ".LogNote(_logger, "Goto lab directory, delete vending-machines.json");
 
             @"                
                 The elves are hungry!
@@ -52,7 +52,7 @@ namespace Janda.CTF.SANS.HolidayHack
                   ""password"": ""XiGRehmwXiGRehmwXiGRehmw""
                 }
                 elf @aa086c750649 ~/lab $             
-            ".LogMessage(_logger, "We can run ./vending-machines, provide new password and then see how it looks like in the json file.");
+            ".LogNote(_logger, "We can run ./vending-machines, provide new password and then see how it looks like in the json file.");
 
 
 
@@ -68,7 +68,7 @@ namespace Janda.CTF.SANS.HolidayHack
                     ""name"": """",
                     ""password"": ""L""
                 }
-            ".LogMessage(_logger, "Trying single letter... and viola first letter matches... ");
+            ".LogNote(_logger, "Trying single letter... and viola first letter matches... ");
 
 
 
@@ -79,7 +79,7 @@ namespace Janda.CTF.SANS.HolidayHack
                   ""name"": ""elf - maintenance"",
                   ""password"": ""LVEdQPpBwr""                                
                }                                                
-            ".LogMessage(_logger, "This is password we are looking for. {command}", "cat vending-machines.json");
+            ".LogNote(_logger, "This is password we are looking for. {command}", "cat vending-machines.json");
 
 
 
@@ -96,7 +96,7 @@ namespace Janda.CTF.SANS.HolidayHack
                   ""name"": """",
                   ""password"": ""LVEd4Yb""
                 }                       
-            ".LogMessage(_logger, "Trying Candies");
+            ".LogNote(_logger, "Trying Candies");
 
 
 
@@ -116,7 +116,7 @@ namespace Janda.CTF.SANS.HolidayHack
                   ""password"": ""LVEdQRpB""
                 }
 
-            ".LogMessage(_logger, "Trying Candyman");
+            ".LogNote(_logger, "Trying Candyman");
 
 
 
@@ -147,7 +147,7 @@ namespace Janda.CTF.SANS.HolidayHack
                   ""password"": ""LVEdQRpBwr""
                 }
 
-            ".LogMessage(_logger, "rm vending-machines.json;./vending-machines;cat vending-machines.json");
+            ".LogNote(_logger, "rm vending-machines.json;./vending-machines;cat vending-machines.json");
 
 
 
@@ -155,7 +155,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 LVEdQPpBwr  -- CandyCane1
                 LVEdQLpBwr  -- Candy1ane1
                 LVEdQbpBwr     CandyLane1
-            ".LogMessage(_logger, "Password was found.");
+            ".LogNote(_logger, "Password was found.");
 
 
 
@@ -176,7 +176,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 Checking......
 
                 Vending machines enabled!!
-            ".LogMessage(_logger, "./vending-machines");
+            ".LogNote(_logger, "./vending-machines");
         }
     }
 }

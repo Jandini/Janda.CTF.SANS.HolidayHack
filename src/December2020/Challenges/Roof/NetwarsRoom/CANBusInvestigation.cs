@@ -46,7 +46,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 Find the decimal portion of the timestamp of the UNLOCK code in candump.log
                 and submit it to ./runtoanswer!  (e.g., if the timestamp is 123456.112233,
                 please submit 112233)
-            ".LogMessage(_logger, "CAN bus challenge");
+            ".LogNote(_logger, "CAN bus challenge");
         }
     }
 }
