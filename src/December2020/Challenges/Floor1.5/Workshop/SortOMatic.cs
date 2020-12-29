@@ -28,31 +28,31 @@ namespace Janda.CTF.SANS.HolidayHack
 
                 Click the HELP button on the SORT-O-MATIC to view this help manual again.
 
-            ".Log(_logger, "SORT-O-MATIC HELP MANUAL");
+            ".Blog(_logger, "SORT-O-MATIC HELP MANUAL");
                              
             "[0-9]"
-                .Log(_logger, "1.Matches at least one digit");
+                .Blog(_logger, "1.Matches at least one digit");
 
             "[A-Za-z][A-Za-z][A-Za-z]"
-                .Log(_logger, "2.Matches 3 alpha a-z characters ignoring case");
+                .Blog(_logger, "2.Matches 3 alpha a-z characters ignoring case");
 
             "[0-9a-z][0-9a-z]"
-                .Log(_logger, "3. Matches 2 chars of lowercase a-z or numbers");
+                .Blog(_logger, "3. Matches 2 chars of lowercase a-z or numbers");
 
             "[A-L1-5]"
-                .Log(_logger, "4. Matches any 2 chars not uppercase A-L or 1 - 5");
+                .Blog(_logger, "4. Matches any 2 chars not uppercase A-L or 1 - 5");
 
             "^[0-9][0-9][0-9]+$"
-                .Log(_logger, "5. Matches three or more digits only");
+                .Blog(_logger, "5. Matches three or more digits only");
             
             "^(([01]?[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9])$"
-                .Log(_logger, "6. Matches multiple hour:minute: second time formats only");
+                .Blog(_logger, "6. Matches multiple hour:minute: second time formats only");
 
             "^[a-fA-F0-9]{2}(:[a-fA-F0-9]{2}){5}$"
-                .Log(_logger, "7. Matches MAC address format only while ignoring case. {url}", "https://ihateregex.io/expr/mac-address/");
+                .Blog(_logger, "7. Matches MAC address format only while ignoring case. {url}", "https://ihateregex.io/expr/mac-address/");
             
             "^((0[1-9]|1[0-9])[-/.](0[1-9]|[12]\\d|3[01])[-/.][12]\\d{3})$"
-                .Log(_logger, "8. Matches multiple day, month, and year date formats only. \n{description}", 
+                .Blog(_logger, "8. Matches multiple day, month, and year date formats only. \n{description}", 
                 @"Create a regular expression that only matches one of the three following day, month, and four digit year formats:
 
                 10/01/1978

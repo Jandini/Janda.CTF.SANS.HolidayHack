@@ -27,7 +27,7 @@ namespace Janda.CTF.SANS.HolidayHack
                     <button class=""btn btnr"" data-floor=""r"">R</button>
                 </div>
 
-            ".Log(_logger, "Access panel without key... {answer}", "Hide the cover html element");
+            ".Blog(_logger, "Access panel without key... {answer}", "Hide the cover html element");
 
         }
     }

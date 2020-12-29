@@ -5,7 +5,7 @@ namespace Janda.CTF
 {
     public static class LoggingExtensions
     {       
-        public static T Log<T>(this T o, ILogger logger, string message = "", params object[] args)
+        public static T Blog<T>(this T o, ILogger logger, string message = "", params object[] args)
         {
             var parameters = new List<object>();
 

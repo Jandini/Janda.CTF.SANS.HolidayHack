@@ -21,9 +21,19 @@ namespace Janda.CTF.SANS.HolidayHack
 
                 (Enter just the 16-character hex value of the nonce)
 
-            ".Log(_logger);
+            ".Blog(_logger);
         }
 
+
+        public void Talks()
+        {
+            @"
+                Prof. Qwerty Petabyte, Working with the Official Naughty/Nice Blockchain...                
+                https://www.youtube.com/watch?v=reKsZ8E44vw
+
+
+            ".Blog(_logger, "Talks");
+        }
 
         public void Run()
         {

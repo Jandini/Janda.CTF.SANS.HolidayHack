@@ -36,7 +36,7 @@ namespace Janda.CTF.SANS.HolidayHack
                     the NoneSome <= Zerokind    __ZNshim as u128i128charboolmut for< -> dyn  mainfull/ at  environment
                     al variable is missing - that can happen if you're using sudo
 
-            ".Log(_logger, "cat door");
+            ".Blog(_logger, "cat door");
 
 
 
@@ -140,7 +140,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 .data
                 .bss
                 .comment
-            ".Log(_logger, "strings door");
+            ".Blog(_logger, "strings door");
         }
     }
 }

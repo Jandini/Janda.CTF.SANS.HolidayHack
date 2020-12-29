@@ -21,7 +21,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 Retrieve the document at /NORTH_POLE_Land_Use_Board_Meeting_Minutes.txt. 
                 Who recused herself from the vote described on the document?
 
-            ".Log(_logger, "Objective");
+            ".Blog(_logger, "Objective");
         }
 
 
@@ -36,7 +36,7 @@ namespace Janda.CTF.SANS.HolidayHack
 
                 More on: https://searchnetworking.techtarget.com/definition/Address-Resolution-Protocol-ARP
 
-            ".Log(_logger, "Theory");
+            ".Blog(_logger, "Theory");
         }
 
         public void Hints()
@@ -75,7 +75,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 Try sniffing the eth0 interface using tcpdump -nni eth0 to see if you can view any traffic from that host.
 
 
-            ".Log(_logger, "Hints");
+            ".Blog(_logger, "Hints");
         }
 
 
@@ -105,7 +105,7 @@ namespace Janda.CTF.SANS.HolidayHack
             
                 I'm sure glad you're here Santa.
 
-            ".Log(_logger, "Chats");
+            ".Blog(_logger, "Chats");
         }
 
 
@@ -122,7 +122,7 @@ namespace Janda.CTF.SANS.HolidayHack
 
                 guest@68e6e97fccd9:~$ 
 
-            ".Log(_logger, "Start");
+            ".Blog(_logger, "Start");
         }
 
 
@@ -159,7 +159,7 @@ namespace Janda.CTF.SANS.HolidayHack
                     2   0.031000 cc:00:10:dc:00:00 → cc:01:10:dc:00:00 ARP 60 10.10.10.1 is at cc:00:10:dc:00:00                                            │
                 guest@452dd887658f:~/pcaps$                               
 
-            ".Log(_logger);
+            ".Blog(_logger);
         }
 
         public void Run()

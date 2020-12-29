@@ -40,14 +40,14 @@ namespace Janda.CTF.SANS.HolidayHack
             };
 
             foreach (var card in cards)
-                card.ToString().Log(_logger, "Open proxmark and call {command} next to {elf} in {room}", "lf hid read", card.Elf, card.Room);
+                card.ToString().Blog(_logger, "Open proxmark and call {command} next to {elf} in {room}", "lf hid read", card.Elf, card.Room);
 
 
             @"
                 [=] Simulating HID tag using raw 2006e22f0e
                 [=] Stopping simulation after 10 seconds.
 
-            ".Log(_logger, "Open proxmark CLI and type {command} next to the door in Workshop", "pm3 --> lf hid sim -r 2006e22f0e");
+            ".Blog(_logger, "Open proxmark CLI and type {command} next to the door in Workshop", "pm3 --> lf hid sim -r 2006e22f0e");
         }
     }
 }

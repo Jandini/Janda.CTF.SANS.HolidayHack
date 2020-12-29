@@ -85,7 +85,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 1609182813211 244#00000003ec
                 1609182813312 080#000000
 
-            ".Log(_logger, @"document.getElementById(""can-feed"").innerText");
+            ".Blog(_logger, @"document.getElementById(""can-feed"").innerText");
 
 
 
@@ -102,7 +102,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 244 Equals  000000000000
                 080 Less    000000000000
 
-            ".Log(_logger, "First blood.... didn't work, so started disabling");
+            ".Blog(_logger, "First blood.... didn't work, so started disabling");
 
 
 
@@ -137,7 +137,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 1609185180361 19B#0000000F2057                        
 
 
-            ".Log(_logger, "First exlude all to see what is wrong");
+            ".Blog(_logger, "First exlude all to see what is wrong");
 
 
             @"
@@ -152,7 +152,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 019 Equals FFFFFFFFFFD0 
                 019 Equals 000000000033 
 
-            ".Log(_logger, "Exclude following messages to defrost Sleigh!");
+            ".Blog(_logger, "Exclude following messages to defrost Sleigh!");
         }
     }
 }

@@ -16,6 +16,18 @@ namespace Janda.CTF.SANS.HolidayHack
             _webBrowser = webBrowser;
         }
 
+
+        public void Talks()
+        {
+            @"
+                Tom Liston, Random Facts About Mersenne Twisters | KringleCon 2020
+                https://www.youtube.com/watch?v=Jo5Nlbqd-Vg&t=3s
+
+
+            ".Blog(_logger, "Talks");
+        }
+
+
         public void Run()
         {
             var random = new Random(0);
@@ -24,7 +36,7 @@ namespace Janda.CTF.SANS.HolidayHack
             for (int i = 0; i < 10; i++)
                 numbers.Add(random.Next() % 10);
 
-            string.Join(",", numbers).Log(_logger);
+            string.Join(",", numbers).Blog(_logger);
 
 
             @"
@@ -37,7 +49,7 @@ namespace Janda.CTF.SANS.HolidayHack
                   1,5  2,5  3,5  4,5  5,5
                             3,6  4,6  5,6
 
-            ".Log(_logger, "Player (seed) = 0... if i could only relate the random value to the position... less likely...");
+            ".Blog(_logger, "Player (seed) = 0... if i could only relate the random value to the position... less likely...");
 
 
             var comment =
@@ -671,7 +683,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 724601804 - Not random enough
                 <Redacted!> - Perfect!
               -->
-            ".Log(_logger, "Found in page source when run with impossible difficulty level.");
+            ".Blog(_logger, "Found in page source when run with impossible difficulty level.");
 
 
 
@@ -680,7 +692,7 @@ namespace Janda.CTF.SANS.HolidayHack
             foreach (var match in regex.Matches(comment))
                 seeds.Add(match.ToString());
 
-            ("seeds = [" + string.Join(",", seeds) + "]").Log(_logger, "{0} random numbers. Use them to clone MT seed table and get the next `Player Name` number. ", seeds.Count);
+            ("seeds = [" + string.Join(",", seeds) + "]").Blog(_logger, "{0} random numbers. Use them to clone MT seed table and get the next `Player Name` number. ", seeds.Count);
 
 
         }

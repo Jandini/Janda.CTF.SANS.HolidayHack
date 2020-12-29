@@ -14,6 +14,19 @@ namespace Janda.CTF.SANS.HolidayHack
             _logger = logger;
         }
 
+        public void Talks()
+        {
+            @"
+                
+                Spencer Gietzen, IOMs vs. IOAs in AWS | KringleCon 2020
+                https://www.youtube.com/watch?v=KliCQbJT6YQ
+
+
+            ".Blog(_logger, "Talks");
+        }
+
+        
+
         public void Run()
         {
             var client = new WebClient();

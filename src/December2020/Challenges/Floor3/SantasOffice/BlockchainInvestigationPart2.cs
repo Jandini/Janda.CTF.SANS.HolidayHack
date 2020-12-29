@@ -19,7 +19,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 If you're clever, you can recreate the original version of that block by changing the values of only 4 bytes. 
                 Once you've recreated the original block, what is the SHA256 of that block?
 
-            ".Log(_logger);
+            ".Blog(_logger);
         }
 
         public void Run()

@@ -32,7 +32,7 @@ namespace Janda.CTF.SANS.HolidayHack
 
                 // TODO: Maybe get these from an API?
 
-            ".Log(_logger, "Solution 1: {technique}", "Use asar from npm and extract app.asar");
+            ".Blog(_logger, "Solution 1: {technique}", "Use asar from npm and extract app.asar");
 
 
             @"
@@ -97,7 +97,7 @@ namespace Janda.CTF.SANS.HolidayHack
 
                 const SANTA_PASSWORD = 'santapass';
 
-            ".Log(_logger, "Solution 2: {technique}", "Use 7zip only");
+            ".Blog(_logger, "Solution 2: {technique}", "Use 7zip only");
         }
     }
 }
