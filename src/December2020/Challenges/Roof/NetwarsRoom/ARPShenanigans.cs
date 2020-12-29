@@ -1,4 +1,4 @@
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 
 namespace Janda.CTF.SANS.HolidayHack
 {
@@ -42,33 +42,38 @@ namespace Janda.CTF.SANS.HolidayHack
         public void Hints()
         {
             @"
-                Go to the NetWars room on the roof and help Alabaster Snowball get access back to a host using ARP. 
-                Retrieve the document at /NORTH_POLE_Land_Use_Board_Meeting_Minutes.txt. 
-                Who recused herself from the vote described on the document?
-
 
                 Spoofy
                 From: Alabaster Snowball
                 Objective: 9) ARP Shenanigans
-                The host is performing an ARP request. Perhaps we could do a spoof to perform a machine-in-the-middle attack. I think we have some sample scapy traffic scripts that could help you in /home/guest/scripts.
+                
+                The host is performing an ARP request. Perhaps we could do a spoof to perform a machine-in-the-middle attack. 
+                I think we have some sample scapy traffic scripts that could help you in /home/guest/scripts.
 
 
                 Resolvy
                 From: Alabaster Snowball
                 Objective: 9) ARP Shenanigans
-                Hmmm, looks like the host does a DNS request after you successfully do an ARP spoof. Let's return a DNS response resolving the request to our IP.
+
+                Hmmm, looks like the host does a DNS request after you successfully do an ARP spoof. 
+                Let's return a DNS response resolving the request to our IP.
 
 
                 Embedy
                 From: Alabaster Snowball
                 Objective: 9) ARP Shenanigans
-                The malware on the host does an HTTP request for a .deb package. Maybe we can get command line access by sending it a command in a customized .deb file
+                
+                The malware on the host does an HTTP request for a .deb package. 
+                Maybe we can get command line access by sending it a command in a customized .deb file
 
 
                 Sniffy
                 From: Alabaster Snowball
                 Objective: 9) ARP Shenanigans
-                Jack Frost must have gotten malware on our host at 10.6.6.35 because we can no longer access it. Try sniffing the eth0 interface using tcpdump -nni eth0 to see if you can view any traffic from that host.
+                
+                Jack Frost must have gotten malware on our host at 10.6.6.35 because we can no longer access it. 
+                Try sniffing the eth0 interface using tcpdump -nni eth0 to see if you can view any traffic from that host.
+
 
             ".Log(_logger, "Hints");
         }
@@ -121,12 +126,51 @@ namespace Janda.CTF.SANS.HolidayHack
         }
 
 
+        public void WonderingAround()
+        {
+            @"
+                # resolution or it will stall when reading:                                                                                                 │guest@452dd887658f:~$ 
+                ```                                                                                                                                         │
+                tshark -nnr arp.pcap                                                                                                                        │
+                tcpdump -nnr arp.pcap                                                                                                                       │
+                ```                                                                                                                                         │
+                                                                                                                                                            │
+                guest@452dd887658f:~$ tshark                                                                                                                │
+                Capturing on 'eth0'                                                                                                                         │
+                    1 0.000000000 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                                 │
+                    2 1.031989483 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                                 │
+                ^C2 packets captured                                                                                                                        │
+                guest@452dd887658f:~$                                                                                                                       │
+                guest@452dd887658f:~$ tshark                                                                                                                │
+                Capturing on 'eth0'                                                                                                                         │
+                    1 0.000000000 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                                 │
+                    2 1.039986867 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                                 │
+                    3 2.075830381 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                                 │
+                    4 3.131865014 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                                 │
+                    5 4.171833866 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                                 │
+                    6 5.203895329 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                                 │
+                    7 6.255960599 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                                 │
+                    8 7.291827766 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                                 │
+                ^C    9 8.328093002 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                               │
+                9 packets captured                                                                                                                          │
+                guest@452dd887658f:~$ cd pcaps/                                                                                                             │
+                guest@452dd887658f:~/pcaps$ tshark -nnr arp.pcap                                                                                            │
+                    1   0.000000 cc:01:10:dc:00:00 → ff:ff:ff:ff:ff:ff ARP 60 Who has 10.10.10.1? Tell 10.10.10.2                                           │
+                    2   0.031000 cc:00:10:dc:00:00 → cc:01:10:dc:00:00 ARP 60 10.10.10.1 is at cc:00:10:dc:00:00                                            │
+                guest@452dd887658f:~/pcaps$                               
+
+            ".Log(_logger);
+        }
+
         public void Run()
         {
             Objective();
             Hints();
             Chats();
             Theory();
+
+
+
         }
     }
 }
