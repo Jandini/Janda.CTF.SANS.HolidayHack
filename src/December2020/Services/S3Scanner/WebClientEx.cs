@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net;
 
-namespace Janda.CTF.SANS.HolidayHack.Services
+namespace Janda.CTF
 {
     class WebClientEx : WebClient
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace Janda.CTF.SANS.HolidayHack.Services
+namespace Janda.CTF
 {
     public static class S3ScannerExtensions
     {

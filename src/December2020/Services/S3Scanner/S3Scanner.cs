@@ -8,7 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace Janda.CTF.SANS.HolidayHack.Services
+namespace Janda.CTF
 {
     class S3Scanner : IS3Scanner
     {

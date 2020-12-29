@@ -15,9 +15,7 @@ namespace Janda.CTF.SANS.HolidayHack
         {
             @"
                 We can shuffle the colors of the lights by connecting via dial-up, but our only modem is broken!
-
                 Fortunately, I speak dial-up. However, I can't quite remember the handshake sequence.
-
                 Maybe you can help me out? The phone number is 756-8347; you can use this blue phone.
 
                 ...

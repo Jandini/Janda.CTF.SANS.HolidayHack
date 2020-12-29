@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Janda.CTF.SANS.HolidayHack.Services
+namespace Janda.CTF
 {
     interface IS3Scanner
     {
