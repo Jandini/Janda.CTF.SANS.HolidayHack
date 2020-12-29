@@ -2,7 +2,7 @@
   "profiles": {
     "Add...": {
       "commandName": "Project",
-      "commandLineArgs": "add --root Santavator --name OperateTheSantavator"
+      "commandLineArgs": "add --root SantasOffice --name BlockchainInvestigationPart2"
     },
     "Play...": {
       "commandName": "Project",
@@ -104,9 +104,13 @@
       "commandName": "Project",
       "commandLineArgs": "--name DefeatFingerprintSensor"
     },
-    "Objective 11a: Blockchain Investigation": {
+    "Objective 11a: Naughty/Nice List with Blockchain Investigation Part 1": {
       "commandName": "Project",
       "commandLineArgs": "--name BlockchainInvestigationPart1"
+    },
+    "Objective 11b: Naughty/Nice List with Blockchain Investigation Part 2": {
+      "commandName": "Project",
+      "commandLineArgs": "--name BlockchainInvestigationPart2"
     }
   }
 }

@@ -16,7 +16,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Janda.CTF" Version="0.1.0-alpha.21" />
+    <PackageReference Include="Janda.CTF" Version="0.1.0-alpha.22" />
     <PackageReference Include="Janda.CTF.Dictionary" Version="0.1.0-alpha.7" />
   </ItemGroup>
 
