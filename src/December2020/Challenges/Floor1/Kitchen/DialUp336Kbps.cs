@@ -22,11 +22,11 @@ namespace Janda.CTF.SANS.HolidayHack
 
                 ""Put it in the cloud,"" they said...
 
-            ".LogNote(_logger, "Fitzy Shortstack");
+            ".Log(_logger, "Fitzy Shortstack");
 
             // ["pickup","dtmf7","dtmf5","dtmf6","dtmf8","dtmf3","dtmf4","dtmf7", "respCrEsCl","ack","cm_cj","l1_l2_info","trn"].forEach((step)=> document.getElementsByClassName(step)[0].click());
             @"[""pickup"",""dtmf7"",""dtmf5"",""dtmf6"",""dtmf8"",""dtmf3"",""dtmf4"",""dtmf7"", ""respCrEsCl"",""ack"",""cm_cj"",""l1_l2_info"",""trn""].forEach((step)=> document.getElementsByClassName(step)[0].click());"
-                .LogNote(_logger, "Run from console to call");
+                .Log(_logger, "Run from console to call");
         }
     }
 }

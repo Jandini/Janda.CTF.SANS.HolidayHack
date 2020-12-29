@@ -48,7 +48,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 ....:dkOddOO0OkdoolllllloooddxOOOOOkkkkOdllccccccccc
 
                 You found her! Thank you!!!
-            ".LogNote(_logger, "Run {command} ", "tmux attach");
+            ".Log(_logger, "Run {command} ", "tmux attach");
         }
     }
 }

@@ -2,7 +2,7 @@
   "profiles": {
     "Add...": {
       "commandName": "Project",
-      "commandLineArgs": "add --root NetwarsRoom --name ARPShenanigans"
+      "commandLineArgs": "add --root NetwarsRoom --class ARPShenanigans"
     },
     "Play...": {
       "commandName": "Project",
@@ -28,6 +28,10 @@
       "commandName": "Project",
       "commandLineArgs": "--name SnowballFight"
     },
+    "Terminal: Kringle Kiosk": {
+      "commandName": "Project",
+      "commandLineArgs": "--name KringleKiosk"
+    },
     "Terminal: Unescape Tmux": {
       "commandName": "Project",
       "commandLineArgs": "--name UnescapeTmux"
@@ -35,10 +39,6 @@
     "Terminal: Redis Bug Hunt": {
       "commandName": "Project",
       "commandLineArgs": "--name RedisBugHunt"
-    },
-    "Terminal: Kringle Kiosk": {
-      "commandName": "Project",
-      "commandLineArgs": "--name KringleKiosk"
     },
     "Terminal: Scapy Prepper": {
       "commandName": "Project",
@@ -96,13 +96,13 @@
       "commandName": "Project",
       "commandLineArgs": "--name BrokenTagGenerator"
     },
+    "Objective 9: ARP Shenanigans": {
+      "commandName": "Project",
+      "commandLineArgs": "--name ARPShenanigans"
+    },
     "Objective 11A: Blockchain Investigation": {
       "commandName": "Project",
       "commandLineArgs": "--name BlockchainInvestigationPart1"
-    },
-    "ARPShenanigans": {
-      "commandName": "Project",
-      "commandLineArgs": "--name ARPShenanigans"
     }
   }
 }

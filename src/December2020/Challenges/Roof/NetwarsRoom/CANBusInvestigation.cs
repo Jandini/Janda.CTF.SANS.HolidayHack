@@ -48,7 +48,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 Find the decimal portion of the timestamp of the UNLOCK code in candump.log
                 and submit it to ./runtoanswer!  (e.g., if the timestamp is 123456.112233,
                 please submit 112233)
-            ".LogNote(_logger, "CAN bus challenge");
+            ".Log(_logger, "CAN bus challenge");
 
 
 
@@ -1423,7 +1423,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 (1608926678.616971) vcan0 244#0000000166
                 (1608926678.629068) vcan0 244#0000000135
 
-            ".LogNote(_logger, "elf@58bf86f1423e:~$ {command}", "cat candump.log");
+            ".Log(_logger, "elf@58bf86f1423e:~$ {command}", "cat candump.log");
 
 
             @"
@@ -1431,7 +1431,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 (1608926671.122520) vcan0 19B#00000F000000      UNLOCK
                 (1608926674.092148) vcan0 19B#000000000000      LOCK
 
-            ".LogNote(_logger, "{value} is LOCK/UNLOCK", "19B#");
+            ".Log(_logger, "{value} is LOCK/UNLOCK", "19B#");
 
 
             @"                
@@ -1443,7 +1443,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 Checking....
                 Your answer is correct!
 
-            ".LogNote(_logger, "elf@58bf86f1423e:~$ ./runtoanswer");
+            ".Log(_logger, "elf@58bf86f1423e:~$ ./runtoanswer");
 
 
         }

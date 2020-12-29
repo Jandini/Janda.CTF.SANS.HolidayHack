@@ -18,7 +18,7 @@ namespace Janda.CTF.SANS.HolidayHack
         public void Run()
         {
             "https://splunk.kringlecastle.com/en-US/account/insecurelogin?username=santa&password=2f3a4fccca6406e35bcf33e92dd93135"
-                .LogNote(_logger, "Splunk url taken from java script page... before becomming Santa");
+                .Log(_logger, "Splunk url taken from java script page... before becomming Santa");
 
 
             @"
@@ -37,7 +37,7 @@ namespace Janda.CTF.SANS.HolidayHack
 
                 | metadata type=sourcetypes index=*
 
-            ".LogNote(_logger, "Learning random searches");
+            ".Log(_logger, "Learning random searches");
 
 
             @"
@@ -57,7 +57,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 13	1606761927	1606770230	1606770230	bro:x509:json	2722	sourcetypes
                 14	1606754786	1606769951	1606770027	csv	68	sourcetypes
 
-            ".LogNote(_logger, "| metadata type=sourcetypes index=*");
+            ".Log(_logger, "| metadata type=sourcetypes index=*");
 
             @"
 	                index	count
@@ -87,7 +87,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 24	t1559.002-main	2324
                 25	t1559.002-win	22144
                 26	t1566.001-win	19688
-            ".LogNote(_logger, "| tstats count where index=* by index");
+            ".Log(_logger, "| tstats count where index=* by index");
 
 
             @"                
@@ -104,12 +104,12 @@ namespace Janda.CTF.SANS.HolidayHack
                 | stats dc(technique)
 
 
-            ".LogNote(_logger, "Q1: How many distinct MITRE ATT & CK techniques did Alice emulate? {Answer}", 13);
+            ".Log(_logger, "Q1: How many distinct MITRE ATT & CK techniques did Alice emulate? {Answer}", 13);
 
 
             @"
                 t1059.003-main t1059.003-win
-            ".LogNote(_logger, "Q2: What are the names of the two indexes that contain the results of emulating Enterprise ATT&CK technique 1059.003 ? (Put them in alphabetical order and separate them with a space) {Answer}", "t1059.003-main t1059.003-win");
+            ".Log(_logger, "Q2: What are the names of the two indexes that contain the results of emulating Enterprise ATT&CK technique 1059.003 ? (Put them in alphabetical order and separate them with a space) {Answer}", "t1059.003-main t1059.003-win");
 
 
             @"
@@ -133,7 +133,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 Attack Commands: Run with command_prompt!
                 REG QUERY HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography /v MachineGuid
 
-            ".LogNote(_logger, "Q3: One technique that Santa had us simulate deals with 'system information discovery'. What is the full name of the registry key that is queried to determine the MachineGuid? {Answer}", "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Cryptography");
+            ".Log(_logger, "Q3: One technique that Santa had us simulate deals with 'system information discovery'. What is the full name of the registry key that is queried to determine the MachineGuid? {Answer}", "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Cryptography");
 
 
 
@@ -143,7 +143,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 ""2020-11-30T17:44:15Z"",""2020-11-30T17:44:15"",""T1105"",""11"",""OSTAP Worming Activity"",""win-dc-748"",""attackrange\administrator"",""2ca61766-b456-4fcf-a35a-1233685e1cad""
 
               
-            ".LogNote(_logger, "Q4: According to events recorded by the Splunk Attack Range, when was the first OSTAP related atomic test executed? (Please provide the alphanumeric UTC timestamp.) {Answer}", "2020-11-30T17:44:15Z");
+            ".Log(_logger, "Q4: According to events recorded by the Splunk Attack Range, when was the first OSTAP related atomic test executed? (Please provide the alphanumeric UTC timestamp.) {Answer}", "2020-11-30T17:44:15Z");
 
 
             @"
@@ -188,7 +188,7 @@ namespace Janda.CTF.SANS.HolidayHack
 
                 index=T1123* ProcessId=* ""Microsoft-Windows-Sysmon"" EventCode=1 powershell.exe -Command WindowsAudioDevice-Powershell-Cmdlet | sort +UtcTime
 
-            ".LogNote(_logger, "Q5: One Atomic Red Team test executed by the Attack Range makes use of an open source package authored by frgnca on GitHub. According to Sysmon (Event Code 1) events in Splunk, what was the ProcessId associated with the first use of this component? {Answer}", "3648");
+            ".Log(_logger, "Q5: One Atomic Red Team test executed by the Attack Range makes use of an open source package authored by frgnca on GitHub. According to Sysmon (Event Code 1) events in Splunk, what was the ProcessId associated with the first use of this component? {Answer}", "3648");
 
 
             @"
@@ -202,7 +202,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 it was not this one... so went to find all bat files in atomice-red-team...
                 https://github.com/redcanaryco/atomic-red-team/blob/8eb52117b748d378325f7719554a896e37bccec7/atomics/T1074.001/src/Discovery.bat
                 
-            ".LogNote(_logger, "Q6: Alice ran a simulation of an attacker abusing Windows registry run keys. This technique leveraged a multi-line batch file that was also used by a few other techniques. What is the final command of this multi-line batch file used as part of this simulation? {Answer}", "quser");
+            ".Log(_logger, "Q6: Alice ran a simulation of an attacker abusing Windows registry run keys. This technique leveraged a multi-line batch file that was also used by a few other techniques. What is the final command of this multi-line batch file used as part of this simulation? {Answer}", "quser");
       
 
             @"
@@ -232,7 +232,7 @@ namespace Janda.CTF.SANS.HolidayHack
 
                 index=* sourcetype=bro:x509* win-dc | stats dc(certificate.serial) by certificate.serial
 
-            ".LogNote(_logger, "Q7: According to x509 certificate events captured by Zeek (formerly Bro), what is the serial number of the TLS certificate assigned to the Windows domain controller in the attack range? {answer}", "55FCEEBB21270D9249E86F4B9DC7AA60");
+            ".Log(_logger, "Q7: According to x509 certificate events captured by Zeek (formerly Bro), what is the serial number of the TLS certificate assigned to the Windows domain controller in the attack range? {answer}", "55FCEEBB21270D9249E86F4B9DC7AA60");
 
 
             @"
@@ -249,7 +249,7 @@ namespace Janda.CTF.SANS.HolidayHack
 
                 https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true)RC4(%7B'option':'UTF8','string':'Stay%20Frosty'%7D,'Latin1','Latin1')&input=N0ZYalAxbHlmS2J5REsvTUNoeWYzNmg3
 
-            ".LogNote(_logger);
+            ".Log(_logger);
         }
     }
 }

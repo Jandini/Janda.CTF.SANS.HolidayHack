@@ -19,7 +19,7 @@ namespace Janda.CTF.SANS.HolidayHack
             var files = Directory.GetFiles("Challenges", "Level-*.js", SearchOption.AllDirectories);
 
             foreach (var file in files)
-                File.ReadAllText(file).LogNote(_logger, file);
+                File.ReadAllText(file).Log(_logger, file);
         }
     }
 }

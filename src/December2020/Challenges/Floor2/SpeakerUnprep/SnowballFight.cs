@@ -24,7 +24,7 @@ namespace Janda.CTF.SANS.HolidayHack
             for (int i = 0; i < 10; i++)
                 numbers.Add(random.Next() % 10);
 
-            string.Join(",", numbers).LogNote(_logger);
+            string.Join(",", numbers).Log(_logger);
 
 
             @"
@@ -37,7 +37,7 @@ namespace Janda.CTF.SANS.HolidayHack
                   1,5  2,5  3,5  4,5  5,5
                             3,6  4,6  5,6
 
-            ".LogNote(_logger, "Player (seed) = 0... if i could only relate the random value to the position... less likely...");
+            ".Log(_logger, "Player (seed) = 0... if i could only relate the random value to the position... less likely...");
 
 
             var comment =
@@ -671,7 +671,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 724601804 - Not random enough
                 <Redacted!> - Perfect!
               -->
-            ".LogNote(_logger, "Found in page source when run with impossible difficulty level.");
+            ".Log(_logger, "Found in page source when run with impossible difficulty level.");
 
 
 
@@ -680,7 +680,7 @@ namespace Janda.CTF.SANS.HolidayHack
             foreach (var match in regex.Matches(comment))
                 seeds.Add(match.ToString());
 
-            ("seeds = [" + string.Join(",", seeds) + "]").LogNote(_logger, "{0} random numbers. Use them to clone MT seed table and get the next `Player Name` number. ", seeds.Count);
+            ("seeds = [" + string.Join(",", seeds) + "]").Log(_logger, "{0} random numbers. Use them to clone MT seed table and get the next `Player Name` number. ", seeds.Count);
 
 
         }
