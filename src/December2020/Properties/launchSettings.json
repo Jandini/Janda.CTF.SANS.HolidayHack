@@ -2,7 +2,7 @@
   "profiles": {
     "Add...": {
       "commandName": "Project",
-      "commandLineArgs": "add --root WrappingRoom --name BrokenTagGenerator --resource"
+      "commandLineArgs": "add --root NetwarsRoom --name ARPShenanigans"
     },
     "Play...": {
       "commandName": "Project",
@@ -99,6 +99,10 @@
     "Objective 11A: Blockchain Investigation": {
       "commandName": "Project",
       "commandLineArgs": "--name BlockchainInvestigationPart1"
+    },
+    "ARPShenanigans": {
+      "commandName": "Project",
+      "commandLineArgs": "--name ARPShenanigans"
     }
   }
 }
