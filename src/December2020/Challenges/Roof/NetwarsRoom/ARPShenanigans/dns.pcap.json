@@ -1,0 +1,45 @@
+// tshark -T ek -j -P -V -x -r dns.pcap
+[
+  {
+    "index": {
+      "_index": "packets-2005-03-30",
+      "_type": "doc"
+    }
+  },
+  {
+    "timestamp": "1112172558685",
+    "layers": {
+      "frame_raw": "00c09f32418c00e018b10cad08004500003c0000400040116543c0a8aa08c0a8aa14801b00350028af6175c00100000100000000000003777777066e6574627364036f72670000010001",
+      "frame": { "filtered": "frame" },
+      "eth_raw": "00c09f32418c00e018b10cad0800",
+      "eth": { "filtered": "eth" },
+      "ip_raw": "4500003c0000400040116543c0a8aa08c0a8aa14",
+      "ip": { "filtered": "ip" },
+      "udp_raw": "801b00350028af61",
+      "udp": { "filtered": "udp" },
+      "dns_raw": "75c00100000100000000000003777777066e6574627364036f72670000010001",
+      "dns": { "filtered": "dns" }
+    }
+  },
+  {
+    "index": {
+      "_index": "packets-2005-03-30",
+      "_type": "doc"
+    }
+  },
+  {
+    "timestamp": "1112172558734",
+    "layers": {
+      "frame_raw": "00e018b10cad00c09f32418c08004500004ccff9000080119539c0a8aa14c0a8aa080035801b0038a31775c08180000100010000000003777777066e6574627364036f72670000010001c00c00010001000140ef0004cc98be0c",
+      "frame": { "filtered": "frame" },
+      "eth_raw": "00e018b10cad00c09f32418c0800",
+      "eth": { "filtered": "eth" },
+      "ip_raw": "4500004ccff9000080119539c0a8aa14c0a8aa08",
+      "ip": { "filtered": "ip" },
+      "udp_raw": "0035801b0038a317",
+      "udp": { "filtered": "udp" },
+      "dns_raw": "75c08180000100010000000003777777066e6574627364036f72670000010001c00c00010001000140ef0004cc98be0c",
+      "dns": { "filtered": "dns" }
+    }
+  }
+]
