@@ -2,7 +2,7 @@
   "profiles": {
     "Add...": {
       "commandName": "Project",
-      "commandLineArgs": "add --root NetwarsRoom --class ARPShenanigans"
+      "commandLineArgs": "add --root Santavator --name OperateTheSantavator"
     },
     "Play...": {
       "commandName": "Project",
@@ -78,7 +78,7 @@
     },
     "Objective 4: Operate the Santavator": {
       "commandName": "Project",
-      "commandLineArgs": "--name DefeatFingerprintSensor"
+      "commandLineArgs": "--name OperateTheSantavator"
     },
     "Objective 5: Open HID Lock": {
       "commandName": "Project",
@@ -100,7 +100,11 @@
       "commandName": "Project",
       "commandLineArgs": "--name ARPShenanigans"
     },
-    "Objective 11A: Blockchain Investigation": {
+    "Objective 10: Defeat Fingerprint Sensor": {
+      "commandName": "Project",
+      "commandLineArgs": "--name DefeatFingerprintSensor"
+    },
+    "Objective 11a: Blockchain Investigation": {
       "commandName": "Project",
       "commandLineArgs": "--name BlockchainInvestigationPart1"
     }
