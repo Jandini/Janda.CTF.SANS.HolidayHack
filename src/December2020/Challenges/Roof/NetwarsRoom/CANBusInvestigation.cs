@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 namespace Janda.CTF.SANS.HolidayHack
 {
 
-    [Challenge(Name ="Terminal: CAN-Bus Investigation", Flag = "None")]
+    [Challenge(Type = "Terminal", Name ="CAN-Bus Investigation", Flag = "N/A")]
     public class CANBusInvestigation : IChallenge
     {
         private readonly ILogger<CANBusInvestigation> _logger;

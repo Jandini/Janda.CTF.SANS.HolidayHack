@@ -1,30 +1,12 @@
-﻿using System;
-using System.Runtime.InteropServices;
-
-namespace Janda.CTF.SANS.HolidayHack
+﻿namespace Janda.CTF.SANS.HolidayHack
 {
     class Program 
     {
-        [DllImport("kernel32.dll", ExactSpelling = true)]
-        private static extern IntPtr GetConsoleWindow();
-        private static readonly IntPtr ThisConsole = GetConsoleWindow();
-        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
-        private const int MAXIMIZE = 3;
-
-        // MaximizeConsole = true
-        [CTF(Name = "SANS Holiday Hack, December 2020")]
-        static void Main(string[] args)
-        {
-            // This can be added as ChallengeConsoleAttribute(FullScreen = true)
-            Console.SetWindowSize(Console.LargestWindowWidth, Console.LargestWindowHeight);
-            ShowWindow(ThisConsole, MAXIMIZE);
-
-            CTF.Run(args, (services) => services
-                .AddS3Scanner()
-                .AddWebBrowserService()
-                .AddWebPageService()
-                .AddDictionary()); 
-        }
+        [CTF(Name = "SANS Holiday Hack, December 2020", MaximizeConsole = true)]
+        static void Main(string[] args) => CTF.Run(args, (services) => services
+            .AddS3Scanner()
+            .AddWebBrowserService()
+            .AddWebPageService()
+            .AddDictionaryServices()); 
     }
 }

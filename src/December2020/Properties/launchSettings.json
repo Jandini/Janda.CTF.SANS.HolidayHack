@@ -64,7 +64,7 @@
       "commandName": "Project",
       "commandLineArgs": "--name SpeakerLightsOn"
     },
-    "Objective 1: UncoverChristmasList": {
+    "Objective 1: Uncover Christmas List": {
       "commandName": "Project",
       "commandLineArgs": "--name UncoverChristmasList"
     },

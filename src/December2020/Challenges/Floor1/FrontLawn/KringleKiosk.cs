@@ -2,6 +2,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Janda.CTF.SANS.HolidayHack
 {
+    [Challenge(Type = "Terminal", Name = "Kringle Kiosk", Flag = "N/A")]
     public class KringleKiosk : IChallenge
     {
         private readonly ILogger<KringleKiosk> _logger;
@@ -245,7 +246,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 shinny@9edb28c788e6:/home/elf$ ./runtoanswer 
 
                 Sorry, that answer is incorrect. Please try again!
-            ".Blog(_logger, "Wonder around...");
+            ".Blog(_logger, "Wonder around... and wonder what that is ...");
 
 
             Menu();

@@ -2,6 +2,7 @@
 
 namespace Janda.CTF.SANS.HolidayHack
 {
+    [Challenge(Type = "Terminal", Name = "Redis Bug Hunt")]
     public class RedisBugHunt : IChallenge
     {
         private readonly ILogger<RedisBugHunt> _logger;

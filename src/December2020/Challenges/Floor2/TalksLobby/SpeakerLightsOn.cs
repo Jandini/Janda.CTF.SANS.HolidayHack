@@ -2,6 +2,8 @@ using Microsoft.Extensions.Logging;
 
 namespace Janda.CTF.SANS.HolidayHack
 {
+
+    [Challenge(Type = "Terminal", Name = "Speaker Lights On", Flag = "Computer-TurnLightsOn")]
     public class SpeakerLightsOn : IChallenge
     {
         private readonly ILogger<SpeakerLightsOn> _logger;

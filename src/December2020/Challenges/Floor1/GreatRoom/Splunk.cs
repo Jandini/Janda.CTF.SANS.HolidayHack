@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 namespace Janda.CTF.SANS.HolidayHack
 {
 
-    [Challenge (Flag = "The Lollipop Guild")]
+    [Challenge (Type = "Objective", Number = 6, Name = "Splunk Challenge", Points = 3, Flag = "The Lollipop Guild")]
     public class Splunk : IChallenge
     {
         private readonly ILogger<Splunk> _logger;
@@ -13,6 +13,15 @@ namespace Janda.CTF.SANS.HolidayHack
         {
             _logger = logger;
             _webBrowser = webBrowser;
+        }
+        public void About()
+        {
+
+            @"
+                Access the Splunk terminal in the Great Room. 
+                What is the name of the adversary group that Santa feared would attack KringleCon?
+
+            ".Blog(_logger, "About");
         }
 
         public void Run()

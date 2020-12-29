@@ -1,9 +1,8 @@
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 
 namespace Janda.CTF.SANS.HolidayHack
 {
+    [Challenge(Type = "Objective", Number = 5, Name = "Open HID Lock")]
     public class OpenHIDLock : IChallenge
     {
         private readonly ILogger<OpenHIDLock> _logger;

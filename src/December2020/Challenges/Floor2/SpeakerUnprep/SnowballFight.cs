@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace Janda.CTF.SANS.HolidayHack
 {
+    [Challenge(Type = "Game", Name = "Snowball Fight")]
     public class SnowballFight : IChallenge
     {
         private readonly ILogger<SnowballFight> _logger;

@@ -3,8 +3,7 @@
 namespace Janda.CTF.SANS.HolidayHack
 {
 
-    //[Challenge(Flag = "Op3nTheD00r", Name = "Speaker Door Open")]
-    [Challenge(Flag = "Op3nTheD00r")]
+    [Challenge(Type = "Terminal", Name = "Speaker Door Open", Flag = "Op3nTheD00r")]
     public class SpeakerDoorOpen : IChallenge
     {
         private readonly ILogger<SpeakerDoorOpen> _logger;

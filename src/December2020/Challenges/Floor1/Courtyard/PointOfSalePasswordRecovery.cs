@@ -2,7 +2,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Janda.CTF.SANS.HolidayHack
 {
-    [Challenge(Flag = "santapass")]
+    [Challenge(Type = "Objective", Number = 3, Name = "Point-of-Sale Password Recovery", Points = 1, Flag = "santapass")]
     public class PointOfSalePasswordRecovery : IChallenge
     {
         private readonly ILogger<PointOfSalePasswordRecovery> _logger;
@@ -33,7 +33,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 // TODO: Maybe get these from an API?
 
             ".Blog(_logger, "Solution 1: {technique}", "Use asar from npm and extract app.asar");
-
+            
 
             @"
 

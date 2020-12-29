@@ -4,7 +4,7 @@ using System.IO;
 namespace Janda.CTF.SANS.HolidayHack
 {
 
-    [Challenge(Name = "The Elf C0de", Flag = "")]
+    [Challenge(Type = "Game", Name = "The Elf C0de")]
     public class TheElfCode : IChallenge
     {
         private readonly ILogger<TheElfCode> _logger;

@@ -5,7 +5,7 @@ using System.Text;
 namespace Janda.CTF.SANS.HolidayHack
 {
 
-    [Challenge(Name = "Objective 8: Broken Tag Generator", Points = 4, Flag = "JackFrostWasHere")]
+    [Challenge(Type = "Objective", Number = 8, Name = "Broken Tag Generator", Points = 4, Flag = "JackFrostWasHere")]
     public class BrokenTagGenerator : IChallenge
     {
         private readonly ILogger<BrokenTagGenerator> _logger;

@@ -2,6 +2,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Janda.CTF.SANS.HolidayHack
 {
+    [Challenge(Type = "Terminal", Name = "Unescape Tmux", Flag = "N/A")]
     public class UnescapeTmux : IChallenge
     {
         private readonly ILogger<UnescapeTmux> _logger;

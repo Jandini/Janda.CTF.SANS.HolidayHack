@@ -2,6 +2,8 @@
 
 namespace Janda.CTF.SANS.HolidayHack
 {
+
+    [Challenge(Type = "Terminal", Name = "Linux Premier")]
     public class LinuxPremier : IChallenge
     {
         private readonly ILogger<LinuxPremier> _logger;

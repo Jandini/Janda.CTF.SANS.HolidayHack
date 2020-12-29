@@ -2,7 +2,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Janda.CTF.SANS.HolidayHack
 {  
-    [Challenge(Name = "Objective 7: Solve the Sleigh's CAN-D-BUS Problem", Flag = "None")]
+    [Challenge(Type = "Objective", Number = 7, Name = "Solve the Sleigh's CAN-D-BUS Problem", Points = 3, Flag = "None")]
     public class SleighCANDBUS : IChallenge
     {
         private readonly ILogger<SleighCANDBUS> _logger;

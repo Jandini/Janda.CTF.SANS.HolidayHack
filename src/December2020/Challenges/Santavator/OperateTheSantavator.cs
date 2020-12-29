@@ -2,6 +2,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Janda.CTF.SANS.HolidayHack
 {
+    [Challenge(Type = "Objective", Number = 4, Name = "Operate the Santavator", Points = 2)]
     public class OperateTheSantavator : IChallenge
     {
         private readonly ILogger<OperateTheSantavator> _logger;

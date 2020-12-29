@@ -2,6 +2,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Janda.CTF.SANS.HolidayHack
 {
+    [Challenge(Type = "Game", Name = "33.6Kbps")]
     public class DialUp336Kbps : IChallenge
     {
         private readonly ILogger<DialUp336Kbps> _logger;

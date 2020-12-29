@@ -2,6 +2,8 @@ using Microsoft.Extensions.Logging;
 
 namespace Janda.CTF.SANS.HolidayHack
 {
+
+    [Challenge(Type = "Objective", Number = 10, Name = "Defeat Fingerprint Sensor", Points = 3)]
     public class DefeatFingerprintSensor : IChallenge
     {
         private readonly ILogger<DefeatFingerprintSensor> _logger;

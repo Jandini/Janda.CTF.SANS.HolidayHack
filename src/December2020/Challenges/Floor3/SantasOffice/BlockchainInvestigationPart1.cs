@@ -2,7 +2,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Janda.CTF.SANS.HolidayHack
 {
-    [Challenge(Name = "Objective 11a: Naughty/Nice List with Blockchain Investigation Part 1", Points = 5)]
+    [Challenge(Type = "Objective", Number = 11, Name = "Naughty/Nice List with Blockchain Investigation Part 1", Points = 5)]
     public class BlockchainInvestigationPart1 : IChallenge
     {
         private readonly ILogger<BlockchainInvestigationPart1> _logger;

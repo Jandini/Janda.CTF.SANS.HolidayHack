@@ -3,7 +3,7 @@
 namespace Janda.CTF.SANS.HolidayHack
 {
 
-    [Challenge(Name = "Objective 9: ARP Shenanigans", Points = 4)]
+    [Challenge(Type = "Objective", Number = 9, Name = "ARP Shenanigans", Points = 4)]
     public class ARPShenanigans : IChallenge
     {
         private readonly ILogger<ARPShenanigans> _logger;
