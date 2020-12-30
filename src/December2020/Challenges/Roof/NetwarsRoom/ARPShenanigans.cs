@@ -449,24 +449,24 @@ namespace Janda.CTF.SANS.HolidayHack
 
 
             @"
-                 2338 2394.379999382 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                         │
-                 2339 2395.420053549 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                         │
-                 2340 2396.251885630     10.6.0.7 → 169.254.169.254 DNS 63 Standard query 0xeb7a A MAC                                                      │
-                 2341 2396.319089628 02:42:0a:06:00:07 → 02:42:94:00:d2:d6 ARP 42 Who has 10.6.0.1? Tell 10.6.0.7                                           │
-                 2342 2396.319146187 02:42:94:00:d2:d6 → 02:42:0a:06:00:07 ARP 42 10.6.0.1 is at 02:42:94:00:d2:d6                                          │
-                 2343 2396.460168832 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                         │
-                 2344 2397.508022900 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                         │
+                 2338 2394.379999382 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                   
+                 2339 2395.420053549 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                   
+                 2340 2396.251885630     10.6.0.7 → 169.254.169.254 DNS 63 Standard query 0xeb7a A MAC                                                
+                 2341 2396.319089628 02:42:0a:06:00:07 → 02:42:94:00:d2:d6 ARP 42 Who has 10.6.0.1? Tell 10.6.0.7                                     
+                 2342 2396.319146187 02:42:94:00:d2:d6 → 02:42:0a:06:00:07 ARP 42 10.6.0.1 is at 02:42:94:00:d2:d6                                    
+                 2343 2396.460168832 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                   
+                 2344 2397.508022900 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                   
                  2345 2398.555955377 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35   
 
-                 2373 2421.277998227     10.6.0.7 → 169.254.169.254 DNS 89 Standard query 0xf15a A IP.c.holidayhack2020.internal                            │guest@d4a322bde6e4:~$ 
-                 2374 2421.636063916 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                         │
-                 2375 2422.680070877 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                         │
-                 2376 2423.724111830 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                         │
-                 2377 2424.768039488 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                         │
-                 2378 2425.807966415 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                         │
-                 2379 2426.283261025     10.6.0.7 → 169.254.169.254 DNS 89 Standard query 0xf15a A IP.c.holidayhack2020.internal                            │
-                 2380 2426.843980274 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                         │
-                 2381 2427.887958485 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                         │
+                 2373 2421.277998227     10.6.0.7 → 169.254.169.254 DNS 89 Standard query 0xf15a A IP.c.holidayhack2020.internal                      
+                 2374 2421.636063916 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                   
+                 2375 2422.680070877 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                   
+                 2376 2423.724111830 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                   
+                 2377 2424.768039488 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                   
+                 2378 2425.807966415 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                   
+                 2379 2426.283261025     10.6.0.7 → 169.254.169.254 DNS 89 Standard query 0xf15a A IP.c.holidayhack2020.internal                      
+                 2380 2426.843980274 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                   
+                 2381 2427.887958485 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                   
                  2382 2428.935949396 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35     
 
             ".Blog(_logger, "When trying send a new packet (not completed yet) I can see DNS packages...");
@@ -479,6 +479,16 @@ namespace Janda.CTF.SANS.HolidayHack
 
             ".Blog(_logger, "Using {code} I have discovered something called Gratuitous ARP", "arp_resp_02.py");
 
+
+            @"
+                 4013 3987.852213869 00:00:00:00:00:00 → 4c:24:57:ab:ed:84 ARP 42 Gratuitous ARP for 10.6.6.35 (Reply)             
+                 4014 3988.868052715 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                
+                 4015 3988.892174494 00:00:00:00:00:00 → 4c:24:57:ab:ed:84 ARP 42 Gratuitous ARP for 10.6.6.35 (Reply)             
+                 4016 3989.908116466 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                
+                 4017 3989.928012661 00:00:00:00:00:00 → 4c:24:57:ab:ed:84 ARP 42 Gratuitous ARP for 10.6.6.35 (Reply)             
+                 4018 3990.944052549 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35        
+
+            ".Blog(_logger, "Using {code} we still get Gratuitous ARP but no duplicate", "arp_resp_03.py");
         }
     }
 }
