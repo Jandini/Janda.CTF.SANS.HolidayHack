@@ -376,6 +376,42 @@ namespace Janda.CTF.SANS.HolidayHack
             // https://www.thepythoncode.com/article/building-arp-spoofer-using-scapy#:~:text=Building%20and%20creating%20an%20ARP%20Spoof%20script%20in,is%20a%20method%20of%20gaining%20a%20man-in-the-middle%20situation.
 
 
+            @"              
+                inet 10.6.0.3  netmask 255.255.0.0  broadcast 10.6.255.255
+                Jack Frost has hijacked the host at 10.6.6.35 with some custom malware.                
+                Request who-has 10.6.6.53 tell 10.6.6.35, length 28
+                      
+            ".Blog(_logger, @"What do we know now...
+                my ip is {myip} with mac {myhw}
+                hijacked host is at {hijackedip}
+                found ARP who-has {hijackedip} packets flying over the network
+
+                For:
+                    Request who-has 10.6.6.53 tell 10.6.6.35, length 28
+                We must reply: 
+                    10.6.6.35 is-at 4c:24:57:ab:ed:84
+
+                    Sender IP addres:   10.6.6.35
+                    Sender MAC address: 4c:24:57:ab:ed:84
+
+
+            ",                 
+            "10.6.0.3", "02:42:0a:06:00:03", "10.6.6.35", "10.6.6.35");
+
+
+
+            @"
+                guest@3fcc52341816:~$ python3
+                Python 3.8.5 (default, Jul 28 2020, 12:59:40) 
+                [GCC 9.3.0] on linux
+                Type ""help"", ""copyright"", ""credits"" or ""license"" for more information.
+                >>> from scapy.all import Ether, ARP, srp, send
+                >>> srp(Ether(dst = 'ff:ff:ff:ff:ff:ff') / ARP(pdst = ""10.6.6.35""), timeout = 1, verbose = 0)[0][0][1].src
+                '4c:24:57:ab:ed:84'
+
+            ".Blog(_logger, "Get hijacked host MAC address");
+
+            
         }
     }
 }

