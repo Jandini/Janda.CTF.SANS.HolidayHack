@@ -574,6 +574,134 @@ namespace Janda.CTF.SANS.HolidayHack
 
             ".Blog(_logger, "Final ARP script is {arpscript}", "arp_resp_04.py");
 
+
+
+            @"
+                https://jasonmurray.org/posts/scapydns/
+                dport=packet[UDP].sport,
+                sport=packet[UDP].dport
+            ".Blog(_logger, "Working on DNS now...");
+
+
+            @"
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=9719
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=24411 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=24411
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=44865 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=44865
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=21870 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=21870
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=3814 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=3814
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=47329 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=47329
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=38174 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=38174
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=8476 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=8476
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=27723 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=27723
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=42743 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=42743
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=40064 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=40064
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=7904 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=7904
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=6510 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=6510
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=40911 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=40911
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=19645 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=19645
+                                                                                                                                                            │
+                ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+                  188 7.649785362    10.6.6.35 → 10.6.0.4     TLSv1.3 286 Application Data, Application Data, Application Data
+                  189 7.650477486     10.6.0.4 → 10.6.6.35    TCP 66 50768 → 64352 [ACK] Seq=810 Ack=2245 Win=64128 Len=0 TSval=3020227848 TSecr=1611965490
+                  190 7.650584627     10.6.0.4 → 10.6.6.35    TCP 66 50768 → 64352 [FIN, ACK] Seq=810 Ack=2245 Win=64128 Len=0 TSval=3020227848 TSecr=1611965490
+                  191 7.650608495    10.6.6.35 → 10.6.0.4     TCP 66 64352 → 50768 [ACK] Seq=2245 Ack=811 Win=64640 Len=0 TSval=1611965494 TSecr=3020227848
+                  192 7.656692208 02:42:0a:06:00:04 → 4c:24:57:ab:ed:84 ARP 42 10.6.6.53 is at 02:42:0a:06:00:04
+                  193 7.673073041    10.6.6.35 → 10.6.6.53    DNS 74 Standard query 0x0000 A ftp.osuosl.org
+                  194 7.697342766    10.6.6.53 → 10.6.6.35    DNS 104 Standard query response 0x0000 A ftp.osuosl.org A 10.6.0.4
+                  195 7.699907289     10.6.0.4 → 10.6.6.35    TCP 74 50772 → 64352 [SYN] Seq=0 Win=64240 Len=0 MSS=1460 SACK_PERM=1 TSval=3020227897 TSecr=0 WS=128
+                  196 8.672807313 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+                  197 8.700693969 02:42:0a:06:00:04 → 4c:24:57:ab:ed:84 ARP 42 10.6.6.53 is at 02:42:0a:06:00:04
+                  198 8.704002672     10.6.0.4 → 10.6.6.35    TCP 74 [TCP Retransmission] 50772 → 64352 [SYN] Seq=0 Win=64240 Len=0 MSS=1460 SACK_PERM=1 TSval=3020228901 TSecr=0 WS=128
+                  199 8.704081393    10.6.6.35 → 10.6.0.4     TCP 74 64352 → 50772 [SYN, ACK] Seq=0 Ack=1 Win=65160 Len=0 MSS=1460 SACK_PERM=1 TSval=1611966547 TSecr=3020228901 WS=128
+                  200 8.704103085     10.6.0.4 → 10.6.6.35    TCP 66 50772 → 64352 [ACK] Seq=1 Ack=1 Win=64256 Len=0 TSval=3020228901 TSecr=1611966547
+                  201 8.704890201     10.6.0.4 → 10.6.6.35    TLSv1 583 Client Hello
+                  202 8.704941104    10.6.6.35 → 10.6.0.4     TCP 66 64352 → 50772 [ACK] Seq=1 Ack=518 Win=64768 Len=0 TSval=1611966548 TSecr=3020228902
+                  203 8.706094444    10.6.6.35 → 10.6.0.4     TLSv1.3 1579 Server Hello, Change Cipher Spec, Application Data, Application Data, Application Data, Application Data
+                  204 8.706113019     10.6.0.4 → 10.6.6.35    TCP 66 50772 → 64352 [ACK] Seq=518 Ack=1514 Win=64128 Len=0 TSval=3020228903 TSecr=1611966549
+                  205 8.706572890     10.6.0.4 → 10.6.6.35    TLSv1.3 146 Change Cipher Spec, Application Data
+                  206 8.706787919    10.6.6.35 → 10.6.0.4     TLSv1.3 321 Application Data
+                  207 8.706889103     10.6.0.4 → 10.6.6.35    TLSv1.3 278 Application Data
+                  208 8.706912105    10.6.6.35 → 10.6.0.4     TLSv1.3 321 Application Data
+                  209 8.709461212    10.6.6.35 → 10.6.0.4     TCP 74 43254 → 80 [SYN] Seq=0 Win=64240 Len=0 MSS=1460 SACK_PERM=1 TSval=1611966553 TSecr=0 WS=128
+                  210 8.709484337     10.6.0.4 → 10.6.6.35    TCP 54 80 → 43254 [RST, ACK] Seq=1 Ack=1 Win=0 Len=0
+                  211 8.710391445    10.6.6.35 → 10.6.0.4     TLSv1.3 286 Application Data, Application Data, Application Data
+                  212 8.711089848     10.6.0.4 → 10.6.6.35    TCP 66 50772 → 64352 [ACK] Seq=810 Ack=2245 Win=64128 Len=0 TSval=3020228908 TSecr=1611966550
+                  213 8.711197824     10.6.0.4 → 10.6.6.35    TCP 66 50772 → 64352 [FIN, ACK] Seq=810 Ack=2245 Win=64128 Len=0 TSval=3020228908 TSecr=1611966550
+
+            ".Blog(_logger, "We can see some new packets flying our way when running {tshark}... :) ", "tshark -n");
+
+            @"
+                => op =is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                  │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=13920
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=38582 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=38582
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=32989 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=32989
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=34817 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=34817
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=31409 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=31409
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=59144 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=59144
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=61144 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=61144
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=59206 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=59206
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=54464 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=54464
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=62160 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=62160
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=36632 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=36632
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=13897 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=13897
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=49061 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=49061
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=8866 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=8866
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=34580 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=34580
+                ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+                guest@10bd7aa40918:~/debs$ python3 -m http.server 80
+
+                10.6.6.35 - - [30/Dec/2020 19:43:31] ""GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"" 404 -
+                10.6.6.35 - - [30/Dec/2020 19:43:32] code 404, message File not found
+                10.6.6.35 - - [30/Dec/2020 19:43:32] ""GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"" 404 -
+                10.6.6.35 - - [30/Dec/2020 19:43:33] code 404, message File not found
+                10.6.6.35 - - [30/Dec/2020 19:43:33] ""GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"" 404 -
+                10.6.6.35 - - [30/Dec/2020 19:43:35] code 404, message File not found
+                10.6.6.35 - - [30/Dec/2020 19:43:35] ""GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"" 404 -
+                10.6.6.35 - - [30/Dec/2020 19:43:36] code 404, message File not found
+                10.6.6.35 - - [30/Dec/2020 19:43:36] ""GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"" 404 -
+                10.6.6.35 - - [30/Dec/2020 19:43:37] code 404, message File not found
+                10.6.6.35 - - [30/Dec/2020 19:43:37] ""GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"" 404 -
+                10.6.6.35 - - [30/Dec/2020 19:43:38] code 404, message File not found
+                10.6.6.35 - - [30/Dec/2020 19:43:38] ""GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"" 404 -
+                10.6.6.35 - - [30/Dec/2020 19:43:39] code 404, message File not found
+                10.6.6.35 - - [30/Dec/2020 19:43:39] ""GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"" 404 -
+                10.6.6.35 - - [30/Dec/2020 19:43:40] code 404, message File not found
+                10.6.6.35 - - [30/Dec/2020 19:43:40] ""GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"" 404 -
+                10.6.6.35 - - [30/Dec/2020 19:43:41] code 404, message File not found
+                10.6.6.35 - - [30/Dec/2020 19:43:41] ""GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"" 404 -
+                10.6.6.35 - - [30/Dec/2020 19:43:42] code 404, message File not found
+                10.6.6.35 - - [30/Dec/2020 19:43:42] ""GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"" 404 -
+                10.6.6.35 - - [30/Dec/2020 19:43:43] code 404, message File not found
+                10.6.6.35 - - [30/Dec/2020 19:43:43] ""GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"" 404 -
+            ".Blog(_logger, "When running {server} we can see that mr JF is trying to get deb file...  ", "python3 -m http.server 80");
+
         }
     }
 }
