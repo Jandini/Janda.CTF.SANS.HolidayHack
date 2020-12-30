@@ -56,6 +56,9 @@
     <None Update="Challenges\Floor1\DiningRoom\TheElfCode\Level-8.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Challenges\Roof\NetwarsRoom\ARPShenanigans\a.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Challenges\Roof\NetwarsRoom\ARPShenanigans\arp_resp_04.py">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
