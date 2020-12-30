@@ -702,6 +702,57 @@ namespace Janda.CTF.SANS.HolidayHack
                 10.6.6.35 - - [30/Dec/2020 19:43:43] ""GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"" 404 -
             ".Blog(_logger, "When running {server} we can see that mr JF is trying to get deb file...  ", "python3 -m http.server 80");
 
+
+            @"
+                https://www.guardicore.com/2019/01/a-vulnerability-in-debians-apt-allows-for-easy-lateral-movement-in-data-centers
+
+                https://unix.stackexchange.com/questions/138188/easily-unpack-deb-edit-postinst-and-repack-deb#:~:text=The%20primary%20command%20to%20manipulate%20deb%20packages%20is,tmp%20%23%20edit%20DEBIAN%2Fpostinst%20dpkg-deb%20-b%20tmp%20fixed.deb
+                mkdir tmp
+                dpkg-deb -R original.deb tmp
+                # edit DEBIAN/postinst
+                dpkg-deb -b tmp fixed.deb
+
+
+                guest@10bd7aa40918:~/debs$ ls -hs
+                total 2.5M
+                 96K gedit-common_3.36.1-1_all.deb                      264K nano_4.8-1ubuntu1_amd64.deb                    1.6M nmap_7.80+dfsg1-2build1_amd64.deb  4.0K temp
+                 16K golang-github-huandu-xstrings-dev_1.2.1-1_all.deb   64K netcat-traditional_1.10-41.1ubuntu1_amd64.deb  316K socat_1.7.3.3-2_amd64.deb          168K unzip_6.0-25ubuntu1_amd64.deb
+                guest@10bd7aa40918:~/debs$ dpkg-deb -R golang-github-huandu-xstrings-dev_1.2.1-1_all.deb temp/
+                guest@10bd7aa40918:~/debs$ ls temp/
+                DEBIAN  usr
+                guest@10bd7aa40918:~/debs$ mkdir 1
+                guest@10bd7aa40918:~/debs$ mkdir 2
+                guest@10bd7aa40918:~/debs$ mkdir 3
+                guest@10bd7aa40918:~/debs$ mkdir 4
+                
+
+                mkdir tmp
+                dpkg-deb -R original.deb tmp
+                # edit DEBIAN/postinst
+                dpkg-deb -b tmp fixed.deb
+
+
+            ".Blog(_logger, "Working with debs ");
+
+
+
+            @"
+                    #!/usr/bin/python3
+                    from http.server import HTTPServer, BaseHTTPRequestHandler
+                    class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
+                        def do_GET(self):
+                            self.send_response(200)
+                            self.end_headers()
+                            self.wfile.write(b'Hello, world!')
+                    httpd = HTTPServer(('', 80), SimpleHTTPRequestHandler)
+                    httpd.serve_forever()
+
+
+                    https://blog.anvileight.com/posts/simple-python-http-server/
+
+
+                    https://stackabuse.com/serving-files-with-pythons-simplehttpserver-module/
+            ".Blog(_logger, "Create simple python HTTP server... ");
         }
     }
 }
