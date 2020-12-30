@@ -472,7 +472,12 @@ namespace Janda.CTF.SANS.HolidayHack
             ".Blog(_logger, "When trying send a new packet (not completed yet) I can see DNS packages...");
 
 
+            @"
+                3388 3397.343838237 00:00:00:00:00:00 → 4c:24:57:ab:ed:84 ARP 42 Gratuitous ARP for 10.6.6.35 (Reply) (duplicate use of 10.6.6.35 detected!)                                                                                                                                           │
+                 
+                https://wiki.wireshark.org/Gratuitous_ARP#:~:text=Gratuitous%20ARPs%20are%20useful%20for%20four%20reasons%3A%201,to%20that%20MAC%20address%20...%20More%20items...%20
 
+            ".Blog(_logger, "Using {code} I have discovered something called Gratuitous ARP", "arp_resp_02.py");
 
         }
     }
