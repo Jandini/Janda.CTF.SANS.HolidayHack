@@ -395,6 +395,14 @@ namespace Janda.CTF.SANS.HolidayHack
                     Sender MAC address: 4c:24:57:ab:ed:84
 
 
+
+                Based on packet comparison (sniffed and the example provided in pcaps) we must reply with: 
+
+                    Ether dst: 02:42:0a:06:00:06 
+                    ARP target ip: 10.10.10.2
+                    ARP sender ip: 10.6.6.53
+
+
             ",                 
             "10.6.0.3", "02:42:0a:06:00:03", "10.6.6.35", "10.6.6.35");
 
@@ -411,7 +419,61 @@ namespace Janda.CTF.SANS.HolidayHack
 
             ".Blog(_logger, "Get hijacked host MAC address");
 
-            
+
+
+            @"
+
+                guest@d4a322bde6e4:~$ tshark -n
+                Capturing on 'eth0'
+                    1 0.000000000 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+                    2 0.000157636 02:42:0a:06:00:06 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.0.6
+                    3 0.088167525 02:42:0a:06:00:06 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.35? Tell 10.6.0.6
+                    4 1.055984658 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+                    5 2.099919201 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+                    6 2.204333394 02:42:0a:06:00:06 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.0.6
+                    7 2.284136670 02:42:0a:06:00:06 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.35? Tell 10.6.0.6
+                    8 3.135988466 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+                    9 4.180013747 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+                   10 4.376467450 02:42:0a:06:00:06 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.0.6
+                   11 4.440169404 02:42:0a:06:00:06 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.35? Tell 10.6.0.6
+                   12 5.235964835 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+                   13 6.295972797 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+                   14 6.508090208 02:42:0a:06:00:06 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.0.6
+                   15 6.604233788 02:42:0a:06:00:06 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.35? Tell 10.6.0.6
+                   16 7.339963840 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+
+                    Who has 10.6.6.35? Tell 10.6.0.6
+                    Who has 10.6.6.53? Tell 10.6.6.35
+
+            ".Blog(_logger, "There are multiple ARP requests which we might have to answer, for example 10.6.6.35");
+
+
+            @"
+                 2338 2394.379999382 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                         │
+                 2339 2395.420053549 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                         │
+                 2340 2396.251885630     10.6.0.7 → 169.254.169.254 DNS 63 Standard query 0xeb7a A MAC                                                      │
+                 2341 2396.319089628 02:42:0a:06:00:07 → 02:42:94:00:d2:d6 ARP 42 Who has 10.6.0.1? Tell 10.6.0.7                                           │
+                 2342 2396.319146187 02:42:94:00:d2:d6 → 02:42:0a:06:00:07 ARP 42 10.6.0.1 is at 02:42:94:00:d2:d6                                          │
+                 2343 2396.460168832 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                         │
+                 2344 2397.508022900 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                         │
+                 2345 2398.555955377 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35   
+
+                 2373 2421.277998227     10.6.0.7 → 169.254.169.254 DNS 89 Standard query 0xf15a A IP.c.holidayhack2020.internal                            │guest@d4a322bde6e4:~$ 
+                 2374 2421.636063916 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                         │
+                 2375 2422.680070877 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                         │
+                 2376 2423.724111830 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                         │
+                 2377 2424.768039488 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                         │
+                 2378 2425.807966415 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                         │
+                 2379 2426.283261025     10.6.0.7 → 169.254.169.254 DNS 89 Standard query 0xf15a A IP.c.holidayhack2020.internal                            │
+                 2380 2426.843980274 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                         │
+                 2381 2427.887958485 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35                                         │
+                 2382 2428.935949396 4c:24:57:ab:ed:84 → ff:ff:ff:ff:ff:ff ARP 42 Who has 10.6.6.53? Tell 10.6.6.35     
+
+            ".Blog(_logger, "When trying send a new packet (not completed yet) I can see DNS packages...");
+
+
+
+
         }
     }
 }
