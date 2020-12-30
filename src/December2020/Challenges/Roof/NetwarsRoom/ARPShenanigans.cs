@@ -270,6 +270,112 @@ namespace Janda.CTF.SANS.HolidayHack
             ".Blog(_logger, "tcpdump -nn");
 
 
+
+
+            @"
+                tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
+                listening on eth0, link-type EN10MB (Ethernet), capture size 262144 bytes
+                22:14:36.566554 ARP, Request who-has 10.6.6.53 tell 10.6.6.35, length 28
+                22:14:37.345679 IP6 fe80::9822:6fff:fe7b:92de > ff02::2: ICMP6, router solicitation, length 16
+                22:14:37.610555 ARP, Request who-has 10.6.6.53 tell 10.6.6.35, length 28
+                22:14:38.642595 ARP, Request who-has 10.6.6.53 tell 10.6.6.35, length 28
+                22:14:39.674605 ARP, Request who-has 10.6.6.53 tell 10.6.6.35, length 28
+                22:14:40.782625 ARP, Request who-has 10.6.6.53 tell 10.6.6.35, length 28
+                22:14:41.826849 ARP, Request who-has 10.6.6.53 tell 10.6.6.35, length 28
+                22:14:42.862631 ARP, Request who-has 10.6.6.53 tell 10.6.6.35, length 28
+                22:14:43.902643 ARP, Request who-has 10.6.6.53 tell 10.6.6.35, length 28
+                22:14:44.938686 ARP, Request who-has 10.6.6.53 tell 10.6.6.35, length 28
+                22:14:45.970638 ARP, Request who-has 10.6.6.53 tell 10.6.6.35, length 28
+                22:14:46.049697 IP6 fe80::9822:6fff:fe7b:92de > ff02::2: ICMP6, router solicitation, length 16
+                22:14:47.002821 ARP, Request who-has 10.6.6.53 tell 10.6.6.35, length 28
+                22:14:48.038662 ARP, Request who-has 10.6.6.53 tell 10.6.6.35, length 28
+                22:14:49.090932 ARP, Request who-has 10.6.6.53 tell 10.6.6.35, length 28
+                22:14:50.126659 ARP, Request who-has 10.6.6.53 tell 10.6.6.35, length 28
+                22:14:51.166754 ARP, Request who-has 10.6.6.53 tell 10.6.6.35, length 28
+                22:14:52.206596 ARP, Request who-has 10.6.6.53 tell 10.6.6.35, length 28
+                22:14:53.238806 ARP, Request who-has 10.6.6.53 tell 10.6.6.35, length 28
+                22:14:54.274839 ARP, Request who-has 10.6.6.53 tell 10.6.6.35, length 28
+
+
+            guest@1dbc829b765d:~$ tshark
+            Capturing on 'eth0'
+                1 0.000000000 fe80::2827:f1ff:fef6:e49d → ff02::2      ICMPv6 70 Router Solicitation from 2a:27:f1:f6:e4:9d
+                2 0.161261685 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+                3 1.209474837 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+                4 2.244852384 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+                5 3.284891781 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+                6 4.324876935 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+                7 5.360963713 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+                8 6.396865986 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+                9 7.423932814 fe80::2827:f1ff:fef6:e49d → ff02::2      ICMPv6 70 Router Solicitation from 2a:27:f1:f6:e4:9d
+               10 7.437029569 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+               11 8.472865340 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+               12 9.504907119 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+               13 10.561525306 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+               14 11.592910912 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+               15 12.636858756 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+               16 13.689205728 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+               17 14.728905098 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+               18 15.772974532 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+               19 16.812953139 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+               20 17.852897605 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+               21 18.884977571 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+               22 19.928908522 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+               23 20.972919679 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+               24 22.008884886 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+               25 22.527940896 fe80::2827:f1ff:fef6:e49d → ff02::2      ICMPv6 70 Router Solicitation from 2a:27:f1:f6:e4:9d
+               26 23.065161088 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+               27 24.112834401 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+               28 25.152877006 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+               29 26.212860899 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+               30 27.252883953 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+               31 28.304987317 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+               32 29.352902817 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+               33 30.396905879 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+               34 31.441033315 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+               35 32.488884888 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+               36 33.532955828 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+               37 34.564894101 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+               38 35.612875309 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+               39 36.661061380 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+               40 37.704864306 4c:24:57:ab:ed:84 → Broadcast    ARP 42 Who has 10.6.6.53? Tell 10.6.6.35
+
+
+            ".Blog(_logger, @"When logged immediatelly run {command}. The ICMP6 does not happen later... 
+                
+                The MAC address {mac} changes everytime accessing the terminal.
+                Router discovery messages
+                To enable router discovery, the IRDP defines two kinds of ICMP messages:[4][5]
+
+                The ICMP Router Solicitation message is sent from a computer host to any routers on the local area network to request that they advertise their presence on the network.
+
+            ", "tcpdump -nni eth0", "2a:27:f1:f6:e4:9d");
+
+
+            @"
+
+                1 0.000000000 4c: 24:57:ab: ed: 84 → Broadcast ARP 42 Who has 10.6.6.53 ? Tell 10.6.6.35
+                2 1.039942918 4c: 24:57:ab: ed: 84 → Broadcast ARP 42 Who has 10.6.6.53 ? Tell 10.6.6.35
+                3 2.091998751 4c: 24:57:ab: ed: 84 → Broadcast ARP 42 Who has 10.6.6.53 ? Tell 10.6.6.35
+                4 3.131935943 4c: 24:57:ab: ed: 84 → Broadcast ARP 42 Who has 10.6.6.53 ? Tell 10.6.6.35
+                5 4.199995086 4c: 24:57:ab: ed: 84 → Broadcast ARP 42 Who has 10.6.6.53 ? Tell 10.6.6.35
+                6 5.259945568 4c: 24:57:ab: ed: 84 → Broadcast ARP 42 Who has 10.6.6.53 ? Tell 10.6.6.35
+                7 6.303958906 4c: 24:57:ab: ed: 84 → Broadcast ARP 42 Who has 10.6.6.53 ? Tell 10.6.6.35
+                8 7.183032133 fe80::f8f1:edff: fe60: 3c57 → ff02::2      ICMPv6 70 Router Solicitation from fa:f1: ed: 60:3c: 57
+                9 7.351906056 4c: 24:57:ab: ed: 84 → Broadcast ARP 42 Who has 10.6.6.53 ? Tell 10.6.6.35
+                10 8.399987293 4c: 24:57:ab: ed: 84 → Broadcast ARP 42 Who has 10.6.6.53 ? Tell 10.6.6.35
+
+            ".Blog(_logger, "Found how to read specific frame: {command}", "tshark -r out.pcap -Y \"frame.number >= 1 && frame.number <= 10\"");
+
+
+
+            // https://github.com/x4nth055/pythoncode-tutorials/tree/master/scapy/arp-spoofer
+
+            // sc config RemoteAccess start=demand
+            // sc start RemoteAccess
+            // https://www.thepythoncode.com/article/building-arp-spoofer-using-scapy#:~:text=Building%20and%20creating%20an%20ARP%20Spoof%20script%20in,is%20a%20method%20of%20gaining%20a%20man-in-the-middle%20situation.
+
+
         }
     }
 }
