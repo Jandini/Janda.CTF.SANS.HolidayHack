@@ -25,6 +25,12 @@ namespace Janda.CTF.SANS.HolidayHack
                 https://www.youtube.com/watch?v=Jo5Nlbqd-Vg&t=3s
 
 
+
+                Reverse mersenne twister...
+                https://blog.ollien.com/posts/reverse-mersenne-twister/
+        
+
+
             ".Blog(_logger, "Talks");
         }
 
