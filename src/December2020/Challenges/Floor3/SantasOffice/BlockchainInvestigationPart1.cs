@@ -1,4 +1,5 @@
 using Microsoft.Extensions.Logging;
+using System;
 
 namespace Janda.CTF.SANS.HolidayHack
 {
@@ -36,7 +37,14 @@ namespace Janda.CTF.SANS.HolidayHack
         }
 
         public void Run()
-        {
+        {        
+
+            @"                
+                pip install pycryptodom
+
+                https://github.com/python/cpython/blob/3.9/Lib/random.py
+
+            ".Blog(_logger, "Prerequriemnets");
 
         }
     }

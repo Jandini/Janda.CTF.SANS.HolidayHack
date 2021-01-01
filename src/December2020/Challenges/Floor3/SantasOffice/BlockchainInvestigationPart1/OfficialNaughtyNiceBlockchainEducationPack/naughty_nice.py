@@ -418,6 +418,7 @@ if __name__ == '__main__':
         private_key = RSA.importKey(fh.read())
     public_key = private_key.publickey()
     c1 = Chain()
+
     for i in range(9):
         block_data = {}
         documents = []
@@ -432,7 +433,10 @@ if __name__ == '__main__':
         block_data['score'] = 100 # this is the Naughty/Nice score of the report
         block_data['sign'] = Nice # this indicates whether the report is about naughty or nice behavior
         c1.add_block(block_data)
-    print(c1.blocks[3])
+
+    for b in c1.blocks:
+        print(b)
+        
     print('C1: Block chain verify: %s' % (c1.verify_chain(public_key)))
 
 # Note: This is how you would load and verify a blockchain contained in a file called blockchain.dat
