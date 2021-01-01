@@ -23,7 +23,6 @@
   <ItemGroup>
     <Folder Include="Challenges\Floor1.5\WrappingRoom\" />
     <Folder Include="Challenges\Floor1\Entryway\" />
-    <Folder Include="Challenges\Floor2\SpeakerUnprep\SnowballFight\" />
     <Folder Include="Challenges\Floor3\Balcony\" />
     <Folder Include="Properties\" />
   </ItemGroup>
