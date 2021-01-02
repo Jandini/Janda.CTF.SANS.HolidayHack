@@ -207,7 +207,13 @@ class Block():
         s = '%i' % (self.index) 
         s += ',%s' % ('%016.016x' % (self.nonce))
         s += ',%i' % (self.nonce)
+        s += ',%i,%i' % (self.nonce & 0xFFFFFFFF, (self.nonce >> 32) & 0xFFFFFFFF)
         return(s)
+
+
+    # nounce as 32 bit values
+    #def __repr__(self):
+    #    return '%i\n%i' % (self.nonce & 0xFFFFFFFF, (self.nonce >> 32) & 0xFFFFFFFF)        
 
     def full_hash(self):
         hash_obj = MD5.new()
@@ -398,3 +404,15 @@ if __name__ == '__main__':
     c1 = Chain(load=True)    
     for b in c1.blocks:  
         print(b)
+
+
+        # 16906007871643758302,1598598878,3936236694
+
+
+        # 5206973710340649463,2007429623,1212343040
+
+        # 5206973710340649463 = 100100001000010111000110000000001110111101001101111000111110111
+        # 2007429623 = 1110111101001101111000111110111
+        # 1212343040 = 1001000010000101110001100000000
+
+        # 

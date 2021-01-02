@@ -436,11 +436,11 @@ if __name__ == '__main__':
 
     for b in c1.blocks:
         print(b)
-        
+
     print('C1: Block chain verify: %s' % (c1.verify_chain(public_key)))
 
 # Note: This is how you would load and verify a blockchain contained in a file called blockchain.dat
-#
+#-
 #    with open('official_public.pem', 'rb') as fh:
 #        official_public_key = RSA.importKey(fh.read())
 #    c2 = Chain(load=True, filename='blockchain.dat')
