@@ -2,7 +2,7 @@
   "profiles": {
     "Add...": {
       "commandName": "Project",
-      "commandLineArgs": "add --root SantasOffice --name BlockchainInvestigationPart2"
+      "commandLineArgs": "add --root Courtyard --name Hiddenyard"
     },
     "Play...": {
       "commandName": "Project",
@@ -27,6 +27,10 @@
     "Snowball Fight": {
       "commandName": "Project",
       "commandLineArgs": "--name SnowballFight"
+    },
+    "Hidden Place": {
+      "commandName": "Project",
+      "commandLineArgs": "--name HiddenPlace"
     },
     "Terminal: Kringle Kiosk": {
       "commandName": "Project",
