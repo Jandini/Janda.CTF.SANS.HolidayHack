@@ -2,7 +2,14 @@ using Microsoft.Extensions.Logging;
 
 namespace Janda.CTF.SANS.HolidayHack
 {
-    [Challenge(Type = "Objective", Number = 11, Name = "Naughty/Nice List with Blockchain Investigation Part 1", Points = 5, Flag = "57066318f32f729d")]
+    [Challenge(Type = "Objective", Number = 11, Name = "Naughty/Nice List with Blockchain Investigation Part 1", Points = 5, 
+        Brief = @"
+            Even though the chunk of the blockchain that you have ends with block 129996, can you predict the nonce for block 130000? 
+            Talk to Tangle Coalbox in the Speaker UNpreparedness Room for tips on prediction and Tinsel Upatree for more tips and tools. 
+
+            (Enter just the 16-character hex value of the nonce)
+        ",        
+        Flag = "57066318f32f729d")]
     public class BlockchainInvestigationPart1 : IChallenge
     {
         private readonly ILogger<BlockchainInvestigationPart1> _logger;
@@ -13,18 +20,6 @@ namespace Janda.CTF.SANS.HolidayHack
         }
         
 
-        public void Objective()
-        {
-            @"
-                Even though the chunk of the blockchain that you have ends with block 129996, can you predict the nonce for block 130000? 
-                Talk to Tangle Coalbox in the Speaker UNpreparedness Room for tips on prediction and Tinsel Upatree for more tips and tools. 
-
-                (Enter just the 16-character hex value of the nonce)
-
-            ".Blog(_logger);
-        }
-
-
         public void Talks()
         {
             @"
@@ -34,15 +29,16 @@ namespace Janda.CTF.SANS.HolidayHack
                 Used resources
                 https://blog.ollien.com/posts/reverse-mersenne-twister/
                 https://nitish.ch/notes/predictability-in-a-prng/
-
                 https://www.youtube.com/watch?v=f841Y7d3oDo&t=2009s
+
+                Untwister:
+                https://github.com/altf4/untwister
 
 
                 Other not used: 
                 https://github.com/nitishch/reverse-mt/blob/master/reverse-mt.py
 
-                Untwister:
-                https://github.com/altf4/untwister
+             
 
 
             ".Blog(_logger, "Talks");

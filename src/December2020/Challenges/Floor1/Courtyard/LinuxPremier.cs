@@ -3,7 +3,13 @@
 namespace Janda.CTF.SANS.HolidayHack
 {
 
-    [Challenge(Type = "Terminal", Name = "Linux Premier")]
+    [Challenge(Type = "Terminal", Name = "Linux Premier", 
+        Brief = @"
+            The North Pole 🍭 Lollipop Maker:
+            All the lollipops on this system have been stolen by munchkins. 
+            Capture munchkins by following instructions here and 🍭's will appear in the green bar below. 
+            Run the command ""hintme"" to receive a hint.   
+        ")] 
     public class LinuxPremier : IChallenge
     {
         private readonly ILogger<LinuxPremier> _logger;
