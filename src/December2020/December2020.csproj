@@ -55,6 +55,12 @@
     <None Update="Challenges\Floor1\DiningRoom\TheElfCode\Level-8.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Challenges\Floor3\SantasOffice\BlockchainInvestigationPart2\129459.data.bin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Challenges\Floor3\SantasOffice\BlockchainInvestigationPart2\blockchain.dat">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
     <None Update="Challenges\Roof\NetwarsRoom\ARPShenanigans\a.py">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

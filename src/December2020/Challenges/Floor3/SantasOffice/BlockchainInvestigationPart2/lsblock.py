@@ -224,8 +224,14 @@ class Chain():
     def save_a_block(self, index, filename=None):
         if filename is None:
             filename = 'block.dat'
-        with open(filename, 'wb') as fh:
+        with open(filename, 'wb') as fh:                                    
             fh.write(self.blocks[index].block_data_signed())
+
+    def save_a_block_data(self, index, filename=None):
+        if filename is None:
+            filename = 'block.dat'
+        with open(filename, 'wb') as fh:                                    
+            fh.write(self.blocks[index].block_data())
 
     def save_chain(self, filename=None):
         if filename is None:
@@ -251,11 +257,12 @@ class Chain():
 
 if __name__ == '__main__':
     chain = Chain(load=True)    
-
     FIRST_INDEX_IN_CHAIN = 128449
     with open("blocks_sha256", "w") as f:
-        for b in chain.blocks:
-            f.write("%s\n" % (b))
+        for b in chain.blocks:            
+            f.write("%s\n" % (b))            
             if (b.sha_hash() == "58a3b9335a6ceb0234c12d35a0564c4ef0e90152d0eb2ce2082383b38028a90f"):
                 print(b)
-                chain.save_a_block(b.index - FIRST_INDEX_IN_CHAIN , str(b.index))
+                i = b.index - FIRST_INDEX_IN_CHAIN
+                chain.save_a_block(i, str(b.index))
+                chain.save_a_block_data(i, "%i.data" % (b.index))

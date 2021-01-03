@@ -1,4 +1,11 @@
 using Microsoft.Extensions.Logging;
+using System;
+using System.Buffers.Binary;
+using System.IO;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Janda.CTF.SANS.HolidayHack
 {
@@ -22,6 +29,31 @@ namespace Janda.CTF.SANS.HolidayHack
             ".Blog(_logger);
         }
 
+
+        private char[] ToHexCharArray(byte[] bytes)
+        {
+            int count = bytes.Length;
+            char[] hex = new char[count * 2];
+            byte b;
+
+            for (int y = 0, x = 0; y < count; ++y, ++x)
+            {
+                b = ((byte)(bytes[y] >> 4));
+
+                hex[x] = (char)(b > 9
+                    ? b + 0x37 + 32
+                    : b + 0x30);
+
+                b = ((byte)(bytes[y] & 0xF));
+
+                hex[++x] = (char)(b > 9
+                    ? b + 0x37 + 32
+                    : b + 0x30);
+            }
+
+            return hex;
+        }
+
         public void Run()
         {
             @"
@@ -39,7 +71,44 @@ namespace Janda.CTF.SANS.HolidayHack
                 https://github.com/corkami/collisions
                 This one is interestring... https://github.com/corkami/collisions#shattered-sha1
 
-            ".Blog(_logger);
+            ".Blog(_logger, "Resources online");
+
+
+
+            // 347979fece8d403e06f89f8633b5231a
+
+            var bytes = File.ReadAllBytes(@"Challenges\Floor3\SantasOffice\BlockchainInvestigationPart2\129459.data.bin");
+            var md5 = new MD5CryptoServiceProvider();
+            var data = md5.ComputeHash(bytes);
+            var original = string.Concat(ToHexCharArray(data));
+
+
+            _logger.LogInformation("Searching for MD5 collision...");
+
+            Parallel.ForEach(Enumerable.Range(0, int.MaxValue), new ParallelOptions() { MaxDegreeOfParallelism = 4 }, (i) =>
+            {
+                var b = BitConverter.GetBytes(i);
+                var c = string.Format("{0:x8}", i);
+
+                for (int j = 0; j < 8; j++)
+                    bytes[65 + j] = (byte)c[j];
+
+                var md5 = new MD5CryptoServiceProvider();
+                var data = md5.ComputeHash(bytes);
+
+                var s = string.Concat(ToHexCharArray(data));
+
+                if (s == "347979fece8d403e06f89f8633b5231a")
+                {
+                    _logger.LogInformation("Collision found at {i} for {c}", i, string.Concat(c));
+                    
+                }
+
+                if ((i % 1000) == 0)
+                    Console.Title = i.ToString();
+            });
+
+
         }
     }
 }
