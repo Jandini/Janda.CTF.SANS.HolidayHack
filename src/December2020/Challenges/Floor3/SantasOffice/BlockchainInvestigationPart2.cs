@@ -1,5 +1,6 @@
 using Microsoft.Extensions.Logging;
 using System;
+using System.Buffers.Binary;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
@@ -66,8 +67,6 @@ namespace Janda.CTF.SANS.HolidayHack
 
             ".Blog(_logger, "Resources online");
 
-
-
             // 347979fece8d403e06f89f8633b5231a
 
             var bytes = File.ReadAllBytes(@"Challenges\Floor3\SantasOffice\BlockchainInvestigationPart2\129459.data.bin");
@@ -76,30 +75,44 @@ namespace Janda.CTF.SANS.HolidayHack
             var original = string.Concat(ToHexCharArray(data));
 
 
+            return;
             _logger.LogInformation("Searching for MD5 collision...");
 
-            Parallel.ForEach(Enumerable.Range(0, int.MaxValue), new ParallelOptions() { MaxDegreeOfParallelism = 4 }, (i) =>
+            for (int b = 13100; b < bytes.Length - 1; b++)
             {
-                var b = BitConverter.GetBytes(i);
-                var c = string.Format("{0:x8}", i);
-
-                for (int j = 0; j < 8; j++)
-                    bytes[65 + j] = (byte)c[j];
-
-                var md5 = new MD5CryptoServiceProvider();
-                var data = md5.ComputeHash(bytes);
-
-                var s = string.Concat(ToHexCharArray(data));
-
-                if (s == "347979fece8d403e06f89f8633b5231a")
+                var currentValue = BinaryPrimitives.ReadUInt16LittleEndian(bytes.AsSpan(b));
+                   
+                Parallel.ForEach(Enumerable.Range(0, 65535), new ParallelOptions() { MaxDegreeOfParallelism = 8 }, (i) =>
                 {
-                    _logger.LogInformation("Collision found at {i} for {c}", i, string.Concat(c));
-                    
-                }
 
-                if ((i % 1000) == 0)
-                    Console.Title = i.ToString();
-            });
+                    var buffer = new byte[bytes.Length];
+                    bytes.AsSpan().CopyTo(buffer);
+                                     
+                    //var b = BitConverter.GetBytes(i);
+                    //var c = string.Format("{0:x8}", i);
+
+                    //for (int j = 0; j < 8; j++)
+                    //    bytes[65 + j] = (byte)c[j];
+
+                    if (i != currentValue)
+                    {
+
+                        BinaryPrimitives.WriteUInt16LittleEndian(buffer.AsSpan(b), (ushort)i);
+                        //buffer[b] = (byte)(i);
+
+                        
+                        var md5 = string.Concat(ToHexCharArray(new MD5CryptoServiceProvider().ComputeHash(buffer)));
+
+                        if (md5 == "347979fece8d403e06f89f8633b5231a")
+                        {
+                            //_logger.LogInformation("Collision found at {i} for {c}", i, string.Concat(c));
+                            _logger.LogInformation("Collision found at offset {b} for value {c}", b, i);
+                        }
+                    }                                          
+                });
+
+                Console.Title = $"Byte {b}";
+            }
 
 
         }
