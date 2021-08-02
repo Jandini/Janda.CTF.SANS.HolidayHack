@@ -1,0 +1,16 @@
+2020-12-28 22:14:41.568 +00:00 [VRB] Started SANS Holiday Hack, December 2020
+2020-12-28 22:14:41.585 +00:00 [VRB] Using CTF runner 0.1.0-alpha.21
+2020-12-28 22:14:41.587 +00:00 [VRB] Searching for WrappingRoom
+2020-12-28 22:14:41.588 +00:00 [VRB] Searching for *.csproj project file...
+2020-12-28 22:14:41.613 +00:00 [VRB] Project file found in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020
+2020-12-28 22:14:41.617 +00:00 [VRB] Directory WrappingRoom found in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Challenges\Floor1.5\WrappingRoom
+2020-12-28 22:14:41.620 +00:00 [VRB] Locating Challenge template file
+2020-12-28 22:14:41.620 +00:00 [VRB] Searching for Challenge.ch
+2020-12-28 22:14:41.624 +00:00 [VRB] Loading embedded template Challenge from Janda.CTF
+2020-12-28 22:14:41.627 +00:00 [VRB] Adding challenge BrokenTagGenerator to launchSettings.json
+2020-12-28 22:14:41.628 +00:00 [VRB] Searching for launchSettings.json
+2020-12-28 22:14:41.628 +00:00 [VRB] Searching for *.csproj project file...
+2020-12-28 22:14:41.649 +00:00 [VRB] Project file found in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020
+2020-12-28 22:14:41.653 +00:00 [VRB] File found C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Properties\launchSettings.json
+2020-12-28 22:14:41.680 +00:00 [VRB] Create resource directory for BrokenTagGenerator
+2020-12-28 22:14:41.701 +00:00 [VRB] Challenge BrokenTagGenerator added successfully

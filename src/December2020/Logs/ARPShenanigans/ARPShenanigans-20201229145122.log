@@ -1,0 +1,79 @@
+2020-12-29 14:51:22.376 +00:00 [VRB] Started SANS Holiday Hack, December 2020
+2020-12-29 14:51:22.406 +00:00 [VRB] Using CTF runner 0.1.0-alpha.21
+2020-12-29 14:51:22.409 +00:00 [VRB] Running challange ARPShenanigans
+2020-12-29 14:51:22.411 +00:00 [INF] Objective
+
+                Go to the NetWars room on the roof and help Alabaster Snowball get access back to a host using ARP. 
+                Retrieve the document at /NORTH_POLE_Land_Use_Board_Meeting_Minutes.txt. 
+                Who recused herself from the vote described on the document?
+
+            
+2020-12-29 14:51:22.411 +00:00 [INF] Hints
+
+                Go to the NetWars room on the roof and help Alabaster Snowball get access back to a host using ARP. 
+                Retrieve the document at /NORTH_POLE_Land_Use_Board_Meeting_Minutes.txt. 
+                Who recused herself from the vote described on the document?
+
+
+                Spoofy
+                From: Alabaster Snowball
+                Objective: 9) ARP Shenanigans
+                The host is performing an ARP request. Perhaps we could do a spoof to perform a machine-in-the-middle attack. I think we have some sample scapy traffic scripts that could help you in /home/guest/scripts.
+
+
+                Resolvy
+                From: Alabaster Snowball
+                Objective: 9) ARP Shenanigans
+                Hmmm, looks like the host does a DNS request after you successfully do an ARP spoof. Let's return a DNS response resolving the request to our IP.
+
+
+                Embedy
+                From: Alabaster Snowball
+                Objective: 9) ARP Shenanigans
+                The malware on the host does an HTTP request for a .deb package. Maybe we can get command line access by sending it a command in a customized .deb file
+
+
+                Sniffy
+                From: Alabaster Snowball
+                Objective: 9) ARP Shenanigans
+                Jack Frost must have gotten malware on our host at 10.6.6.35 because we can no longer access it. Try sniffing the eth0 interface using tcpdump -nni eth0 to see if you can view any traffic from that host.
+
+            
+2020-12-29 14:51:22.413 +00:00 [INF] Elf Chats
+
+
+                Alabaster Snowball  8:38PM
+
+                Oh, I see the Scapy Present Packet Prepper has already been completed!
+                Now you can help me get access to this machine.
+                It seems that some interloper here at the North Pole has taken control of the host.
+
+                We need to regain access to some important documents associated with Kringle Castle.
+                Maybe we should try a machine-in-the-middle attack?
+            
+                Oh, I see the Scapy Present Packet Prepper has already been completed!
+                Now you can help me get access to this machine.
+
+                It seems that some interloper here at the North Pole has taken control of the host.
+                We need to regain access to some important documents associated with Kringle Castle.
+
+                Maybe we should try a machine-in-the-middle attack?
+                That could give us access to manipulate DNS responses.
+
+                But we'll still need to cook up something to change the HTTP response.
+            
+                I'm sure glad you're here Santa.
+
+            
+2020-12-29 14:51:22.414 +00:00 [INF] Theory
+
+                What is ARP? Address Resolution Protocol
+
+                Address Resolution Protocol (ARP) is a procedure for mapping a dynamic Internet Protocol address (IP address) to a permanent physical machine address in a local area network (LAN). 
+                The physical machine address is also known as a Media Access Control or MAC address. 
+
+
+                More on: https://searchnetworking.techtarget.com/definition/Address-Resolution-Protocol-ARP
+
+            
+2020-12-29 14:51:22.414 +00:00 [VRB] Challenge ARPShenanigans completed

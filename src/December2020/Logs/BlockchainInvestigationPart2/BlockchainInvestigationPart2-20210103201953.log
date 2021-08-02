@@ -1,0 +1,33 @@
+2021-01-03 20:19:53.135 +00:00 [VRB] Started SANS Holiday Hack, December 2020
+2021-01-03 20:19:53.159 +00:00 [VRB] Using CTF runner 0.1.0-alpha.28
+2021-01-03 20:19:53.161 +00:00 [VRB] Running challange BlockchainInvestigationPart2
+2021-01-03 20:19:53.165 +00:00 [INF] Resources online
+
+                Wow, it really was all about abusing the pseudo-random sequence!
+                I've been thinking, do you think someone could try and cheat the Naughty/Nice Blockchain with this same technique?
+
+                I remember you told us about how if you have control over to bytes in a file, it's easy to create MD5 hash collisions.
+
+                But the nonce would have to be known ahead of time.
+                We know that the blockchain works by "chaining" blocks together.
+                There's no way you know who could change it without messing up the chain, right Santa?
+                I'm going to look closer to spot if any of the blocks have been changed.
+
+
+                https://github.com/corkami/collisions
+                This one is interestring... https://github.com/corkami/collisions#shattered-sha1
+
+            
+2021-01-03 20:19:53.174 +00:00 [INF] Searching for MD5 collision...
+2021-01-03 20:19:53.818 +00:00 [INF] Collision found at offiset 0 for value 12336
+2021-01-03 20:19:56.800 +00:00 [INF] Collision found at offiset 1 for value 12336
+2021-01-03 20:19:59.770 +00:00 [INF] Collision found at offiset 2 for value 12336
+2021-01-03 20:20:02.684 +00:00 [INF] Collision found at offiset 3 for value 12336
+2021-01-03 20:20:05.693 +00:00 [INF] Collision found at offiset 4 for value 12336
+2021-01-03 20:20:08.640 +00:00 [INF] Collision found at offiset 5 for value 12336
+2021-01-03 20:20:11.634 +00:00 [INF] Collision found at offiset 6 for value 12336
+2021-01-03 20:20:14.614 +00:00 [INF] Collision found at offiset 7 for value 12336
+2021-01-03 20:20:17.513 +00:00 [INF] Collision found at offiset 8 for value 12336
+2021-01-03 20:20:21.001 +00:00 [INF] Collision found at offiset 9 for value 12336
+2021-01-03 20:20:24.761 +00:00 [INF] Collision found at offiset 10 for value 12592
+2021-01-03 20:20:28.423 +00:00 [INF] Collision found at offiset 11 for value 26161
