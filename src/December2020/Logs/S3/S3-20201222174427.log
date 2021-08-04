@@ -1,0 +1,74 @@
+2020-12-22 17:44:27.152 +00:00 [VRB] Started SANS Holiday Hack, December 2020
+2020-12-22 17:44:27.172 +00:00 [VRB] Using CTF runner 0.1.0-alpha.18
+2020-12-22 17:44:27.174 +00:00 [VRB] Running challange S3
+2020-12-22 17:44:27.179 +00:00 [VRB] Reading embedded Dictionary.embedded.gz
+2020-12-22 17:44:27.685 +00:00 [ERR] Forbidden education
+System.Net.WebException: The remote server returned an error: (403) Forbidden.
+   at System.Net.HttpWebRequest.GetResponse()
+   at System.Net.WebClient.GetWebResponse(WebRequest request)
+   at System.Net.WebClient.OpenRead(Uri address)
+   at System.Net.WebClient.OpenRead(String address)
+   at Janda.CTF.SANS.HolidayHack.S3.Run() in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Challenges\Amazon\S3.cs:line 43
+2020-12-22 17:44:28.108 +00:00 [ERR] Forbidden accessibility
+System.Net.WebException: The remote server returned an error: (403) Forbidden.
+   at System.Net.HttpWebRequest.GetResponse()
+   at System.Net.WebClient.GetWebResponse(WebRequest request)
+   at System.Net.WebClient.OpenRead(Uri address)
+   at System.Net.WebClient.OpenRead(String address)
+   at Janda.CTF.SANS.HolidayHack.S3.Run() in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Challenges\Amazon\S3.cs:line 43
+2020-12-22 17:44:28.698 +00:00 [ERR] Forbidden toolbar
+System.Net.WebException: The remote server returned an error: (403) Forbidden.
+   at System.Net.HttpWebRequest.GetResponse()
+   at System.Net.WebClient.GetWebResponse(WebRequest request)
+   at System.Net.WebClient.OpenRead(Uri address)
+   at System.Net.WebClient.OpenRead(String address)
+   at Janda.CTF.SANS.HolidayHack.S3.Run() in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Challenges\Amazon\S3.cs:line 43
+2020-12-22 17:44:29.087 +00:00 [ERR] Forbidden text
+System.Net.WebException: The remote server returned an error: (403) Forbidden.
+   at System.Net.HttpWebRequest.GetResponse()
+   at System.Net.WebClient.GetWebResponse(WebRequest request)
+   at System.Net.WebClient.OpenRead(Uri address)
+   at System.Net.WebClient.OpenRead(String address)
+   at Janda.CTF.SANS.HolidayHack.S3.Run() in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Challenges\Amazon\S3.cs:line 43
+2020-12-22 17:44:29.487 +00:00 [ERR] Forbidden radio
+System.Net.WebException: The remote server returned an error: (403) Forbidden.
+   at System.Net.HttpWebRequest.GetResponse()
+   at System.Net.WebClient.GetWebResponse(WebRequest request)
+   at System.Net.WebClient.OpenRead(Uri address)
+   at System.Net.WebClient.OpenRead(String address)
+   at Janda.CTF.SANS.HolidayHack.S3.Run() in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Challenges\Amazon\S3.cs:line 43
+2020-12-22 17:44:29.687 +00:00 [ERR] Forbidden talk
+System.Net.WebException: The remote server returned an error: (403) Forbidden.
+   at System.Net.HttpWebRequest.GetResponse()
+   at System.Net.WebClient.GetWebResponse(WebRequest request)
+   at System.Net.WebClient.OpenRead(Uri address)
+   at System.Net.WebClient.OpenRead(String address)
+   at Janda.CTF.SANS.HolidayHack.S3.Run() in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Challenges\Amazon\S3.cs:line 43
+2020-12-22 17:44:30.079 +00:00 [ERR] Forbidden a-z
+System.Net.WebException: The remote server returned an error: (403) Forbidden.
+   at System.Net.HttpWebRequest.GetResponse()
+   at System.Net.WebClient.GetWebResponse(WebRequest request)
+   at System.Net.WebClient.OpenRead(Uri address)
+   at System.Net.WebClient.OpenRead(String address)
+   at Janda.CTF.SANS.HolidayHack.S3.Run() in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Challenges\Amazon\S3.cs:line 43
+2020-12-22 17:44:30.288 +00:00 [ERR] Forbidden homepage
+System.Net.WebException: The remote server returned an error: (403) Forbidden.
+   at System.Net.HttpWebRequest.GetResponse()
+   at System.Net.WebClient.GetWebResponse(WebRequest request)
+   at System.Net.WebClient.OpenRead(Uri address)
+   at System.Net.WebClient.OpenRead(String address)
+   at Janda.CTF.SANS.HolidayHack.S3.Run() in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Challenges\Amazon\S3.cs:line 43
+2020-12-22 17:44:30.484 +00:00 [ERR] Forbidden int
+System.Net.WebException: The remote server returned an error: (403) Forbidden.
+   at System.Net.HttpWebRequest.GetResponse()
+   at System.Net.WebClient.GetWebResponse(WebRequest request)
+   at System.Net.WebClient.OpenRead(Uri address)
+   at System.Net.WebClient.OpenRead(String address)
+   at Janda.CTF.SANS.HolidayHack.S3.Run() in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Challenges\Amazon\S3.cs:line 43
+2020-12-22 17:44:30.874 +00:00 [ERR] Forbidden oth
+System.Net.WebException: The remote server returned an error: (403) Forbidden.
+   at System.Net.HttpWebRequest.GetResponse()
+   at System.Net.WebClient.GetWebResponse(WebRequest request)
+   at System.Net.WebClient.OpenRead(Uri address)
+   at System.Net.WebClient.OpenRead(String address)
+   at Janda.CTF.SANS.HolidayHack.S3.Run() in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Challenges\Amazon\S3.cs:line 43

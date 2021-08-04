@@ -1,0 +1,11 @@
+2020-12-25 13:08:18.450 +00:00 [VRB] Started SANS Holiday Hack, December 2020
+2020-12-25 13:08:18.468 +00:00 [VRB] Using CTF runner 0.1.0-alpha.18
+2020-12-25 13:08:18.471 +00:00 [VRB] Searching for Courtyard
+2020-12-25 13:08:18.488 +00:00 [VRB] Directory Courtyard found in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Challenges\Floor1\Courtyard
+2020-12-25 13:08:18.492 +00:00 [VRB] Locating Challenge template file
+2020-12-25 13:08:18.494 +00:00 [VRB] Searching for Challenge.ch
+2020-12-25 13:08:18.555 +00:00 [VRB] Loading embedded template Challenge from Janda.CTF
+2020-12-25 13:08:18.558 +00:00 [VRB] Adding challenge LinuxPremier to launchSettings.json
+2020-12-25 13:08:18.559 +00:00 [VRB] Searching for launchSettings.json
+2020-12-25 13:08:18.570 +00:00 [VRB] File "launchSettings.json" was found in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Properties\launchSettings.json
+2020-12-25 13:08:18.599 +00:00 [VRB] Challenge LinuxPremier added successfully

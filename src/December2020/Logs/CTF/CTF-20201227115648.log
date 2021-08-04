@@ -1,0 +1,16 @@
+2020-12-27 11:56:48.280 +00:00 [VRB] Started SANS Holiday Hack, December 2020
+2020-12-27 11:56:48.299 +00:00 [VRB] Using CTF runner 0.1.0-alpha.19
+2020-12-27 11:56:48.300 +00:00 [VRB] Searching for SantasOffice
+2020-12-27 11:56:48.302 +00:00 [VRB] Searching for *.csproj project file...
+2020-12-27 11:56:48.328 +00:00 [VRB] Project file found in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020
+2020-12-27 11:56:48.331 +00:00 [VRB] Directory SantasOffice found in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Challenges\Floor3\SantasOffice
+2020-12-27 11:56:48.335 +00:00 [VRB] Locating Challenge template file
+2020-12-27 11:56:48.335 +00:00 [VRB] Searching for Challenge.ch
+2020-12-27 11:56:48.339 +00:00 [VRB] Loading embedded template Challenge from Janda.CTF
+2020-12-27 11:56:48.343 +00:00 [VRB] Adding challenge BlockchainInvestigation1 to launchSettings.json
+2020-12-27 11:56:48.344 +00:00 [VRB] Searching for launchSettings.json
+2020-12-27 11:56:48.344 +00:00 [VRB] Searching for *.csproj project file...
+2020-12-27 11:56:48.362 +00:00 [VRB] Project file found in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020
+2020-12-27 11:56:48.365 +00:00 [VRB] File found C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Properties\launchSettings.json
+2020-12-27 11:56:48.381 +00:00 [VRB] Create resource directory for BlockchainInvestigation1
+2020-12-27 11:56:48.393 +00:00 [VRB] Challenge BlockchainInvestigation1 added successfully

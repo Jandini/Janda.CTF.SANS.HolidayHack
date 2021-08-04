@@ -1,0 +1,264 @@
+﻿document.getElementsByClassName("badge-item hint selected")[0].outerHTML
+
+
+Terminal Tips
+From: Jewel Loggins
+You can copy and paste in terminals with Ctrl-c and Ctrl-v or ⌘-c and ⌘-v.
+
+Filtering Text
+From: Wunorse Openslae
+Terminal: CAN-Bus Investigation
+You can hide lines you don't want to see with commands like cat file.txt | grep -v badstuff
+
+CAN Bus Talk
+From: Wunorse Openslae
+Terminal: CAN-Bus Investigation
+Chris Elgee is talking about how CAN traffic works right now!
+
+JavaScript Primer
+From: Ribb Bonbowford
+Terminal: Programming Concepts
+Want to learn a useful language? JavaScript is a great place to start! You can also test out your code using a JavaScript playground.
+
+Compressing JS
+From: Ribb Bonbowford
+Terminal: Programming Concepts
+There are lots of ways to make your code shorter, but the number of elf commands is key.
+
+Filtering Items
+From: Ribb Bonbowford
+Terminal: Programming Concepts
+There's got to be a way to filter for specific typeof items in an array. Maybe the typeof operator could also be useful?
+
+Adding to Arrays
+From: Ribb Bonbowford
+Terminal: Programming Concepts
+var array = [2, 3, 4]; array.push(1) doesn't do QUITE what was intended...
+
+JavaScript Loops
+From: Ribb Bonbowford
+Terminal: Programming Concepts
+Did you try the JavaScript primer? There's a great section on looping.
+
+Getting a Key Name
+From: Ribb Bonbowford
+Terminal: Programming Concepts
+In JavaScript you can enumerate an object's keys using keys, and filter the array using filter.
+
+Sniffy
+From: Alabaster Snowball
+Objective: 9) ARP Shenanigans
+Jack Frost must have gotten malware on our host at 10.6.6.35 because we can no longer access it. Try sniffing the eth0 interface using tcpdump -nni eth0 to see if you can view any traffic from that host.
+
+Spoofy
+From: Alabaster Snowball
+Objective: 9) ARP Shenanigans
+The host is performing an ARP request. Perhaps we could do a spoof to perform a machine-in-the-middle attack. I think we have some sample scapy traffic scripts that could help you in /home/guest/scripts.
+
+Resolvy
+From: Alabaster Snowball
+Objective: 9) ARP Shenanigans
+Hmmm, looks like the host does a DNS request after you successfully do an ARP spoof. Let's return a DNS response resolving the request to our IP.
+
+Embedy
+From: Alabaster Snowball
+Objective: 9) ARP Shenanigans
+The malware on the host does an HTTP request for a .deb package. Maybe we can get command line access by sending it a command in a customized .deb file
+
+Download File Mechanism
+From: Holly Evergreen
+Objective: 8) Broken Tag Generator
+Once you know the path to the file, we need a way to download it!
+
+Error Page Message Disclosure
+From: Holly Evergreen
+Objective: 8) Broken Tag Generator
+Can you figure out the path to the script? It's probably on error pages!
+
+Redirect to Download
+From: Holly Evergreen
+Objective: 8) Broken Tag Generator
+If you find a way to execute code blindly, I bet you can redirect to a file then download that file!
+
+Content-Type Gotcha
+From: Holly Evergreen
+Objective: 8) Broken Tag Generator
+If you're having trouble seeing the code, watch out for the Content-Type! Your browser might be trying to help (badly)!
+
+Endpoint Exploration
+From: Holly Evergreen
+Objective: 8) Broken Tag Generator
+Is there an endpoint that will print arbitrary files?
+
+Source Code Retrieval
+From: Holly Evergreen
+Objective: 8) Broken Tag Generator
+We might be able to find the problem if we can get source code!
+
+Source Code Analysis
+From: Holly Evergreen
+Objective: 8) Broken Tag Generator
+I'm sure there's a vulnerability in the source somewhere... surely Jack wouldn't leave their mark?
+
+Patience and Timing
+From: Holly Evergreen
+Objective: 8) Broken Tag Generator
+Remember, the processing happens in the background so you might need to wait a bit after exploiting but before grabbing the output!
+
+Twirl Area
+From: Jingle Ringford
+Objective: 1) Uncover Santa's Gift List
+Make sure you Lasso the correct twirly area.
+
+Image Edit Tool
+From: Jingle Ringford
+Objective: 1) Uncover Santa's Gift List
+There are tools out there that could help Filter the Distortion that is this Twirl.
+
+Santavator Operations
+From: Pepper Minstix
+Objective: 4) Operate the Santavator
+It's really more art than science. The goal is to put the right colored light into the receivers on the left and top of the panel.
+
+Santavator Bypass
+From: Ribb Bonbowford
+Objective: 4) Operate the Santavator
+There may be a way to bypass the Santavator S4 game with the browser console...
+
+Electron Applications
+From: Sugarplum Mary
+Objective: 3) Point-of-Sale Password Recovery
+It's possible to extract the source code from an Electron app.
+
+Electron ASAR Extraction
+From: Sugarplum Mary
+Objective: 3) Point-of-Sale Password Recovery
+There are tools and guides explaining how to extract ASAR from Electron apps.
+
+What's a Proxmark?
+From: Bushy Evergreen
+Objective: 5) Open HID Lock
+The Proxmark is a multi-function RFID device, capable of capturing and replaying RFID events.
+
+Short List of Essential Proxmark Commands
+From: Bushy Evergreen
+Objective: 5) Open HID Lock
+There's a short list of essential Proxmark commands also available.
+
+Impersonating Badges with Proxmark
+From: Bushy Evergreen
+Objective: 5) Open HID Lock
+You can also use a Proxmark to impersonate a badge to unlock a door, if the badge you impersonate has access. lf hid sim -r 2006......
+
+Reading Badges with Proxmark
+From: Bushy Evergreen
+Objective: 5) Open HID Lock
+You can use a Proxmark to capture the facility code and ID value of HID ProxCard badge by running lf hid read when you are close enough to someone with a badge.
+
+Proxmark Talk
+From: Bushy Evergreen
+Objective: 5) Open HID Lock
+Larry Pesce knows a thing or two about HID attacks. He's the author of a course on wireless hacking!
+
+Bucket_finder.rb
+From: Shinny Upatree
+Objective: 2) Investigate S3 Bucket
+He even wrote a tool to search for unprotected buckets!
+
+Leaky AWS S3 Buckets
+From: Shinny Upatree
+Objective: 2) Investigate S3 Bucket
+It seems like there's a new story every week about data exposed through unprotected Amazon S3 buckets.
+
+Finding S3 Buckets
+From: Shinny Upatree
+Objective: 2) Investigate S3 Bucket
+Robin Wood wrote up a guide about finding these open S3 buckets.
+
+Santa's Wrapper3000
+From: Shinny Upatree
+Objective: 2) Investigate S3 Bucket
+Santa's Wrapper3000 is pretty buggy. It uses several compression tools, binary to ASCII conversion, and other tools to wrap packages.
+
+Find Santa's Package
+From: Shinny Upatree
+Objective: 2) Investigate S3 Bucket
+Find Santa's package file from the cloud storage provider. Check Josh Wright's talk for more tips!
+
+Data Decoding and Investigation
+From: Minty Candycane
+Objective: 6) Splunk Challenge
+Defenders often need to manipulate data to decRypt, deCode, and refourm it into something that is useful. Cyber Chef is extremely useful here!
+
+Splunk Basics
+From: Minty Candycane
+Objective: 6) Splunk Challenge
+There was a great Splunk talk at KringleCon 2 that's still available!
+https://www.youtube.com/watch?v=qbIhHhRKQCw
+https://www.youtube.com/watch?v=RxVgEFt08kU
+
+Adversary Emulation and Splunk
+From: Minty Candycane
+Objective: 6) Splunk Challenge
+Dave Herrald talks about emulating advanced adversaries and hunting them with Splunk.
+
+Redis RCE
+From: Holly Evergreen
+Terminal: Redis Bug Hunt
+This is kind of what we're trying to do...
+
+Regex Practice
+From: Minty Candycane
+Terminal: Regex Toy Sorting
+Here's a place to try out your JS Regex expressions: https://regex101.com/
+
+JavaScript Regex Cheat Sheet
+From: Minty Candycane
+Terminal: Regex Toy Sorting
+Handy quick reference for JS regular expression construction: https://www.debuggex.com/cheatsheet/regex/javascript
+
+Command Injection
+From: Shinny Upatree
+Terminal: Kringle Kiosk
+There's probably some kind of command injection vulnerability in the menu terminal.
+
+Extra Instances
+From: Tangle Coalbox
+Terminal: Snowball Game
+Need extra Snowball Game instances? Pop them up in a new tab from https://snowball2.kringlecastle.com.
+
+PRNG Seeding
+From: Tangle Coalbox
+Terminal: Snowball Game
+While system time is probably most common, developers have the option to seed pseudo-random number generators with other values.
+
+Twisted Talk
+From: Tangle Coalbox
+Terminal: Snowball Game
+Tom Liston is giving two talks at once - amazing! One is about the Mersenne Twister.
+
+Mersenne Twister
+From: Tangle Coalbox
+Terminal: Snowball Game
+Python uses the venerable Mersenne Twister algorithm to generate PRNG values after seed. Given enough data, an attacker might predict upcoming values.
+
+Strings in Binary Files
+From: Bushy Evergreen
+Terminal: Speaker UNPrep
+The strings command is common in Linux and available in Windows as part of SysInternals.
+
+Lookup Table
+From: Bushy Evergreen
+Terminal: Speaker UNPrep
+For polyalphabetic ciphers, if you have control over inputs and visibilty of outputs, lookup tables can save the day.
+
+Letting a Program Decrypt for You
+From: Bushy Evergreen
+Terminal: Speaker UNPrep
+While you have to use the lights program in /home/elf/ to turn the lights on, you can delete parts in /home/elf/lab/.
+
+Tmux Cheat Sheet
+From: Pepper Minstix
+Terminal: Unescape Tmux
+There's a handy tmux reference available at https://tmuxcheatsheet.com/!
+

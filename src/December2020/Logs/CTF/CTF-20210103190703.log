@@ -1,0 +1,15 @@
+2021-01-03 19:07:03.851 +00:00 [VRB] Started SANS Holiday Hack, December 2020
+2021-01-03 19:07:03.944 +00:00 [VRB] Using CTF runner 0.1.0-alpha.28
+2021-01-03 19:07:03.980 +00:00 [VRB] Searching for Courtyard
+2021-01-03 19:07:04.022 +00:00 [VRB] Searching for *.csproj project file...
+2021-01-03 19:07:04.148 +00:00 [VRB] Project file found in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020
+2021-01-03 19:07:04.189 +00:00 [VRB] Directory Courtyard found in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Challenges\Floor1\Courtyard
+2021-01-03 19:07:04.273 +00:00 [VRB] Locating Challenge template file
+2021-01-03 19:07:04.279 +00:00 [VRB] Searching for Challenge.ch
+2021-01-03 19:07:04.329 +00:00 [VRB] Loading embedded template Challenge from Janda.CTF
+2021-01-03 19:07:04.365 +00:00 [VRB] Adding challenge Hiddenyard to launchSettings.json
+2021-01-03 19:07:04.402 +00:00 [VRB] Searching for launchSettings.json
+2021-01-03 19:07:04.420 +00:00 [VRB] Searching for *.csproj project file...
+2021-01-03 19:07:04.525 +00:00 [VRB] Project file found in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020
+2021-01-03 19:07:04.568 +00:00 [VRB] File found C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Properties\launchSettings.json
+2021-01-03 19:07:04.642 +00:00 [VRB] Challenge Hiddenyard created in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Challenges\Floor1\Courtyard\Hiddenyard.cs

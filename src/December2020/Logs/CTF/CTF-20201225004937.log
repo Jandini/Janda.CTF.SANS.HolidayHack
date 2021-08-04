@@ -1,0 +1,11 @@
+2020-12-25 00:49:37.838 +00:00 [VRB] Started SANS Holiday Hack, December 2020
+2020-12-25 00:49:37.856 +00:00 [VRB] Using CTF runner 0.1.0-alpha.18
+2020-12-25 00:49:37.859 +00:00 [VRB] Searching for Challenges
+2020-12-25 00:49:37.871 +00:00 [VRB] Directory Challenges found in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Challenges
+2020-12-25 00:49:37.875 +00:00 [VRB] Locating Challenge template file
+2020-12-25 00:49:37.876 +00:00 [VRB] Searching for Challenge.ch
+2020-12-25 00:49:37.923 +00:00 [VRB] Loading embedded template Challenge from Janda.CTF
+2020-12-25 00:49:37.927 +00:00 [VRB] Adding challenge ScrapyPrepper to launchSettings.json
+2020-12-25 00:49:37.927 +00:00 [VRB] Searching for launchSettings.json
+2020-12-25 00:49:37.939 +00:00 [VRB] File "launchSettings.json" was found in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Properties\launchSettings.json
+2020-12-25 00:49:37.967 +00:00 [VRB] Challenge ScrapyPrepper added successfully

@@ -1,0 +1,15 @@
+2020-12-26 21:45:04.809 +00:00 [VRB] Started SANS Holiday Hack, December 2020
+2020-12-26 21:45:04.830 +00:00 [VRB] Using CTF runner 0.1.0-alpha.19
+2020-12-26 21:45:04.832 +00:00 [VRB] Searching for Kitchen
+2020-12-26 21:45:04.833 +00:00 [VRB] Searching for *.csproj project file...
+2020-12-26 21:45:04.853 +00:00 [VRB] Project file found in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020
+2020-12-26 21:45:04.855 +00:00 [VRB] Directory Kitchen found in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Challenges\Floor1\Kitchen
+2020-12-26 21:45:04.858 +00:00 [VRB] Locating Challenge template file
+2020-12-26 21:45:04.859 +00:00 [VRB] Searching for Challenge.ch
+2020-12-26 21:45:04.863 +00:00 [VRB] Loading embedded template Challenge from Janda.CTF
+2020-12-26 21:45:04.866 +00:00 [VRB] Adding challenge DialUp to launchSettings.json
+2020-12-26 21:45:04.867 +00:00 [VRB] Searching for launchSettings.json
+2020-12-26 21:45:04.867 +00:00 [VRB] Searching for *.csproj project file...
+2020-12-26 21:45:04.882 +00:00 [VRB] Project file found in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020
+2020-12-26 21:45:04.884 +00:00 [VRB] File found C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Properties\launchSettings.json
+2020-12-26 21:45:04.920 +00:00 [VRB] Challenge DialUp added successfully

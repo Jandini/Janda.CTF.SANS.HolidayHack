@@ -1,0 +1,7 @@
+2020-12-22 21:16:33.314 +00:00 [VRB] Started SANS Holiday Hack, December 2020
+2020-12-22 21:16:33.344 +00:00 [VRB] Using CTF runner 0.1.0-alpha.18
+2020-12-22 21:16:33.346 +00:00 [VRB] Running challange S3
+2020-12-22 21:16:33.359 +00:00 [VRB] Reading embedded Dictionary.embedded.gz
+2020-12-22 21:16:39.123 +00:00 [INF] Bucket found: blast
+2020-12-22 21:16:41.969 +00:00 [INF] Bucket found: parenting
+2020-12-22 21:16:49.187 +00:00 [INF] Bucket found: animals

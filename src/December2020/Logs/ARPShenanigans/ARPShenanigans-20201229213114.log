@@ -1,0 +1,142 @@
+2020-12-29 21:31:14.529 +00:00 [VRB] Started SANS Holiday Hack, December 2020
+2020-12-29 21:31:14.547 +00:00 [VRB] Using CTF runner 0.1.0-alpha.26
+2020-12-29 21:31:14.549 +00:00 [VRB] Running challange ARPShenanigans
+2020-12-29 21:31:14.550 +00:00 [INF] Objective
+
+                Go to the NetWars room on the roof and help Alabaster Snowball get access back to a host using ARP. 
+                Retrieve the document at /NORTH_POLE_Land_Use_Board_Meeting_Minutes.txt. 
+                Who recused herself from the vote described on the document?
+
+            
+2020-12-29 21:31:14.551 +00:00 [INF] Hints
+
+
+                Spoofy
+                From: Alabaster Snowball
+                Objective: 9) ARP Shenanigans
+                
+                The host is performing an ARP request. Perhaps we could do a spoof to perform a machine-in-the-middle attack. 
+                I think we have some sample scapy traffic scripts that could help you in /home/guest/scripts.
+
+
+                Resolvy
+                From: Alabaster Snowball
+                Objective: 9) ARP Shenanigans
+
+                Hmmm, looks like the host does a DNS request after you successfully do an ARP spoof. 
+                Let's return a DNS response resolving the request to our IP.
+
+
+                Embedy
+                From: Alabaster Snowball
+                Objective: 9) ARP Shenanigans
+                
+                The malware on the host does an HTTP request for a .deb package. 
+                Maybe we can get command line access by sending it a command in a customized .deb file
+
+
+                Sniffy
+                From: Alabaster Snowball
+                Objective: 9) ARP Shenanigans
+                
+                Jack Frost must have gotten malware on our host at 10.6.6.35 because we can no longer access it. 
+                Try sniffing the eth0 interface using tcpdump -nni eth0 to see if you can view any traffic from that host.
+
+
+            
+2020-12-29 21:31:14.552 +00:00 [INF] Chats
+
+
+                Alabaster Snowball  8:38PM
+
+                Oh, I see the Scapy Present Packet Prepper has already been completed!
+                Now you can help me get access to this machine.
+                It seems that some interloper here at the North Pole has taken control of the host.
+
+                We need to regain access to some important documents associated with Kringle Castle.
+                Maybe we should try a machine-in-the-middle attack?
+            
+                Oh, I see the Scapy Present Packet Prepper has already been completed!
+                Now you can help me get access to this machine.
+
+                It seems that some interloper here at the North Pole has taken control of the host.
+                We need to regain access to some important documents associated with Kringle Castle.
+
+                Maybe we should try a machine-in-the-middle attack?
+                That could give us access to manipulate DNS responses.
+
+                But we'll still need to cook up something to change the HTTP response.
+            
+                I'm sure glad you're here Santa.
+
+            
+2020-12-29 21:31:14.553 +00:00 [INF] Theory
+
+                What is ARP? Address Resolution Protocol
+
+                Address Resolution Protocol (ARP) is a procedure for mapping a dynamic Internet Protocol address (IP address) to a permanent physical machine address in a local area network (LAN). 
+                The physical machine address is also known as a Media Access Control or MAC address. 
+
+
+                More on: https://searchnetworking.techtarget.com/definition/Address-Resolution-Protocol-ARP
+
+            
+2020-12-29 21:31:14.567 +00:00 [INF] Getting nothing from ARP cache
+
+                guest@505d7d82c555:~$ arp -a                
+            
+2020-12-29 21:31:14.567 +00:00 [INF] cat HELP.md
+                
+                # How To Resize and Switch Terminal Panes:
+                You can use the key combinations ( Ctrl+B ↑ or ↓ ) to resize the terminals.
+                You can use the key combinations ( Ctrl+B o ) to switch terminal panes.
+                See tmuxcheatsheet.com for more details
+
+                # To Add An Additional Terminal Pane:
+                `/usr/bin/tmux split-window -hb`
+
+                # To exit a terminal pane simply type:
+                `exit`
+
+                # To Launch a webserver to serve-up files/folder in a local directory:
+                ```
+                cd /my/directory/with/files
+                python3 -m http.server 80
+                ```
+
+                # A Sample ARP pcap can be viewed at:
+                https://www.cloudshark.org/captures/d97c5b81b057
+
+                # A Sample DNS pcap can be viewed at:
+                https://www.cloudshark.org/captures/0320b9b57d35
+
+                # If Reading arp.pcap with tcpdump or tshark be sure to disable name
+                # resolution or it will stall when reading:
+                ```
+                tshark -nnr arp.pcap
+                tcpdump -nnr arp.pcap
+                ```
+            
+2020-12-29 21:31:14.576 +00:00 [INF] ifconfig, IP 10.6.0.3 MAC 02:42:0a:06:00:03
+
+                eth0: flags=4419<UP,BROADCAST,RUNNING,PROMISC,MULTICAST>  mtu 1500
+                        inet 10.6.0.3  netmask 255.255.0.0  broadcast 10.6.255.255
+                        ether 02:42:0a:06:00:03  txqueuelen 0  (Ethernet)
+                        RX packets 446  bytes 19164 (19.1 KB)
+                        RX errors 0  dropped 0  overruns 0  frame 0
+                        TX packets 0  bytes 0 (0.0 B)
+                        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+                lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+                        inet 127.0.0.1  netmask 255.0.0.0
+                        loop  txqueuelen 1000  (Local Loopback)
+                        RX packets 40  bytes 2000 (2.0 KB)
+                        RX errors 0  dropped 0  overruns 0  frame 0
+                        TX packets 40  bytes 2000 (2.0 KB)
+                        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+            
+2020-12-29 21:31:14.579 +00:00 [INF] tshark help
+
+                https://www.wireshark.org/docs/man-pages/tshark.html
+2020-12-29 21:31:14.580 +00:00 [VRB] Challenge ARPShenanigans completed

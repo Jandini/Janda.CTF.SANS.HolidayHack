@@ -1,0 +1,7 @@
+2020-12-26 21:44:58.788 +00:00 [VRB] Started SANS Holiday Hack, December 2020
+2020-12-26 21:44:58.807 +00:00 [VRB] Using CTF runner 0.1.0-alpha.19
+2020-12-26 21:44:58.808 +00:00 [VRB] Searching for Challenges
+2020-12-26 21:44:58.809 +00:00 [VRB] Searching for *.csproj project file...
+2020-12-26 21:44:58.827 +00:00 [VRB] Project file found in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020
+2020-12-26 21:44:58.830 +00:00 [VRB] Directory Challenges found in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Challenges
+2020-12-26 21:44:58.833 +00:00 [ERR] The challenge Santavator file already exist in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Challenges\Santavator.cs

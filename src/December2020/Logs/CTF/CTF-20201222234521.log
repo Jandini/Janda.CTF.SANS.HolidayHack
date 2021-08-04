@@ -1,0 +1,11 @@
+2020-12-22 23:45:21.327 +00:00 [VRB] Started SANS Holiday Hack, December 2020
+2020-12-22 23:45:21.348 +00:00 [VRB] Using CTF runner 0.1.0-alpha.18
+2020-12-22 23:45:21.352 +00:00 [VRB] Searching for Challenges
+2020-12-22 23:45:21.404 +00:00 [VRB] Directory Challenges found in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Challenges
+2020-12-22 23:45:21.443 +00:00 [VRB] Locating Challenge template file
+2020-12-22 23:45:21.448 +00:00 [VRB] Searching for Challenge.ch
+2020-12-22 23:45:21.501 +00:00 [VRB] Loading embedded template Challenge from Janda.CTF
+2020-12-22 23:45:21.504 +00:00 [VRB] Adding challenge RedisBugHunt to launchSettings.json
+2020-12-22 23:45:21.505 +00:00 [VRB] Searching for launchSettings.json
+2020-12-22 23:45:21.518 +00:00 [VRB] File "launchSettings.json" was found in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Properties\launchSettings.json
+2020-12-22 23:45:21.552 +00:00 [VRB] Challenge RedisBugHunt added successfully

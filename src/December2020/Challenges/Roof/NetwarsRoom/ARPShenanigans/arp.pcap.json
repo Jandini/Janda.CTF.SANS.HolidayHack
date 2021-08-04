@@ -1,0 +1,55 @@
+// tshark -T ek -j -P -V -x -r arp.pcap
+[
+  {
+    "index": {
+      "_index": "packets-2011-02-27",
+      "_type": "doc"
+    }
+  },
+
+  {
+    "timestamp": "1298826962806",
+    "no_": "1",
+    "time": "0.000000",
+    "source": "cc:01:10:dc:00:00",
+    "destination": "Broadcast",
+    "protocol": "ARP",
+    "length": "60",
+    "info": "Who has 10.10.10.1? Tell 10.10.10.2",
+    "layers": {
+      "frame_raw": "ffffffffffffcc0110dc000008060001080006040001cc0110dc00000a0a0a020000000000000a0a0a01000000000000000000000000000000000000",
+      "frame": { "filtered": "frame" },
+      "eth_raw": "ffffffffffffcc0110dc00000806",
+      "eth": { "filtered": "eth" },
+      "arp_raw": "0001080006040001cc0110dc00000a0a0a020000000000000a0a0a01",
+      "arp": { "filtered": "arp" }
+    }
+  },
+
+
+
+  {
+    "index": {
+      "_index": "packets-2011-02-27",
+      "_type": "doc"
+    }
+  },
+  {
+    "timestamp": "1298826962837",
+    "no_": "2",
+    "time": "0.031000",
+    "source": "cc:00:10:dc:00:00",
+    "destination": "cc:01:10:dc:00:00",
+    "protocol": "ARP",
+    "length": "60",
+    "info": "10.10.10.1 is at cc:00:10:dc:00:00",
+    "layers": {
+      "frame_raw": "cc0110dc0000cc0010dc000008060001080006040002cc0010dc00000a0a0a01cc0110dc00000a0a0a02000000000000000000000000000000000000",
+      "frame": { "filtered": "frame" },
+      "eth_raw": "cc0110dc0000cc0010dc00000806",
+      "eth": { "filtered": "eth" },
+      "arp_raw": "0001080006040002cc0010dc00000a0a0a01cc0110dc00000a0a0a02",
+      "arp": { "filtered": "arp" }
+    }
+  }
+]

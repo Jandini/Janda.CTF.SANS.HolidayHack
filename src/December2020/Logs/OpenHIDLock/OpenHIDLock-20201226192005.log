@@ -1,0 +1,10 @@
+2020-12-26 19:20:05.696 +00:00 [VRB] Started SANS Holiday Hack, December 2020
+2020-12-26 19:20:05.716 +00:00 [VRB] Using CTF runner 0.1.0-alpha.19
+2020-12-26 19:20:05.717 +00:00 [VRB] Running challange OpenHIDLock
+2020-12-26 19:20:05.724 +00:00 [INF] Open proxmark and call lf hid read next to Bow Ninecandle in Talks Lobby
+{"$type":"HIDCard"}
+2020-12-26 19:20:05.727 +00:00 [INF] Open proxmark and call lf hid read next to Noel Boetie in Wrapping Room
+{"$type":"HIDCard"}
+2020-12-26 19:20:05.728 +00:00 [INF] Open proxmark and call lf hid read next to Sparkle Redberry in Entryway
+{"$type":"HIDCard"}
+2020-12-26 19:20:05.728 +00:00 [VRB] Challenge OpenHIDLock completed

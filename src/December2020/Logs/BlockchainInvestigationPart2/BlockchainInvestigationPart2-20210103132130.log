@@ -1,0 +1,22 @@
+2021-01-03 13:21:30.976 +00:00 [VRB] Started SANS Holiday Hack, December 2020
+2021-01-03 13:21:30.994 +00:00 [VRB] Using CTF runner 0.1.0-alpha.26
+2021-01-03 13:21:30.996 +00:00 [VRB] Running challange BlockchainInvestigationPart2
+2021-01-03 13:21:30.997 +00:00 [INF] Resources online
+
+                Wow, it really was all about abusing the pseudo-random sequence!
+                I've been thinking, do you think someone could try and cheat the Naughty/Nice Blockchain with this same technique?
+
+                I remember you told us about how if you have control over to bytes in a file, it's easy to create MD5 hash collisions.
+
+                But the nonce would have to be known ahead of time.
+                We know that the blockchain works by "chaining" blocks together.
+                There's no way you know who could change it without messing up the chain, right Santa?
+                I'm going to look closer to spot if any of the blocks have been changed.
+
+
+                https://github.com/corkami/collisions
+                This one is interestring... https://github.com/corkami/collisions#shattered-sha1
+
+            
+2021-01-03 13:21:30.999 +00:00 [INF] Int looping...
+2021-01-03 13:21:36.776 +00:00 [VRB] Challenge BlockchainInvestigationPart2 completed

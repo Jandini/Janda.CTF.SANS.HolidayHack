@@ -1,0 +1,11 @@
+2020-12-25 20:17:35.017 +00:00 [VRB] Started SANS Holiday Hack, December 2020
+2020-12-25 20:17:35.035 +00:00 [VRB] Using CTF runner 0.1.0-alpha.18
+2020-12-25 20:17:35.037 +00:00 [VRB] Searching for GreatRoom
+2020-12-25 20:17:35.054 +00:00 [VRB] Directory GreatRoom found in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Challenges\Floor1\GreatRoom
+2020-12-25 20:17:35.057 +00:00 [VRB] Locating Challenge template file
+2020-12-25 20:17:35.058 +00:00 [VRB] Searching for Challenge.ch
+2020-12-25 20:17:35.122 +00:00 [VRB] Loading embedded template Challenge from Janda.CTF
+2020-12-25 20:17:35.125 +00:00 [VRB] Adding challenge Splunk to launchSettings.json
+2020-12-25 20:17:35.126 +00:00 [VRB] Searching for launchSettings.json
+2020-12-25 20:17:35.139 +00:00 [VRB] File "launchSettings.json" was found in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Properties\launchSettings.json
+2020-12-25 20:17:35.165 +00:00 [VRB] Challenge Splunk added successfully
