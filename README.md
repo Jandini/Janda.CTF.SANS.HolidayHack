@@ -1,5 +1,6 @@
 # Janda.CTF.SANS.HolidayHack
 
+[![.NET](https://github.com/Jandini/Janda.CTF.SANS.HolidayHack/actions/workflows/dotnet.yml/badge.svg)](https://github.com/Jandini/Janda.CTF.SANS.HolidayHack/actions/workflows/dotnet.yml)
 
 ## December 2020
 
