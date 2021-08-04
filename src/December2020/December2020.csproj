@@ -7,17 +7,13 @@
     <Authors>Matt Janda</Authors>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>..\..\bin</OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <OutputPath>..\..\bin</OutputPath>
+  <PropertyGroup>
+    <OutputPath>..\..\bin\$(Configuration)</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Janda.CTF" Version="0.1.0-alpha.28" />
-    <PackageReference Include="Janda.CTF.Dictionary" Version="0.1.0-alpha.7" />
+    <PackageReference Include="Janda.CTF" Version="0.1.0" />
+    <PackageReference Include="Janda.CTF.Dictionary" Version="0.1.0" />
   </ItemGroup>
 
   <ItemGroup>

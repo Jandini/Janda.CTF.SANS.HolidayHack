@@ -76,7 +76,8 @@ namespace Janda.CTF.SANS.HolidayHack
 
 
             return;
-            _logger.LogInformation("Searching for MD5 collision...");
+            
+            /* _logger.LogInformation("Searching for MD5 collision...");
 
             for (int b = 13100; b < bytes.Length - 1; b++)
             {
@@ -112,7 +113,7 @@ namespace Janda.CTF.SANS.HolidayHack
                 });
 
                 Console.Title = $"Byte {b}";
-            }
+            } */
 
 
         }

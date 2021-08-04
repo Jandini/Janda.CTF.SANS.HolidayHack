@@ -2,7 +2,7 @@
   "profiles": {
     "Add...": {
       "commandName": "Project",
-      "commandLineArgs": "add --root Courtyard --name Hiddenyard"
+      "commandLineArgs": "add --root Courtyard --class Hiddenyard"
     },
     "Play...": {
       "commandName": "Project",
@@ -14,107 +14,111 @@
     },
     "The Elf C0de": {
       "commandName": "Project",
-      "commandLineArgs": "--name TheElfCode"
+      "commandLineArgs": "--class TheElfCode"
     },
     "336Kbps": {
       "commandName": "Project",
-      "commandLineArgs": "--name DialUp336Kbps"
+      "commandLineArgs": "--class DialUp336Kbps"
     },
     "SORT-O-MATIC": {
       "commandName": "Project",
-      "commandLineArgs": "--name SortOMatic"
+      "commandLineArgs": "--class SortOMatic"
     },
     "Snowball Fight": {
       "commandName": "Project",
-      "commandLineArgs": "--name SnowballFight"
+      "commandLineArgs": "--class SnowballFight"
     },
     "Hidden Place": {
       "commandName": "Project",
-      "commandLineArgs": "--name HiddenPlace"
+      "commandLineArgs": "--class HiddenPlace"
     },
     "Terminal: Kringle Kiosk": {
       "commandName": "Project",
-      "commandLineArgs": "--name KringleKiosk"
+      "commandLineArgs": "--class KringleKiosk"
     },
     "Terminal: Unescape Tmux": {
       "commandName": "Project",
-      "commandLineArgs": "--name UnescapeTmux"
+      "commandLineArgs": "--class UnescapeTmux"
     },
     "Terminal: Redis Bug Hunt": {
       "commandName": "Project",
-      "commandLineArgs": "--name RedisBugHunt"
+      "commandLineArgs": "--class RedisBugHunt"
     },
     "Terminal: Scapy Prepper": {
       "commandName": "Project",
-      "commandLineArgs": "--name ScapyPrepper"
+      "commandLineArgs": "--class ScapyPrepper"
     },
     "Terminal: Linux Premier": {
       "commandName": "Project",
-      "commandLineArgs": "--name LinuxPremier"
+      "commandLineArgs": "--class LinuxPremier"
     },
     "Terminal: CAN-Bus Investigation": {
       "commandName": "Project",
-      "commandLineArgs": "--name CANBusInvestigation"
+      "commandLineArgs": "--class CANBusInvestigation"
     },
     "Terminal: Speaker Door Open": {
       "commandName": "Project",
-      "commandLineArgs": "--name SpeakerDoorOpen"
+      "commandLineArgs": "--class SpeakerDoorOpen"
     },
     "Terminal: Speaker Vending Machine On": {
       "commandName": "Project",
-      "commandLineArgs": "--name SpeakerVendingMachineOn"
+      "commandLineArgs": "--class SpeakerVendingMachineOn"
     },
     "Terminal: Speaker Lights On": {
       "commandName": "Project",
-      "commandLineArgs": "--name SpeakerLightsOn"
+      "commandLineArgs": "--class SpeakerLightsOn"
     },
     "Objective 1: Uncover Christmas List": {
       "commandName": "Project",
-      "commandLineArgs": "--name UncoverChristmasList"
+      "commandLineArgs": "--class UncoverChristmasList"
     },
     "Objective 2: Investigate S3 Bucket": {
       "commandName": "Project",
-      "commandLineArgs": "--name InvestigateS3Bucket"
+      "commandLineArgs": "--class InvestigateS3Bucket"
     },
     "Objective 3: Point-of-Sale Password Recovery": {
       "commandName": "Project",
-      "commandLineArgs": "--name PointOfSalePasswordRecovery"
+      "commandLineArgs": "--class PointOfSalePasswordRecovery"
     },
     "Objective 4: Operate the Santavator": {
       "commandName": "Project",
-      "commandLineArgs": "--name OperateTheSantavator"
+      "commandLineArgs": "--class OperateTheSantavator"
     },
     "Objective 5: Open HID Lock": {
       "commandName": "Project",
-      "commandLineArgs": "--name OpenHIDLock"
+      "commandLineArgs": "--class OpenHIDLock"
     },
     "Objective 6: Splunk Challenge": {
       "commandName": "Project",
-      "commandLineArgs": "--name Splunk"
+      "commandLineArgs": "--class Splunk"
     },
     "Objective 7: Solve the Sleigh's CAN-D-BUS Problem": {
       "commandName": "Project",
-      "commandLineArgs": "--name SleighCANDBUS"
+      "commandLineArgs": "--class SleighCANDBUS"
     },
     "Objective 8: Broken Tag Generator": {
       "commandName": "Project",
-      "commandLineArgs": "--name BrokenTagGenerator"
+      "commandLineArgs": "--class BrokenTagGenerator"
     },
     "Objective 9: ARP Shenanigans": {
       "commandName": "Project",
-      "commandLineArgs": "--name ARPShenanigans"
+      "commandLineArgs": "--class ARPShenanigans"
     },
     "Objective 10: Defeat Fingerprint Sensor": {
       "commandName": "Project",
-      "commandLineArgs": "--name DefeatFingerprintSensor"
+      "commandLineArgs": "--class DefeatFingerprintSensor"
     },
     "Objective 11a: Naughty/Nice List with Blockchain Investigation Part 1": {
       "commandName": "Project",
-      "commandLineArgs": "--name BlockchainInvestigationPart1"
+      "commandLineArgs": "--class BlockchainInvestigationPart1"
     },
     "Objective 11b: Naughty/Nice List with Blockchain Investigation Part 2": {
       "commandName": "Project",
-      "commandLineArgs": "--name BlockchainInvestigationPart2"
+      "commandLineArgs": "--class BlockchainInvestigationPart2"
+    },
+    "Hiddenyard": {
+      "commandName": "Project",
+      "commandLineArgs": "run --class Hiddenyard"
     }
   }
 }
