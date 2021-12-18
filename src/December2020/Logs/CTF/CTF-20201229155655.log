@@ -1,7 +1,0 @@
-2020-12-29 15:56:55.722 +00:00 [VRB] Started SANS Holiday Hack, December 2020
-2020-12-29 15:56:55.740 +00:00 [VRB] Using CTF runner 0.1.0-alpha.22
-2020-12-29 15:56:55.741 +00:00 [VRB] Searching for SantasOffice
-2020-12-29 15:56:55.742 +00:00 [VRB] Searching for *.csproj project file...
-2020-12-29 15:56:55.768 +00:00 [VRB] Project file found in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020
-2020-12-29 15:56:55.773 +00:00 [VRB] Directory SantasOffice found in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Challenges\Floor3\SantasOffice
-2020-12-29 15:56:55.776 +00:00 [ERR] The challenge BlockchainInvestigationPart2 file already exist in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Challenges\Floor3\SantasOffice\BlockchainInvestigationPart2.cs

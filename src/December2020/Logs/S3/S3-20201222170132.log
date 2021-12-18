@@ -1,5 +1,0 @@
-2020-12-22 17:01:32.418 +00:00 [VRB] Started SANS Holiday Hack, December 2020
-2020-12-22 17:01:32.438 +00:00 [VRB] Using CTF runner 0.1.0-alpha.18
-2020-12-22 17:01:32.440 +00:00 [VRB] Running challange S3
-2020-12-22 17:01:32.441 +00:00 [VRB] Downloading page from http://s3.amazonaws.com/kringlecastle
-2020-12-22 17:01:32.803 +00:00 [ERR] The remote server returned an error: (403) Forbidden.

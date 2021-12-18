@@ -1,5 +1,0 @@
-2020-12-26 14:38:20.313 +00:00 [VRB] Started SANS Holiday Hack, December 2020
-2020-12-26 14:38:20.331 +00:00 [VRB] Using CTF runner 0.1.0-alpha.18
-2020-12-26 14:38:20.333 +00:00 [VRB] Searching for SpeakerUnprep
-2020-12-26 14:38:20.337 +00:00 [VRB] Directory SpeakerUnprep found in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\bin\netcoreapp3.1\Logs\December2020\SpeakerUNPrep
-2020-12-26 14:38:20.339 +00:00 [ERR] The challenge SnowballFight file already exist in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\bin\netcoreapp3.1\Logs\December2020\SpeakerUNPrep\SnowballFight.cs

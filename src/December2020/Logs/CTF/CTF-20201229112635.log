@@ -1,7 +1,0 @@
-2020-12-29 11:26:35.801 +00:00 [VRB] Started SANS Holiday Hack, December 2020
-2020-12-29 11:26:35.819 +00:00 [VRB] Using CTF runner 0.1.0-alpha.21
-2020-12-29 11:26:35.821 +00:00 [VRB] Searching for NetwarsRoom
-2020-12-29 11:26:35.822 +00:00 [VRB] Searching for *.csproj project file...
-2020-12-29 11:26:35.846 +00:00 [VRB] Project file found in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020
-2020-12-29 11:26:35.850 +00:00 [VRB] Directory NetwarsRoom found in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Challenges\Roof\NetwarsRoom
-2020-12-29 11:26:35.854 +00:00 [ERR] The challenge ARPShenanigans file already exist in C:\Users\Matt\Source\Repos\Janda\CTFs\Janda.CTF.SANS.HolidayHack\src\December2020\Challenges\Roof\NetwarsRoom\ARPShenanigans.cs

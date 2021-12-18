@@ -1,5 +1,0 @@
-2020-12-23 00:01:45.749 +00:00 [VRB] Started SANS Holiday Hack, December 2020
-2020-12-23 00:01:45.767 +00:00 [VRB] Using CTF runner 0.1.0-alpha.18
-2020-12-23 00:01:45.769 +00:00 [VRB] Running challange RedisBugHunt
-2020-12-23 00:01:45.770 +00:00 [INF] curl http://localhost/maintenance.php?cmd=info
-2020-12-23 00:01:45.770 +00:00 [VRB] Challenge RedisBugHunt completed

@@ -1,3 +1,0 @@
-2020-12-28 23:14:33.023 +00:00 [VRB] Started SANS Holiday Hack, December 2020
-2020-12-28 23:14:33.041 +00:00 [VRB] Using CTF runner 0.1.0-alpha.21
-2020-12-28 23:14:33.046 +00:00 [FTL] Unable to resolve service for type 'Janda.CTF.IWebPageService' while attempting to activate 'Janda.CTF.SANS.HolidayHack.BrokenTagGenerator'.
