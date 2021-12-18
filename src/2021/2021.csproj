@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Janda.CTF.SANS.HolidayHack</RootNamespace>
+    <Authors>Matt Janda</Authors>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <OutputPath>..\..\bin\$(Configuration)</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Janda.CTF" Version="0.4.0" />
+    <PackageReference Include="Janda.CTF.Dictionary" Version="0.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
